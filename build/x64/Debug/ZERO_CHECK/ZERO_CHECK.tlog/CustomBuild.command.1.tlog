@@ -1,0 +1,10 @@
+^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\BBCEA4D3219C77F8AF73A6980AAD3E31\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/BasicSc2Bot.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

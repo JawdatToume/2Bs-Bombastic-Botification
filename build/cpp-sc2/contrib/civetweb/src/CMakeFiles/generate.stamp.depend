@@ -1,0 +1,12 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.c.in
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindThreads.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/civetweb/cmake/FindLibDl.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/civetweb/cmake/FindLibRt.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/civetweb/cmake/FindWinSock.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/civetweb/src/CMakeLists.txt

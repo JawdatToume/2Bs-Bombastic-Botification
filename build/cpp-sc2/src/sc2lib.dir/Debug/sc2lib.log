@@ -1,0 +1,8 @@
+﻿  Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/CMakeLists.txt
+  sc2_search.cc
+  sc2_utils.cc
+C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src\google\protobuf\stubs\strutil.h(357,36): warning C4127: conditional expression is constant (compiling source file C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\src\sc2lib\sc2_search.cc)
+C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src\google\protobuf\stubs\strutil.h(364,46): warning C4127: conditional expression is constant (compiling source file C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\src\sc2lib\sc2_search.cc)
+C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src\google\protobuf\stubs\strutil.h(357,36): warning C4127: conditional expression is constant (compiling source file C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\src\sc2lib\sc2_utils.cc)
+C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src\google\protobuf\stubs\strutil.h(364,46): warning C4127: conditional expression is constant (compiling source file C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\src\sc2lib\sc2_utils.cc)
+  sc2lib.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\sc2libd.lib

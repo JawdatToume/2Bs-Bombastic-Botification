@@ -1,0 +1,25 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeDependentOption.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindThreads.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/FindZLIB.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/GNUInstallDirs.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/SelectLibraryConfigurations.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/extract_includes.bat.in
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/install.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/libprotobuf-lite.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/libprotobuf.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/libprotoc.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/protobuf-config-version.cmake.in
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/protobuf-config.cmake.in
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/protobuf-lite.pc.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/protobuf-module.cmake.in
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/protobuf-options.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/protobuf.pc.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/protoc.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/version.rc.in

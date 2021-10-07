@@ -1,0 +1,11 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeConfigurableFile.in
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFiles.cmake
+C:/Program Files/CMake/share/cmake-3.21/Modules/CheckSymbolExists.cmake
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CheckIncludeFiles/HAVE_ALLOCA_H.c
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CheckIncludeFiles/HAVE_MALLOC_H.c
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CheckIncludeFiles/HAVE_STDARG_H.c
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CheckIncludeFiles/HAVE_STDIO_H.c
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CheckIncludeFiles/HAVE_STRING_H.c
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt
+C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/ipv6-parse/ipv6_config.h.in
