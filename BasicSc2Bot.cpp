@@ -71,7 +71,7 @@ bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit
         const Unit* unit = GetRandomEntry(workers);
 
         // Check to see if unit can make it there
-        if (Query()->PathingDistance(unit, build_location) < 0.1f) {
+        if (Query()->PathingDistance(unit, build_location) < 0.1f) { 
             return false;
         }
 
@@ -101,7 +101,7 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
 
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
-    } else if (minerals >= 50 && food_cap - food_used > 0){
+    } else if (minerals >= 50 && food_cap - food_used > 0 ){
 
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
