@@ -83,7 +83,7 @@ bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit
 
         // Check to see if unit can build there
         if (Query()->Placement(ability_type_for_structure, build_location)) {
-            cout << "building!!!" << endl;
+            cout << "Building a " << ability_type_for_structure.to_string() << endl;
             Actions()->UnitCommand(unit, ability_type_for_structure, build_location);
             return true;
         }
@@ -99,9 +99,11 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
     // TODO: Multiple spawned at once. Make only spawn one?
     if (food_used == food_cap && minerals >= 100) {
 
+        cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
-    } else if (minerals >= 50){
+    } else if (minerals >= 50 && food_cap - food_used > 0){
 
+        cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
 }
