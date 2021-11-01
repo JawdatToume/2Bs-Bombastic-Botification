@@ -1,6 +1,6 @@
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\CPP-SC2\CONTRIB\IPV6-PARSE\CMAKELISTS.TXT
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\CPP-SC2\CONTRIB\IPV6-PARSE\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

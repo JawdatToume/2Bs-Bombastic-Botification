@@ -28,14 +28,15 @@ void BasicSc2Bot::ObtainInfo() {
     food_used = obs->GetFoodUsed();
     minerals = obs->GetMinerals();
     vespene = obs->GetVespene();
-
+    lair_count = CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
 }
 
 // For debugging purposes
 void BasicSc2Bot::PrintInfo() {
     cout << "Info:" << endl;
     cout << "Larva Count: " << larva_count << endl;
-    cout << "Minerals: " << minerals << endl << endl;
+    cout << "Minerals: " << minerals << endl;
+    cout << "Vespene: " << vespene << endl << endl;
 }
 
 
@@ -108,6 +109,11 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
     }
 }
 
+// make overlord generate creep beneath it
+void BasicSc2Bot::GenerateCreep(const Unit *unit) {
+    Actions()->UnitCommand(unit, ABILITY_ID::BEHAVIOR_GENERATECREEPON);
+}
+
 
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
@@ -128,6 +134,11 @@ void BasicSc2Bot::OnStep() {
         switch (unit->unit_type.ToType()) {
             case UNIT_TYPEID::ZERG_LARVA: {
                  MorphLarva(unit);
+            }
+            case UNIT_TYPEID::ZERG_OVERLORD: {
+                if (lair_count > 0 /*&& overlord BEHAVIOR_GENERATECREEPOFF == true*/) {  // available once lair built
+                    GenerateCreep(unit);
+                }
             }
             default: {
                 break;

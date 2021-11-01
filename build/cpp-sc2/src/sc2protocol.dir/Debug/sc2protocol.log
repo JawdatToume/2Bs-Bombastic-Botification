@@ -8,7 +8,6 @@
   Generating ../generated/s2clientprotocol/score.pb.cc, ../generated/s2clientprotocol/score.pb.h
   Generating ../generated/s2clientprotocol/spatial.pb.cc, ../generated/s2clientprotocol/spatial.pb.h
   Generating ../generated/s2clientprotocol/ui.pb.cc, ../generated/s2clientprotocol/ui.pb.h
-  Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/CMakeLists.txt
   common.pb.cc
   data.pb.cc
   debug.pb.cc
@@ -19,4 +18,4 @@
   score.pb.cc
   spatial.pb.cc
   ui.pb.cc
-  sc2protocol.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\sc2protocold.lib
+  sc2protocol.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\sc2protocold.lib

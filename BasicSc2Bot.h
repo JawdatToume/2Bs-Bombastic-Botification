@@ -19,6 +19,7 @@ private:
 	bool BasicSc2Bot::TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type);
 
 	void MorphLarva(const sc2::Unit* unit);
+	void GenerateCreep(const sc2::Unit* unit);
 
 	int food_cap, food_used;
 	int minerals = 0, vespene = 0;
@@ -28,7 +29,8 @@ private:
 
 	int larva_count,
 		drone_count,
-	    spawning_pool_count;
+	    spawning_pool_count,
+		lair_count;
 };
 
 #endif

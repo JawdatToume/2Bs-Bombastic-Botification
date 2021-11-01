@@ -1,6 +1,6 @@
-﻿  Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/CMakeLists.txt
+﻿  Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/CMakeLists.txt
   BasicSc2Bot.cpp
   main.cpp
   Generating Code...
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-  BasicSc2Bot.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\bin\BasicSc2Bot.exe
+  BasicSc2Bot.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\bin\BasicSc2Bot.exe

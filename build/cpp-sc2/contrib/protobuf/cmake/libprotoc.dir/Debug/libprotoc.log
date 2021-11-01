@@ -1,5 +1,4 @@
-﻿  Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt
-  code_generator.cc
+﻿  code_generator.cc
   command_line_interface.cc
   cpp_enum.cc
   cpp_enum_field.cc
@@ -80,4 +79,4 @@
   ruby_generator.cc
   subprocess.cc
   zip_writer.cc
-  libprotoc.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\libprotocd.lib
+  libprotoc.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\libprotocd.lib

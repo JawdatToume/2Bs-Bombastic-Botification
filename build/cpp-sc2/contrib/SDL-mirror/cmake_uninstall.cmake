@@ -1,13 +1,13 @@
-if (NOT EXISTS "C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/SDL-mirror/install_manifest.txt")
-    message(FATAL_ERROR "Cannot find install manifest: \"C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/SDL-mirror/install_manifest.txt\"")
-endif(NOT EXISTS "C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/SDL-mirror/install_manifest.txt")
+if (NOT EXISTS "C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/SDL-mirror/install_manifest.txt")
+    message(FATAL_ERROR "Cannot find install manifest: \"C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/SDL-mirror/install_manifest.txt\"")
+endif(NOT EXISTS "C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/SDL-mirror/install_manifest.txt")
 
-file(READ "C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/SDL-mirror/install_manifest.txt" files)
+file(READ "C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/SDL-mirror/install_manifest.txt" files)
 string(REGEX REPLACE "\n" ";" files "${files}")
 foreach (file ${files})
     message(STATUS "Uninstalling \"$ENV{DESTDIR}${file}\"")
     execute_process(
-        COMMAND C:/Program Files/CMake/bin/cmake.exe -E remove "$ENV{DESTDIR}${file}"
+        COMMAND C:/cmake-3.22.0-rc2-windows-x86_64/bin/cmake.exe -E remove "$ENV{DESTDIR}${file}"
         OUTPUT_VARIABLE rm_out
         RESULT_VARIABLE rm_retval
     )

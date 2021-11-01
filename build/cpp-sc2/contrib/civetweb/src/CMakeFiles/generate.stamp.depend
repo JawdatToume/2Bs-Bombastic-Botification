@@ -1,12 +1,11 @@
 # CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.c.in
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckLibraryExists.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/FindThreads.cmake
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/civetweb/cmake/FindLibDl.cmake
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/civetweb/cmake/FindLibRt.cmake
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/civetweb/cmake/FindWinSock.cmake
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/civetweb/src/CMakeLists.txt
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/civetweb/cmake/FindLibDl.cmake
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/civetweb/cmake/FindLibRt.cmake
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/civetweb/cmake/FindWinSock.cmake
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/civetweb/src/CMakeLists.txt
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckIncludeFile.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckLibraryExists.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/FindPackageMessage.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/FindThreads.cmake

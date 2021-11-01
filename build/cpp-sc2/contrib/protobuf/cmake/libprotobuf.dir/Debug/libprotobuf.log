@@ -1,5 +1,4 @@
-﻿  Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt
-  any_lite.cc
+﻿  any_lite.cc
   arena.cc
   extension_set.cc
   generated_enum_util.cc
@@ -78,4 +77,4 @@
   type_resolver_util.cc
   wire_format.cc
   wrappers.pb.cc
-  libprotobuf.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\libprotobufd.lib
+  libprotobuf.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\libprotobufd.lib

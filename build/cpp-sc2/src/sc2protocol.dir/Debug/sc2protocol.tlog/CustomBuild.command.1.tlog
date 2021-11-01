@@ -1,6 +1,6 @@
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\COMMON.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\COMMON.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/common.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/common.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -8,9 +8,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\DATA.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\DATA.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/data.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/data.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -18,9 +18,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\DEBUG.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\DEBUG.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/debug.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/debug.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -28,9 +28,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\ERROR.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\ERROR.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/error.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/error.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -38,9 +38,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\QUERY.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\QUERY.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/query.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/query.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -48,9 +48,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\RAW.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\RAW.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/raw.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/raw.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -58,9 +58,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\SC2API.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\SC2API.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/sc2api.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/sc2api.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -68,9 +68,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\SCORE.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\SCORE.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/score.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/score.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -78,9 +78,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\SPATIAL.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\SPATIAL.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/spatial.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/spatial.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -88,9 +88,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\BUILD\CMAKEFILES\451EB49982F75A0CD940130E44A2B09A\UI.PB.CC.RULE
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\BUILD\CMAKEFILES\E190F4EAB219D1876B5F040DAED6E729\UI.PB.CC.RULE
 setlocal
-..\bin\protoc -I=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/generated C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/../protocol/s2clientprotocol/ui.proto
+..\bin\protoc -I=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/ --cpp_out=C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/generated C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/src/../protocol/s2clientprotocol/ui.proto
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
@@ -98,9 +98,9 @@ endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd
-^C:\USERS\JAWDA\ONEDRIVE\DESKTOP\CMPUT350_LAB\BASICSC2BOT\CPP-SC2\SRC\CMAKELISTS.TXT
+^C:\USERS\A\DOCUMENTS\CMPUT350-PROJECT\2BS-BOMBASTIC-BOTIFICATION\CPP-SC2\SRC\CMAKELISTS.TXT
 setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/src/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/src/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
