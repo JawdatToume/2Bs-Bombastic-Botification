@@ -16,10 +16,12 @@ public:
 private:
 	void ObtainInfo();
 	void PrintInfo();
-	bool BasicSc2Bot::TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type);
+	sc2::Tag FindClosestGeyser(sc2::Point2D base_location);  // find closest geyser to a base
+	bool TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type, sc2::Tag location_tag = 0);
 
 	void MorphLarva(const sc2::Unit* unit);
 	void GenerateCreep(const sc2::Unit* unit);
+	void BuildExtractor();
 
 	int food_cap, food_used;
 	int minerals = 0, vespene = 0;
@@ -30,7 +32,8 @@ private:
 	int larva_count,
 		drone_count,
 	    spawning_pool_count,
-		lair_count;
+		lair_count,
+		base_count;
 };
 
 #endif

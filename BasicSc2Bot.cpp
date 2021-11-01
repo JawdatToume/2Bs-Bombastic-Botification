@@ -29,6 +29,7 @@ void BasicSc2Bot::ObtainInfo() {
     minerals = obs->GetMinerals();
     vespene = obs->GetVespene();
     lair_count = CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
+    base_count = obs->GetUnits(Unit::Alliance::Self, IsTownHall()).size();
 }
 
 // For debugging purposes
@@ -39,19 +40,47 @@ void BasicSc2Bot::PrintInfo() {
     cout << "Vespene: " << vespene << endl << endl;
 }
 
+// from bot_example.cc
+Tag BasicSc2Bot::FindClosestGeyser(Point2D base_location) {
+    Units geysers = Observation()->GetUnits(Unit::Alliance::Neutral, IsUnit(UNIT_TYPEID::NEUTRAL_VESPENEGEYSER));
+    // only search for closest geyser within this radius
+    float minimum_distance = 15.0f;
+    Tag closestGeyser = 0;
+    
+    for (const auto& geyser : geysers) {
+        float current_distance = Distance2D(base_location, geyser->pos);
+        if (current_distance < minimum_distance) {
+            if (Query()->Placement(ABILITY_ID::BUILD_EXTRACTOR, geyser->pos)) {
+                minimum_distance = current_distance;
+                closestGeyser = geyser->tag;
+            }
+        }
+    }
+    return closestGeyser;
+}
 
 // UNIT SPAWNING AND BUILDING ////////////////////////////////////////////////////////////
 
-// From bot_examples.cc 
-bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type) {
+// From bot_examples.cc
+bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, Tag location_tag) {
     float rx = GetRandomScalar();
     float ry = GetRandomScalar();
     const ObservationInterface* observation = Observation();
+   
+    // default: pick a random location
     Point2D build_location = Point2D(start_location.x + rx * 15, start_location.y + ry * 15);
 
+    cout << "ability_type_for_structure is Extractor: " << (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) << endl;  /// 1 occurs
+
+    // location is set to closest to a base
+    if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
+        build_location = (observation->GetUnit(location_tag))->pos;
+    }
+    
     if (observation->HasCreep(build_location)) {
 
         const ObservationInterface* observation = Observation();
+
         Units workers = observation->GetUnits(Unit::Alliance::Self, IsUnit(unit_type));
 
         //if we have no workers Don't build
@@ -72,7 +101,7 @@ bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit
         const Unit* unit = GetRandomEntry(workers);
 
         // Check to see if unit can make it there
-        if (Query()->PathingDistance(unit, build_location) < 0.1f) { 
+        if (Query()->PathingDistance(unit, build_location) < 0.1f) {
             return false;
         }
 
@@ -82,12 +111,32 @@ bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit
             }
         }
 
+        /*if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
+            const Unit* target = observation->GetUnit(location_tag);
+
+            if (Query()->Placement(ability_type_for_structure, target->pos)) {
+                Actions()->UnitCommand(unit, ability_type_for_structure, target);
+                return true;
+            }
+        } else {
+            // Check to see if unit can build there
+            if (Query()->Placement(ability_type_for_structure, build_location)) {
+                cout << "Building a " << ability_type_for_structure.to_string() << endl;
+                Actions()->UnitCommand(unit, ability_type_for_structure, build_location);
+                return true;
+            }
+        }*/
+
         // Check to see if unit can build there
+        if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
+            cout << "Query()->Placement(ability_type_for_structure, build_location: " << (Query()->Placement(ability_type_for_structure, build_location)) << endl;  /// 1
+        }
         if (Query()->Placement(ability_type_for_structure, build_location)) {
             cout << "Building a " << ability_type_for_structure.to_string() << endl;
             Actions()->UnitCommand(unit, ability_type_for_structure, build_location);
             return true;
         }
+        
         return false;
 
     }
@@ -114,6 +163,23 @@ void BasicSc2Bot::GenerateCreep(const Unit *unit) {
     Actions()->UnitCommand(unit, ABILITY_ID::BEHAVIOR_GENERATECREEPON);
 }
 
+// build extractor to collect vespene gas
+void BasicSc2Bot::BuildExtractor() {
+    const ObservationInterface* obs = Observation();
+    Units bases = obs->GetUnits(Unit::Alliance::Self, IsTownHall());  // return all command centers of current player
+
+    // build extractor
+    for (const auto& base: bases) {
+        if (base->assigned_harvesters >= base->ideal_harvesters) {  // if there are more drone than ideal working in a base
+            if (base->build_progress == 1) {
+                Tag geyser = FindClosestGeyser(base->pos);
+                if (geyser != 0) {  // only build if found closest geyser to a base
+                    TryBuild(ABILITY_ID::BUILD_EXTRACTOR, UNIT_TYPEID::ZERG_DRONE, geyser);
+                }
+            }
+        }
+    }
+}
 
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
@@ -147,9 +213,16 @@ void BasicSc2Bot::OnStep() {
         }
     }
 
-    // building
+    // building spawning pool
     if (spawning_pool_count < 1 && minerals >= 200) {
         TryBuild(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
+        
+    }
+    
+    bool need_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
+    // if all bases are destroyed or there's no base, don't build
+    if (base_count > 0 && minerals >= 25 && need_extractor) {
+        BuildExtractor();
     }
 
     return;
