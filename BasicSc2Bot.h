@@ -16,9 +16,11 @@ public:
 private:
 	void ObtainInfo();
 	void PrintInfo();
-	bool BasicSc2Bot::TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type);
+	bool TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type);
 
 	void MorphLarva(const sc2::Unit* unit);
+	void InjectLarva(const sc2::Unit* unit);
+	void CreepTumors(const sc2::Unit* unit);
 
 	int food_cap, food_used;
 	int minerals = 0, vespene = 0;

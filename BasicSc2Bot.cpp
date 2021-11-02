@@ -108,6 +108,26 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
     }
 }
 
+// Get the queens to inject Larva when they are able to, decides whether a queen spreads creep tumors or injects larva at a hatchery
+void BasicSc2Bot::InjectLarva(const Unit* unit, int num) {
+    Units hatcheries = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
+    // decide which hatchery we're building at, cycles between queens
+    int mode = num % (hatcheries.size()+1);
+    for (size_t i = 0; i < hatcheries.size(); i++) {
+        if (mode == i) {
+            // if hatchery is not completely built yet
+            if (hatcheries.at(i)->build_progress != 1) {
+                mode++;
+            }
+            // prevents impossible requests
+            else if(unit->energy >= 25 && unit->orders.empty()){
+                Actions()->UnitCommand(unit, ABILITY_ID::EFFECT_INJECTLARVA, hatcheries.at(i));
+            }
+        }
+    }
+    Actions()->UnitCommand(unit, ABILITY_ID::EFFECT_INJECTLARVA);
+}
+
 
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
@@ -120,6 +140,7 @@ void BasicSc2Bot::OnGameStart() {
 // per frame...
 void BasicSc2Bot::OnStep() { 
     ObtainInfo();
+    int queens = 0;
 
     // looking through all unit types
     Units units = Observation()->GetUnits(Unit::Alliance::Self);
@@ -127,7 +148,11 @@ void BasicSc2Bot::OnStep() {
 
         switch (unit->unit_type.ToType()) {
             case UNIT_TYPEID::ZERG_LARVA: {
-                 MorphLarva(unit);
+                MorphLarva(unit);
+            }
+            case UNIT_TYPEID::ZERG_QUEEN: {
+                InjectLarva(unit, queens);
+                queens++;
             }
             default: {
                 break;
