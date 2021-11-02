@@ -70,9 +70,7 @@ bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit
     // default: pick a random location
     Point2D build_location = Point2D(start_location.x + rx * 15, start_location.y + ry * 15);
 
-    cout << "ability_type_for_structure is Extractor: " << (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) << endl;  /// 1 occurs
-
-    // location is set to closest to a base
+    // location is set to a geyser location that is closest to a base
     if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
         build_location = (observation->GetUnit(location_tag))->pos;
     }
@@ -100,9 +98,12 @@ bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit
         // If no worker is already building one, get a random worker to build one
         const Unit* unit = GetRandomEntry(workers);
 
-        // Check to see if unit can make it there
-        if (Query()->PathingDistance(unit, build_location) < 0.1f) {
+        // skipping distance checking for building extractor because the chosen target location is already closest to a base
+        if (ability_type_for_structure != ABILITY_ID::BUILD_EXTRACTOR) {
+            // Check to see if unit can make it there
+            if (Query()->PathingDistance(unit, build_location) < 0.1f) {
             return false;
+            }
         }
 
         for (const auto& expansion : expansions) {
@@ -111,34 +112,19 @@ bool BasicSc2Bot::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit
             }
         }
 
-        /*if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
-            const Unit* target = observation->GetUnit(location_tag);
-
-            if (Query()->Placement(ability_type_for_structure, target->pos)) {
-                Actions()->UnitCommand(unit, ability_type_for_structure, target);
-                return true;
-            }
-        } else {
-            // Check to see if unit can build there
-            if (Query()->Placement(ability_type_for_structure, build_location)) {
-                cout << "Building a " << ability_type_for_structure.to_string() << endl;
-                Actions()->UnitCommand(unit, ability_type_for_structure, build_location);
-                return true;
-            }
-        }*/
-
         // Check to see if unit can build there
-        if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
-            cout << "Query()->Placement(ability_type_for_structure, build_location: " << (Query()->Placement(ability_type_for_structure, build_location)) << endl;  /// 1
-        }
         if (Query()->Placement(ability_type_for_structure, build_location)) {
             cout << "Building a " << ability_type_for_structure.to_string() << endl;
-            Actions()->UnitCommand(unit, ability_type_for_structure, build_location);
+            if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
+                // must pass in Unit type, Point2D does not work for building extractor
+                Actions()->UnitCommand(unit, ability_type_for_structure, observation->GetUnit(location_tag));
+                cout << "Finished building an extractor" << endl;
+            } else {
+                Actions()->UnitCommand(unit, ability_type_for_structure, build_location);
+            }
             return true;
         }
-        
         return false;
-
     }
     return false;
 }
@@ -219,9 +205,9 @@ void BasicSc2Bot::OnStep() {
         
     }
     
-    bool need_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
+    bool not_enough_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
     // if all bases are destroyed or there's no base, don't build
-    if (base_count > 0 && minerals >= 25 && need_extractor) {
+    if (base_count > 0 && minerals >= 25 && not_enough_extractor) {
         BuildExtractor();
     }
 
