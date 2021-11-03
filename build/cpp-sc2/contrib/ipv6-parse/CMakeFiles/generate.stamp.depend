@@ -1,5 +1,0 @@
-# CMake generation dependency list for this directory.
-C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt
-C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/ipv6-parse/ipv6_config.h.in
-C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckIncludeFiles.cmake
-C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckSymbolExists.cmake
