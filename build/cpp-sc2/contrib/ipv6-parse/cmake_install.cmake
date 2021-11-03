@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/ipv6-parse
+# Install script for directory: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/ipv6-parse
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

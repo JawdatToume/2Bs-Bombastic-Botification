@@ -22,8 +22,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B5D4B755-EDF9-3F76-96F4-B265B9A80AB2}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{9FB28AB0-3198-3C5D-AF71-90CBBAB8D3E0}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>SDL2main</ProjectName>
@@ -59,26 +59,26 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SDL2main.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">SDL2main</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SDL2main.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">SDL2main</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SDL2main.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">SDL2main</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.lib</TargetExt>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SDL2main.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">SDL2main</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.lib</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -95,10 +95,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;_SCL_SECURE_NO_WARNINGS;USING_GENERATED_CONFIG_H;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -111,7 +111,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <ExceptionHandling>
@@ -129,10 +129,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;USING_GENERATED_CONFIG_H;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -145,7 +145,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <ExceptionHandling>
@@ -163,10 +163,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;USING_GENERATED_CONFIG_H;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -179,7 +179,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BufferSecurityCheck>false</BufferSecurityCheck>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -196,10 +196,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;_SCL_SECURE_NO_WARNINGS;USING_GENERATED_CONFIG_H;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\include;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -211,11 +211,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/SDL-mirror/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/SDL-mirror/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -223,12 +223,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Internal\CheckSourceRuns.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake\macros.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake\sdlchecks.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake_uninstall.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include\SDL_config.h.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake\macros.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake\sdlchecks.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake_uninstall.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include\SDL_config.h.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCCompilerFlag.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceRuns.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCXXSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckFunctionExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFileCXX.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckStructHasMember.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckSymbolExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckTypeSize.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPkgConfig.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\GNUInstallDirs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\Internal\CheckSourceRuns.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/SDL-mirror/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/SDL-mirror/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -236,12 +236,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Internal\CheckSourceRuns.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake\macros.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake\sdlchecks.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake_uninstall.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include\SDL_config.h.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake\macros.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake\sdlchecks.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake_uninstall.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include\SDL_config.h.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCCompilerFlag.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceRuns.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCXXSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckFunctionExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFileCXX.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckStructHasMember.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckSymbolExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckTypeSize.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPkgConfig.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\GNUInstallDirs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\Internal\CheckSourceRuns.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/SDL-mirror/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/SDL-mirror/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -249,12 +249,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Internal\CheckSourceRuns.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake\macros.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake\sdlchecks.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake_uninstall.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include\SDL_config.h.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake\macros.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake\sdlchecks.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake_uninstall.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include\SDL_config.h.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCCompilerFlag.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceRuns.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCXXSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckFunctionExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFileCXX.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckStructHasMember.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckSymbolExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckTypeSize.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPkgConfig.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\GNUInstallDirs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\Internal\CheckSourceRuns.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/SDL-mirror/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/SDL-mirror/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -262,17 +262,17 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCCompilerFlag.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceRuns.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCXXSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckStructHasMember.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPkgConfig.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\Internal\CheckSourceRuns.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake\macros.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake\sdlchecks.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\cmake_uninstall.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\include\SDL_config.h.cmake;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\SDL-mirror\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake\macros.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake\sdlchecks.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\cmake_uninstall.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\include\SDL_config.h.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCCompilerFlag.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceRuns.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCXXSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckFunctionExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFileCXX.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckStructHasMember.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckSymbolExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckTypeSize.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPkgConfig.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\GNUInstallDirs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\Internal\CheckSourceRuns.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\SDL-mirror\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\SDL-mirror\src\main\windows\SDL_windows_main.c" />
+    <ClCompile Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\SDL-mirror\src\main\windows\SDL_windows_main.c" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\ZERO_CHECK.vcxproj">
-      <Project>{CE44FA76-7FCF-317D-8B57-9F1FF5597C68}</Project>
+    <ProjectReference Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\ZERO_CHECK.vcxproj">
+      <Project>{1C1EE5DD-57AA-3163-9E34-98439FF50BB5}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>

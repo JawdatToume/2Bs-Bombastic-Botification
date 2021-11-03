@@ -1,25 +1,24 @@
 # CMake generation dependency list for this directory.
-C:/Program Files/CMake/share/cmake-3.21/Modules/CMakeDependentOption.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCCompilerFlag.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCSourceCompiles.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCSourceRuns.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckCXXSourceCompiles.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckFunctionExists.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.c.in
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFile.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFileCXX.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckIncludeFiles.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckLibraryExists.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckStructHasMember.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckSymbolExists.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/CheckTypeSize.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageHandleStandardArgs.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/FindPackageMessage.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/FindPkgConfig.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/GNUInstallDirs.cmake
-C:/Program Files/CMake/share/cmake-3.21/Modules/Internal/CheckSourceRuns.cmake
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/cmake/macros.cmake
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/cmake/sdlchecks.cmake
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/cmake_uninstall.cmake.in
-C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/SDL-mirror/include/SDL_config.h.cmake
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/CMakeLists.txt
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/cmake/macros.cmake
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/cmake/sdlchecks.cmake
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/cmake_uninstall.cmake.in
+C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/SDL-mirror/include/SDL_config.h.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CMakeDependentOption.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckCCompilerFlag.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckCSourceCompiles.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckCSourceRuns.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckCXXSourceCompiles.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckFunctionExists.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckIncludeFile.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckIncludeFileCXX.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckIncludeFiles.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckLibraryExists.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckStructHasMember.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckSymbolExists.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/CheckTypeSize.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/FindPackageHandleStandardArgs.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/FindPackageMessage.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/FindPkgConfig.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/GNUInstallDirs.cmake
+C:/cmake-3.22.0-rc2-windows-x86_64/share/cmake-3.22/Modules/Internal/CheckSourceRuns.cmake
