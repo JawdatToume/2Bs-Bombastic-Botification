@@ -301,6 +301,24 @@ const Unit* BasicSc2Bot::FindNearestMineralPatch(const Point2D& start) {
     return target;
 }
 
+/*bool BasicSc2Bot::TryBuildExpansionHatch() {
+    const ObservationInterface* observation = Observation();
+
+    //Don't have more active bases than we can provide workers for
+    if (GetExpectedWorkers(UNIT_TYPEID::ZERG_EXTRACTOR) > max_worker_count_) {
+        return false;
+    }
+    // If we have extra workers around, try and build another Hatch.
+    if (GetExpectedWorkers(UNIT_TYPEID::ZERG_EXTRACTOR) < observation->GetFoodWorkers() - 10) {
+        return TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
+    }
+    //Only build another Hatch if we are floating extra minerals
+    if (observation->GetMinerals() > std::min<size_t>((CountUnitType(observation, UNIT_TYPEID::ZERG_HATCHERY) * 300), 1200)) {
+        return TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
+    }
+    return false;
+}*/
+
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
 void BasicSc2Bot::OnGameStart() { 

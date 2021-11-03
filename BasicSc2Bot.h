@@ -25,6 +25,7 @@ private:
 	void ManageWorkers(sc2::UNIT_TYPEID worker_type, sc2::AbilityID worker_gather_command, sc2::UNIT_TYPEID vespene_building_type);
 	void MineIdleWorkers(const sc2::Unit* worker, sc2::AbilityID worker_gather_command, sc2::UnitTypeID vespene_building_type);
 	const sc2::Unit* FindNearestMineralPatch(const sc2::Point2D& start);
+	bool TryBuildExpansionHatch();
 
 	int food_cap, food_used;
 	int minerals = 0, vespene = 0;
