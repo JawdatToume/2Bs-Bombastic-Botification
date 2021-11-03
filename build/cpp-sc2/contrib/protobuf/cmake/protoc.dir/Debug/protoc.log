@@ -1,3 +1,2 @@
-﻿  Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt
-  main.cc
-  protoc.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\protoc.exe
+﻿  LINK : C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\protoc.exe not found or not built by the last incremental link; performing full link
+  protoc.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\protoc.exe

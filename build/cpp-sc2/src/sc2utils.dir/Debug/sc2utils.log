@@ -1,6 +1,1 @@
-﻿  Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/src/CMakeLists.txt
-  sc2_arg_parser.cc
-  sc2_manage_process.cc
-  sc2_property_reader.cc
-  sc2_scan_directory.cc
-  sc2utils.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\sc2utilsd.lib
+﻿  sc2utils.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\sc2utilsd.lib

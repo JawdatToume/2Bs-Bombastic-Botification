@@ -1,354 +1,354 @@
 Performing C SOURCE FILE Test HAVE_C_FLAG_STD_C11 failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_01e21.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_63a6d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_STD_C11 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_01e21.dir\Debug\\" /Fd"cmTC_01e21.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue  -std=c11 C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '-std=c11' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_01e21.vcxproj]
-  cmTC_01e21.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_01e21.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_STD_C11 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_63a6d.dir\Debug\\" /Fd"cmTC_63a6d.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue  -std=c11 "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '-std=c11' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_63a6d.vcxproj]
+  cmTC_63a6d.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_63a6d.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_STD_C99 failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_2ff4b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_0819e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_STD_C99 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2ff4b.dir\Debug\\" /Fd"cmTC_2ff4b.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue  -std=c99 C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '-std=c99' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_2ff4b.vcxproj]
-  cmTC_2ff4b.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_2ff4b.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_STD_C99 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0819e.dir\Debug\\" /Fd"cmTC_0819e.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue  -std=c99 "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '-std=c99' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_0819e.vcxproj]
+  cmTC_0819e.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_0819e.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_STD_C89 failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_dfdbf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_c49dc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_STD_C89 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_dfdbf.dir\Debug\\" /Fd"cmTC_dfdbf.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue  -std=c89 C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '-std=c89' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_dfdbf.vcxproj]
-  cmTC_dfdbf.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_dfdbf.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_STD_C89 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c49dc.dir\Debug\\" /Fd"cmTC_c49dc.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue  -std=c89 "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '-std=c89' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_c49dc.vcxproj]
+  cmTC_c49dc.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_c49dc.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WEXTRA failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_fb565.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_437e4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WEXTRA /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fb565.dir\Debug\\" /Fd"cmTC_fb565.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wextra C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wextra' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_fb565.vcxproj]
+  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WEXTRA /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_437e4.dir\Debug\\" /Fd"cmTC_437e4.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wextra "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wextra' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_437e4.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WSHADOW failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_e38c6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_85826.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WSHADOW /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e38c6.dir\Debug\\" /Fd"cmTC_e38c6.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wshadow C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wshadow' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_e38c6.vcxproj]
+  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WSHADOW /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_85826.dir\Debug\\" /Fd"cmTC_85826.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wshadow "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wshadow' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_85826.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WCONVERSION failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_d27b2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_60a45.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WCONVERSION /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d27b2.dir\Debug\\" /Fd"cmTC_d27b2.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wconversion C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wconversion' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_d27b2.vcxproj]
+  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WCONVERSION /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_60a45.dir\Debug\\" /Fd"cmTC_60a45.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wconversion "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wconversion' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_60a45.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WMISSING_PROTOTYPES failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_71352.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_1176c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WMISSING_PROTOTYPES /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_71352.dir\Debug\\" /Fd"cmTC_71352.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wmissing-prototypes C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wmissing-prototypes' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_71352.vcxproj]
+  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WMISSING_PROTOTYPES /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1176c.dir\Debug\\" /Fd"cmTC_1176c.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wmissing-prototypes "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wmissing-prototypes' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_1176c.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WEVERYTHING failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_7f627.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_af817.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WEVERYTHING /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_7f627.dir\Debug\\" /Fd"cmTC_7f627.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Weverything C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Weverything' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_7f627.vcxproj]
+  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WEVERYTHING /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_af817.dir\Debug\\" /Fd"cmTC_af817.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Weverything "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Weverything' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_af817.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WPARENTHESES failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_fb4bf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_ec2ec.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WPARENTHESES /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fb4bf.dir\Debug\\" /Fd"cmTC_fb4bf.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wparentheses C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wparentheses' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_fb4bf.vcxproj]
+  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WPARENTHESES /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ec2ec.dir\Debug\\" /Fd"cmTC_ec2ec.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wparentheses "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wparentheses' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_ec2ec.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WNO_PADDED failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_675b1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_5019c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_PADDED /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_675b1.dir\Debug\\" /Fd"cmTC_675b1.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-padded C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wno-padded' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_675b1.vcxproj]
+  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_PADDED /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5019c.dir\Debug\\" /Fd"cmTC_5019c.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-padded "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wno-padded' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_5019c.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WNO_UNUSED_MACROS failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_6e8c1.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_3d3d0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_UNUSED_MACROS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6e8c1.dir\Debug\\" /Fd"cmTC_6e8c1.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-unused-macros C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wno-unused-macros' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_6e8c1.vcxproj]
+  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_UNUSED_MACROS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3d3d0.dir\Debug\\" /Fd"cmTC_3d3d0.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-unused-macros "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wno-unused-macros' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_3d3d0.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WNO_RESERVED_ID_MACROS failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_5112d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_2c576.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_RESERVED_ID_MACROS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5112d.dir\Debug\\" /Fd"cmTC_5112d.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-reserved-id-macros C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wno-reserved-id-macros' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_5112d.vcxproj]
+  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_RESERVED_ID_MACROS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2c576.dir\Debug\\" /Fd"cmTC_2c576.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-reserved-id-macros "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wno-reserved-id-macros' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_2c576.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WNO_FORMAT_NONLITERAL failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_c04bf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_8678c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_FORMAT_NONLITERAL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c04bf.dir\Debug\\" /Fd"cmTC_c04bf.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-format-nonliteral C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wno-format-nonliteral' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_c04bf.vcxproj]
+  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_FORMAT_NONLITERAL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8678c.dir\Debug\\" /Fd"cmTC_8678c.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-format-nonliteral "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wno-format-nonliteral' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_8678c.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WNO_DATE_TIME failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_edb40.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_177f3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_DATE_TIME /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_edb40.dir\Debug\\" /Fd"cmTC_edb40.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-date-time C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wno-date-time' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_edb40.vcxproj]
+  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_DATE_TIME /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_177f3.dir\Debug\\" /Fd"cmTC_177f3.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-date-time "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wno-date-time' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_177f3.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WNO_CAST_QUAL failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_0fef7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_07736.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_CAST_QUAL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0fef7.dir\Debug\\" /Fd"cmTC_0fef7.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-cast-qual C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wno-cast-qual' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_0fef7.vcxproj]
+  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WNO_CAST_QUAL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_07736.dir\Debug\\" /Fd"cmTC_07736.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -Wno-cast-qual "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wno-cast-qual' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_07736.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WD4820 failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_00efc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_e6aaf.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
-  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WD4820 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_00efc.dir\Debug\\" /Fd"cmTC_00efc.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  /Wd4820 C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line error D8021: invalid numeric argument '/Wd4820' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_00efc.vcxproj]
+  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WD4820 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e6aaf.dir\Debug\\" /Fd"cmTC_e6aaf.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  /Wd4820 "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line error D8021: invalid numeric argument '/Wd4820' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_e6aaf.vcxproj]
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_PEDANTIC_ERRORS failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_8f128.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_92baa.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_PEDANTIC_ERRORS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_8f128.dir\Debug\\" /Fd"cmTC_8f128.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -pedantic-errors C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '-pedantic-errors' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_8f128.vcxproj]
-  cmTC_8f128.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_8f128.exe
+  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_PEDANTIC_ERRORS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_92baa.dir\Debug\\" /Fd"cmTC_92baa.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -pedantic-errors "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '-pedantic-errors' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_92baa.vcxproj]
+  cmTC_92baa.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_92baa.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_FVISIBILITY_HIDDEN failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_f587e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_34d69.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_FVISIBILITY_HIDDEN /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f587e.dir\Debug\\" /Fd"cmTC_f587e.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -fvisibility=hidden C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '-fvisibility=hidden' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_f587e.vcxproj]
-  cmTC_f587e.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_f587e.exe
+  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_FVISIBILITY_HIDDEN /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_34d69.dir\Debug\\" /Fd"cmTC_34d69.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -fvisibility=hidden "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '-fvisibility=hidden' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_34d69.vcxproj]
+  cmTC_34d69.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_34d69.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_FSTACK_PROTECTOR_STRONG failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_3316f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_39bdc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_FSTACK_PROTECTOR_STRONG /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3316f.dir\Debug\\" /Fd"cmTC_3316f.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -fstack-protector-strong C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '-fstack-protector-strong' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_3316f.vcxproj]
-  cmTC_3316f.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_3316f.exe
+  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_FSTACK_PROTECTOR_STRONG /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_39bdc.dir\Debug\\" /Fd"cmTC_39bdc.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -fstack-protector-strong "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '-fstack-protector-strong' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_39bdc.vcxproj]
+  cmTC_39bdc.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_39bdc.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_FLTO failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_130f2.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_20412.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_FLTO /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_130f2.dir\Debug\\" /Fd"cmTC_130f2.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -flto C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '-flto' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_130f2.vcxproj]
-  cmTC_130f2.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_130f2.exe
+  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_FLTO /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_20412.dir\Debug\\" /Fd"cmTC_20412.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -flto "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '-flto' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_20412.vcxproj]
+  cmTC_20412.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_20412.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_FSTACK_PROTECTOR_ALL failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_76cc7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_76d9d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_FSTACK_PROTECTOR_ALL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_76cc7.dir\Debug\\" /Fd"cmTC_76cc7.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -fstack-protector-all C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '-fstack-protector-all' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_76cc7.vcxproj]
-  cmTC_76cc7.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_76cc7.exe
+  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_FSTACK_PROTECTOR_ALL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_76d9d.dir\Debug\\" /Fd"cmTC_76d9d.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  -fstack-protector-all "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '-fstack-protector-all' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_76d9d.vcxproj]
+  cmTC_76d9d.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_76d9d.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_COVERAGE failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_86798.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_c5d04.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_COVERAGE /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_86798.dir\Debug\\" /Fd"cmTC_86798.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  --coverage C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-cl : command line warning D9002: ignoring unknown option '--coverage' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_86798.vcxproj]
-  cmTC_86798.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_86798.exe
+  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_COVERAGE /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_c5d04.dir\Debug\\" /Fd"cmTC_c5d04.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue  --coverage "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+cl : command line warning D9002: ignoring unknown option '--coverage' [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_c5d04.vcxproj]
+  cmTC_c5d04.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_c5d04.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Determining if the include file pthread.h exists failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_87560.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_3075d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CheckIncludeFile.c
-  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_87560.dir\Debug\\" /Fd"cmTC_87560.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
-C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_87560.vcxproj]
+  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3075d.dir\Debug\\" /Fd"cmTC_3075d.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c(1,10): fatal error C1083: Cannot open include file: 'pthread.h': No such file or directory [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_3075d.vcxproj]
 
 
 
 Determining if files alloca.h exist failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_f2e2f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_a5083.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   HAVE_ALLOCA_H.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f2e2f.dir\Debug\\" /Fd"cmTC_f2e2f.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_ALLOCA_H.c
-C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_ALLOCA_H.c(2,10): fatal error C1083: Cannot open include file: 'alloca.h': No such file or directory [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_f2e2f.vcxproj]
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a5083.dir\Debug\\" /Fd"cmTC_a5083.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CheckIncludeFiles\HAVE_ALLOCA_H.c"
+C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CheckIncludeFiles\HAVE_ALLOCA_H.c(2,10): fatal error C1083: Cannot open include file: 'alloca.h': No such file or directory [C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\cmTC_a5083.vcxproj]
 
 
 Source:
@@ -357,145 +357,4 @@ Source:
 
 
 int main(void){return 0;}
-
-Determining if the include file xaudio2.h exists failed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
-
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_63d2e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
-Copyright (C) Microsoft Corporation. All rights reserved.
-
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
-  Copyright (C) Microsoft Corporation.  All rights reserved.
-  CheckIncludeFile.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_63d2e.dir\Debug\\" /Fd"cmTC_63d2e.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(61,26): error C2485: 'uuid': unrecognized extended attribute [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(61,70): error C2332: 'struct': missing tag name [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(61,70): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(61,72): error C2079: 'IXAudio2' uses undefined struct '<unnamed-tag>' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(161,1): error C2371: 'IXAudio2': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(61): message : see declaration of 'IXAudio2' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(400,1): error C2371: 'IXAudio2': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(61): message : see declaration of 'IXAudio2' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(410,32): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(410,32): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(410,32): error C2059: syntax error: '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(410,79): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(415,32): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(415,32): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(415,36): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(420,33): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(420,33): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(420,37): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(450,35): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(450,35): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(450,50): error C2371: 'IXAudio2SourceVoice': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(163): message : see declaration of 'IXAudio2SourceVoice' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(450,69): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(451,46): error C2371: 'WAVEFORMATEX': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\mmeapi.h(353): message : see declaration of 'WAVEFORMATEX' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(451,58): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(451,58): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(452,42): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(452,35): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(452,42): error C2146: syntax error: missing ';' before identifier 'Flags' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(453,41): error C2059: syntax error: 'type' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(456,100): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(470,35): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(470,35): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(470,50): error C2371: 'IXAudio2SubmixVoice': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(164): message : see declaration of 'IXAudio2SubmixVoice' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(470,69): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(471,42): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(471,35): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(471,42): error C2146: syntax error: missing ';' before identifier 'InputChannels' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(471,64): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(471,57): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(471,64): error C2146: syntax error: missing ';' before identifier 'InputSampleRate' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(472,42): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(472,35): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(472,42): error C2146: syntax error: missing ';' before identifier 'Flags' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(472,69): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(472,62): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(472,69): error C2146: syntax error: missing ';' before identifier 'ProcessingStage' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(473,50): error C2371: 'XAUDIO2_VOICE_SENDS': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(234): message : see declaration of 'XAUDIO2_VOICE_SENDS' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(473,69): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(473,69): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(474,50): error C2371: 'XAUDIO2_EFFECT_CHAIN': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(249): message : see declaration of 'XAUDIO2_EFFECT_CHAIN' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(474,70): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(474,70): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(474,100): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(489,38): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(489,38): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(489,53): error C2371: 'IXAudio2MasteringVoice': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(165): message : see declaration of 'IXAudio2MasteringVoice' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(489,75): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(490,45): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(490,38): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(490,45): error C2146: syntax error: missing ';' before identifier 'InputChannels' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(491,45): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(491,38): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(491,45): error C2146: syntax error: missing ';' before identifier 'InputSampleRate' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(492,45): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(492,38): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(492,45): error C2146: syntax error: missing ';' before identifier 'Flags' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(492,76): error C2040: 'LPCWSTR': 'int' differs in levels of indirection from 'const WCHAR *' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(492,84): error C2146: syntax error: missing ';' before identifier 'szDeviceId' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(493,53): error C2371: 'XAUDIO2_EFFECT_CHAIN': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(249): message : see declaration of 'XAUDIO2_EFFECT_CHAIN' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(493,73): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(493,73): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(494,42): error C2370: 'AUDIO_STREAM_CATEGORY': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\audiosessiontypes.h(69): message : see declaration of 'AUDIO_STREAM_CATEGORY' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(494,64): error C2146: syntax error: missing ';' before identifier 'StreamCategory' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(494,115): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(499,29): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(499,29): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(499,33): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(504,35): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(504,35): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(504,39): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(513,31): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(513,31): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(513,44): warning C4142: 'UINT32': benign redefinition of type [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(513,37): error C2370: 'UINT32': redefinition; different storage class [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\shared\basetsd.h(81): message : see declaration of 'UINT32' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(513,44): error C2146: syntax error: missing ';' before identifier 'OperationSet' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(513,56): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(521,43): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(521,43): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(521,55): error C2371: 'XAUDIO2_PERFORMANCE_DATA': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(356): message : see declaration of 'XAUDIO2_PERFORMANCE_DATA' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(521,79): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(521,90): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(530,46): error C2143: syntax error: missing ')' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(530,46): error C2143: syntax error: missing '{' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(530,67): error C2371: 'XAUDIO2_DEBUG_CONFIGURATION': redefinition; different basic types [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(367): message : see declaration of 'XAUDIO2_DEBUG_CONFIGURATION' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(530,94): warning C4228: nonstandard extension used: qualifiers after comma in declarator list are ignored [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(530,94): error C2143: syntax error: missing ';' before '*' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(531,61): error C2059: syntax error: 'type' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(531,88): error C2059: syntax error: ')' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(532,1): error C2059: syntax error: '}' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\xaudio2.h(1201,1): error C2059: syntax error: 'string' [C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\cmTC_63d2e.vcxproj]
-
-
 

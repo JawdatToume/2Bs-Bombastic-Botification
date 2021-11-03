@@ -22,8 +22,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{48886B5D-F746-3461-9272-63981E2CC273}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{52704DC2-A5E9-32A0-9CF9-886CA259BCC0}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>ALL_BUILD</ProjectName>
@@ -105,11 +105,11 @@
     </Midl>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\ipv6-parse\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\ipv6-parse\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -117,12 +117,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckSymbolExists.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_ALLOCA_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_MALLOC_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDARG_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STRING_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\ipv6-parse\ipv6_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\ipv6-parse\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\ipv6-parse\ipv6_config.h.in;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckSymbolExists.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\ipv6-parse\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -130,12 +130,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckSymbolExists.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_ALLOCA_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_MALLOC_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDARG_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STRING_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\ipv6-parse\ipv6_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\ipv6-parse\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\ipv6-parse\ipv6_config.h.in;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckSymbolExists.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\ipv6-parse\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -143,12 +143,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckSymbolExists.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_ALLOCA_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_MALLOC_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDARG_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STRING_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\ipv6-parse\ipv6_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\ipv6-parse\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\ipv6-parse\ipv6_config.h.in;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckSymbolExists.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\ipv6-parse\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/ipv6-parse/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/ipv6-parse/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -156,22 +156,22 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeConfigurableFile.in;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckSymbolExists.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_ALLOCA_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_MALLOC_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDARG_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STRING_H.c;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\ipv6-parse\ipv6_config.h.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\ipv6-parse\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\ipv6-parse\ipv6_config.h.in;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckSymbolExists.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\ipv6-parse\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\ZERO_CHECK.vcxproj">
-      <Project>{CE44FA76-7FCF-317D-8B57-9F1FF5597C68}</Project>
+    <ProjectReference Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\ZERO_CHECK.vcxproj">
+      <Project>{1C1EE5DD-57AA-3163-9E34-98439FF50BB5}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\ipv6-parse\ipv6-parse.vcxproj">
-      <Project>{50D0F461-E864-3349-95B5-2CD3A775DA6B}</Project>
+    <ProjectReference Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\ipv6-parse\ipv6-parse.vcxproj">
+      <Project>{2764E122-20EC-337D-9D4C-53FD51332B45}</Project>
       <Name>ipv6-parse</Name>
     </ProjectReference>
   </ItemGroup>

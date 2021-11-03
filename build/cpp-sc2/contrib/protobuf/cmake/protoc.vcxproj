@@ -22,8 +22,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{3804BB12-ABCF-3CD1-8369-24409C712F8D}</ProjectGuid>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <ProjectGuid>{E00ADAF3-87A8-3C00-97BC-E3CE75EE55BA}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.19041.0</WindowsTargetPlatformVersion>
     <Keyword>Win32Proj</Keyword>
     <Platform>x64</Platform>
     <ProjectName>protoc</ProjectName>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">protoc.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">protoc</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">protoc.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">protoc</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">protoc.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">protoc</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\bin\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\bin\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">protoc.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">protoc</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,14 +86,12 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
-      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
-      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <DisableSpecificWarnings>4018;4065;4146;4244;4251;4267;4305;4307;4309;4334;4355;4506;4800;4996</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>Disabled</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <Optimization>Disabled</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
@@ -105,10 +103,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;GOOGLE_PROTOBUF_CMAKE_BUILD;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -121,8 +119,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/bin/protoc.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/bin/protoc.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/bin/protoc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/bin/protoc.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -131,29 +129,27 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4018;4065;4146;4244;4251;4267;4305;4307;4309;4334;4355;4506;4800;4996</DisableSpecificWarnings>
       <ExceptionHandling>Sync</ExceptionHandling>
-      <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
-      <Optimization>MaxSpeed</Optimization>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <UseFullPaths>false</UseFullPaths>
       <WarningLevel>TurnOffAllWarnings</WarningLevel>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);NDEBUG;GOOGLE_PROTOBUF_CMAKE_BUILD;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);GOOGLE_PROTOBUF_CMAKE_BUILD;CMAKE_INTDIR="Release"</PreprocessorDefinitions>
       <ObjectFileName>$(IntDir)</ObjectFileName>
       <DebugInformationFormat>
       </DebugInformationFormat>
     </ClCompile>
     <ResourceCompile>
-      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;GOOGLE_PROTOBUF_CMAKE_BUILD;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;GOOGLE_PROTOBUF_CMAKE_BUILD;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -166,8 +162,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/bin/protoc.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/bin/protoc.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/bin/protoc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/bin/protoc.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -176,7 +172,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DisableSpecificWarnings>4018;4065;4146;4244;4251;4267;4305;4307;4309;4334;4355;4506;4800;4996</DisableSpecificWarnings>
@@ -195,10 +191,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;GOOGLE_PROTOBUF_CMAKE_BUILD;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -211,8 +207,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/bin/protoc.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/bin/protoc.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/bin/protoc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/bin/protoc.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -221,7 +217,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>%(AdditionalOptions) /bigobj</AdditionalOptions>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -239,10 +235,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;NDEBUG;GOOGLE_PROTOBUF_CMAKE_BUILD;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -255,8 +251,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/bin/protoc.lib</ImportLibrary>
-      <ProgramDataBaseFile>C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/bin/protoc.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/bin/protoc.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/bin/protoc.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -264,11 +260,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\CMakeLists.txt">
+    <CustomBuild Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/protobuf/cmake/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/protobuf/cmake/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -276,12 +272,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\SelectLibraryConfigurations.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\extract_includes.bat.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\install.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotobuf-lite.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotobuf.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotoc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-config-version.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-config.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-lite.pc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-module.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-options.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf.pc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protoc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\version.rc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\extract_includes.bat.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\install.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotobuf-lite.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotobuf.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotoc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-config-version.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-config.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-lite.pc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-module.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-options.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf.pc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protoc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\version.rc.in;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindThreads.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindZLIB.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\GNUInstallDirs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/protobuf/cmake/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/protobuf/cmake/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -289,12 +285,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\SelectLibraryConfigurations.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\extract_includes.bat.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\install.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotobuf-lite.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotobuf.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotoc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-config-version.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-config.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-lite.pc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-module.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-options.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf.pc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protoc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\version.rc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\extract_includes.bat.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\install.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotobuf-lite.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotobuf.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotoc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-config-version.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-config.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-lite.pc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-module.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-options.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf.pc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protoc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\version.rc.in;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindThreads.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindZLIB.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\GNUInstallDirs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/protobuf/cmake/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/protobuf/cmake/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -302,12 +298,12 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\SelectLibraryConfigurations.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\extract_includes.bat.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\install.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotobuf-lite.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotobuf.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotoc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-config-version.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-config.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-lite.pc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-module.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-options.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf.pc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protoc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\version.rc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\extract_includes.bat.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\install.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotobuf-lite.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotobuf.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotoc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-config-version.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-config.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-lite.pc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-module.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-options.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf.pc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protoc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\version.rc.in;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindThreads.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindZLIB.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\GNUInstallDirs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/cpp-sc2/contrib/protobuf/cmake/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot -BC:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build --check-stamp-file C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/cpp-sc2/contrib/protobuf/cmake/CMakeFiles/generate.stamp
+C:\cmake-3.22.0-rc2-windows-x86_64\bin\cmake.exe -SC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification -BC:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build --check-stamp-file C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/cpp-sc2/contrib/protobuf/cmake/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -315,28 +311,28 @@ endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
 exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
-      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeDependentOption.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindThreads.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\FindZLIB.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\GNUInstallDirs.cmake;C:\Program Files\CMake\share\cmake-3.21\Modules\SelectLibraryConfigurations.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\extract_includes.bat.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\install.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotobuf-lite.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotobuf.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\libprotoc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-config-version.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-config.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-lite.pc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-module.cmake.in;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf-options.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protobuf.pc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\protoc.cmake;C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\cmake\version.rc.in;%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake\CMakeFiles\generate.stamp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\extract_includes.bat.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\install.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotobuf-lite.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotobuf.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\libprotoc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-config-version.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-config.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-lite.pc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-module.cmake.in;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf-options.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protobuf.pc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\protoc.cmake;C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\cmake\version.rc.in;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeDependentOption.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckCSourceCompiles.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckIncludeFile.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CheckLibraryExists.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageHandleStandardArgs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindPackageMessage.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindThreads.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\FindZLIB.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\GNUInstallDirs.cmake;C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\SelectLibraryConfigurations.cmake;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\cpp-sc2\contrib\protobuf\src\google\protobuf\compiler\main.cc" />
-    <ResourceCompile Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake\version.rc" />
+    <ClCompile Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\cpp-sc2\contrib\protobuf\src\google\protobuf\compiler\main.cc" />
+    <ResourceCompile Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake\version.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\ZERO_CHECK.vcxproj">
-      <Project>{CE44FA76-7FCF-317D-8B57-9F1FF5597C68}</Project>
+    <ProjectReference Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\ZERO_CHECK.vcxproj">
+      <Project>{1C1EE5DD-57AA-3163-9E34-98439FF50BB5}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake\libprotobuf.vcxproj">
-      <Project>{CA6C2995-15D9-3ADB-BE54-40C734F326C2}</Project>
+    <ProjectReference Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake\libprotobuf.vcxproj">
+      <Project>{075F5B1F-FC0B-31B1-B123-01CA45E4D1DD}</Project>
       <Name>libprotobuf</Name>
     </ProjectReference>
-    <ProjectReference Include="C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\cpp-sc2\contrib\protobuf\cmake\libprotoc.vcxproj">
-      <Project>{26A2325B-8EFD-3569-B2A4-C6DA1ECB0FE9}</Project>
+    <ProjectReference Include="C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\cpp-sc2\contrib\protobuf\cmake\libprotoc.vcxproj">
+      <Project>{505753D3-77C6-3B1E-B6CE-C70FD953831F}</Project>
       <Name>libprotoc</Name>
     </ProjectReference>
   </ItemGroup>

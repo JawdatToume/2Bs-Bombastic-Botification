@@ -1,4 +1,4 @@
-The system is: Windows - 10.0.19042 - AMD64
+The system is: Windows - 10.0.21996 - AMD64
 Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
 Compiler:  
 Build flags: 
@@ -6,11 +6,11 @@ Id flags:
 
 The output was:
 0
-Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2021-09-28 11:30:49 AM.
-Project "C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\3.21.3\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
+Build started 2021-10-31 12:48:13 PM.
+Project "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\3.22.0-rc2\CompilerIdC\CompilerIdC.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
   Creating directory "Debug\CompilerIdC.tlog\".
@@ -21,7 +21,7 @@ ClCompile:
   CMakeCCompilerId.c
 Link:
   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X64 Debug\CMakeCCompilerId.obj
-  CompilerIdC.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\3.21.3\CompilerIdC\CompilerIdC.exe
+  CompilerIdC.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\3.22.0-rc2\CompilerIdC\CompilerIdC.exe
 PostBuildEvent:
   for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
   :VCEnd
@@ -29,20 +29,20 @@ PostBuildEvent:
 FinalizeBuildStatus:
   Deleting file "Debug\CompilerIdC.tlog\unsuccessfulbuild".
   Touching "Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate".
-Done Building Project "C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\3.21.3\CompilerIdC\CompilerIdC.vcxproj" (default targets).
+Done Building Project "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\3.22.0-rc2\CompilerIdC\CompilerIdC.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:00.60
+Time Elapsed 00:00:01.20
 
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
 
 Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
 
-The C compiler identification is MSVC, found in "C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/3.21.3/CompilerIdC/CompilerIdC.exe"
+The C compiler identification is MSVC, found in "C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/3.22.0-rc2/CompilerIdC/CompilerIdC.exe"
 
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler:  
@@ -51,11 +51,11 @@ Id flags:
 
 The output was:
 0
-Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-Build started 2021-09-28 11:30:50 AM.
-Project "C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\3.21.3\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
+Build started 2021-10-31 12:48:14 PM.
+Project "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\3.22.0-rc2\CompilerIdCXX\CompilerIdCXX.vcxproj" on node 1 (default targets).
 PrepareForBuild:
   Creating directory "Debug\".
   Creating directory "Debug\CompilerIdCXX.tlog\".
@@ -66,7 +66,7 @@ ClCompile:
   CMakeCXXCompilerId.cpp
 Link:
   C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133\bin\HostX64\x64\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdCXX.lib" /MACHINE:X64 Debug\CMakeCXXCompilerId.obj
-  CompilerIdCXX.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\3.21.3\CompilerIdCXX\CompilerIdCXX.exe
+  CompilerIdCXX.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\3.22.0-rc2\CompilerIdCXX\CompilerIdCXX.exe
 PostBuildEvent:
   for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
   :VCEnd
@@ -74,108 +74,108 @@ PostBuildEvent:
 FinalizeBuildStatus:
   Deleting file "Debug\CompilerIdCXX.tlog\unsuccessfulbuild".
   Touching "Debug\CompilerIdCXX.tlog\CompilerIdCXX.lastbuildstate".
-Done Building Project "C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\3.21.3\CompilerIdCXX\CompilerIdCXX.vcxproj" (default targets).
+Done Building Project "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\3.22.0-rc2\CompilerIdCXX\CompilerIdCXX.vcxproj" (default targets).
 
 Build succeeded.
     0 Warning(s)
     0 Error(s)
 
-Time Elapsed 00:00:00.45
+Time Elapsed 00:00:00.58
 
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
 
 Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
 
-The CXX compiler identification is MSVC, found in "C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/3.21.3/CompilerIdCXX/CompilerIdCXX.exe"
+The CXX compiler identification is MSVC, found in "C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/3.22.0-rc2/CompilerIdCXX/CompilerIdCXX.exe"
 
 Detecting C compiler ABI info compiled with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_fe6a0.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_eed85.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CMakeCCompilerABI.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_fe6a0.dir\Debug\\" /Fd"cmTC_fe6a0.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCCompilerABI.c"
-  cmTC_fe6a0.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_fe6a0.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_eed85.dir\Debug\\" /Fd"cmTC_eed85.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeCCompilerABI.c"
+  cmTC_eed85.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_eed85.exe
 
 
 
 Detecting CXX compiler ABI info compiled with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_74712.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_de242.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CMakeCXXCompilerABI.cpp
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_74712.dir\Debug\\" /Fd"cmTC_74712.dir\Debug\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\Program Files\CMake\share\cmake-3.21\Modules\CMakeCXXCompilerABI.cpp"
-  cmTC_74712.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_74712.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_de242.dir\Debug\\" /Fd"cmTC_de242.dir\Debug\vc142.pdb" /external:W3 /Gd /TP /errorReport:queue "C:\cmake-3.22.0-rc2-windows-x86_64\share\cmake-3.22\Modules\CMakeCXXCompilerABI.cpp"
+  cmTC_de242.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_de242.exe
 
 
 
 Performing C SOURCE FILE Test HAVE_C_FLAG_WALL succeeded with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_1f826.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_684a3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WALL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_1f826.dir\Debug\\" /Fd"cmTC_1f826.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-  cmTC_1f826.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_1f826.exe
+  cl /c /Zi /Wall /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WALL /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_684a3.dir\Debug\\" /Fd"cmTC_684a3.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+  cmTC_684a3.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_684a3.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_W4 succeeded with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_f7257.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_9abdb.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_W4 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_f7257.dir\Debug\\" /Fd"cmTC_f7257.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-  cmTC_f7257.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_f7257.exe
+  cl /c /Zi /W4 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_W4 /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9abdb.dir\Debug\\" /Fd"cmTC_9abdb.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+  cmTC_9abdb.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_9abdb.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Performing C SOURCE FILE Test HAVE_C_FLAG_WX succeeded with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_ce303.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_05bc3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WX /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ce303.dir\Debug\\" /Fd"cmTC_ce303.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-  cmTC_ce303.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_ce303.exe
+  cl /c /Zi /W4 /WX /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_C_FLAG_WX /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_05bc3.dir\Debug\\" /Fd"cmTC_05bc3.dir\Debug\vc142.pdb" /external:W4 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+  cmTC_05bc3.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_05bc3.exe
 
 
 Source file was:
 int main(void) { return 0; }
 Determining if the _snprintf_s exist passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_3e126.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_21f11.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CheckSymbolExists.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3e126.dir\Debug\\" /Fd"cmTC_3e126.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckSymbolExists.c
-  cmTC_3e126.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_3e126.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_21f11.dir\Debug\\" /Fd"cmTC_21f11.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckSymbolExists.c"
+  cmTC_21f11.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_21f11.exe
 
 
-File C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <stdio.h>
 
@@ -190,72 +190,72 @@ int main(int argc, char** argv)
 #endif
 }
 Determining if files malloc.h exist passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_809a5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_caf19.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   HAVE_MALLOC_H.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_809a5.dir\Debug\\" /Fd"cmTC_809a5.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_MALLOC_H.c
-  cmTC_809a5.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_809a5.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_caf19.dir\Debug\\" /Fd"cmTC_caf19.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CheckIncludeFiles\HAVE_MALLOC_H.c"
+  cmTC_caf19.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_caf19.exe
 
 
 
 Determining if files string.h exist passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_69c7c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_e3631.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   HAVE_STRING_H.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_69c7c.dir\Debug\\" /Fd"cmTC_69c7c.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STRING_H.c
-  cmTC_69c7c.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_69c7c.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e3631.dir\Debug\\" /Fd"cmTC_e3631.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CheckIncludeFiles\HAVE_STRING_H.c"
+  cmTC_e3631.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_e3631.exe
 
 
 
 Determining if files stdio.h exist passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_a24df.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_d572e.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   HAVE_STDIO_H.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a24df.dir\Debug\\" /Fd"cmTC_a24df.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c
-  cmTC_a24df.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_a24df.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d572e.dir\Debug\\" /Fd"cmTC_d572e.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CheckIncludeFiles\HAVE_STDIO_H.c"
+  cmTC_d572e.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_d572e.exe
 
 
 
 Determining if files stdarg.h exist passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_2d4f4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_e7540.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   HAVE_STDARG_H.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_2d4f4.dir\Debug\\" /Fd"cmTC_2d4f4.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CheckIncludeFiles\HAVE_STDARG_H.c
-  cmTC_2d4f4.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_2d4f4.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e7540.dir\Debug\\" /Fd"cmTC_e7540.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CheckIncludeFiles\HAVE_STDARG_H.c"
+  cmTC_e7540.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_e7540.exe
 
 
 
 Performing C SOURCE FILE Test HAVE_WIN32_CC succeeded with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_73996.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_193fc.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_WIN32_CC /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_73996.dir\Debug\\" /Fd"cmTC_73996.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-  cmTC_73996.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_73996.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_WIN32_CC /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_193fc.dir\Debug\\" /Fd"cmTC_193fc.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+  cmTC_193fc.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_193fc.exe
 
 
 Source file was:
@@ -263,16 +263,16 @@ Source file was:
     #include <windows.h>
     int main(int argc, char **argv) { }
 Performing C SOURCE FILE Test HAVE_XINPUT_H succeeded with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_ef32f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_b2385.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   src.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_XINPUT_H /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_ef32f.dir\Debug\\" /Fd"cmTC_ef32f.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\src.c
-  cmTC_ef32f.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_ef32f.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D HAVE_XINPUT_H /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_b2385.dir\Debug\\" /Fd"cmTC_b2385.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\src.c"
+  cmTC_b2385.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_b2385.exe
 
 
 Source file was:
@@ -281,87 +281,101 @@ Source file was:
         #include <xinput.h>
         int main(int argc, char **argv) { }
 Determining if the include file d3d9.h exists passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_0226b.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_05de7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CheckIncludeFile.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_0226b.dir\Debug\\" /Fd"cmTC_0226b.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
-  cmTC_0226b.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_0226b.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_05de7.dir\Debug\\" /Fd"cmTC_05de7.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  cmTC_05de7.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_05de7.exe
 
 
 
 Determining if the include file d3d11_1.h exists passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_12016.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_74483.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CheckIncludeFile.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_12016.dir\Debug\\" /Fd"cmTC_12016.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
-  cmTC_12016.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_12016.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_74483.dir\Debug\\" /Fd"cmTC_74483.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  cmTC_74483.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_74483.exe
 
 
 
 Determining if the include file ddraw.h exists passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_3a1c6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_a57b3.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CheckIncludeFile.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_3a1c6.dir\Debug\\" /Fd"cmTC_3a1c6.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
-  cmTC_3a1c6.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_3a1c6.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a57b3.dir\Debug\\" /Fd"cmTC_a57b3.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  cmTC_a57b3.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_a57b3.exe
 
 
 
 Determining if the include file dsound.h exists passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_bee25.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_5f9d7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CheckIncludeFile.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bee25.dir\Debug\\" /Fd"cmTC_bee25.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
-  cmTC_bee25.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_bee25.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_5f9d7.dir\Debug\\" /Fd"cmTC_5f9d7.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  cmTC_5f9d7.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_5f9d7.exe
 
 
 
 Determining if the include file dinput.h exists passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_d6136.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_343b9.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CheckIncludeFile.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_d6136.dir\Debug\\" /Fd"cmTC_d6136.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
-  C:\Program Files (x86)\Windows Kits\10\Include\10.0.16299.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  cmTC_d6136.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_d6136.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_343b9.dir\Debug\\" /Fd"cmTC_343b9.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.19041.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+  cmTC_343b9.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_343b9.exe
+
+
+
+Determining if the include file xaudio2.h exists passed with the following output:
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
+
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_9930d.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
+  Copyright (C) Microsoft Corporation.  All rights reserved.
+  CheckIncludeFile.c
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9930d.dir\Debug\\" /Fd"cmTC_9930d.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  cmTC_9930d.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_9930d.exe
 
 
 
 Determining if the include file dxgi.h exists passed with the following output:
-Change Dir: C:/Users/jawda/OneDrive/Desktop/CMPUT350_Lab/BasicSc2Bot/build/CMakeFiles/CMakeTmp
+Change Dir: C:/Users/a/Documents/cmput350-project/2Bs-Bombastic-Botification/build/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_e5e04.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.0+0538acc04 for .NET Framework
+Run Build Command(s):C:/Program Files (x86)/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin/MSBuild.exe cmTC_a0a39.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=16.0 /v:m && Microsoft (R) Build Engine version 16.11.1+3e40a09f8 for .NET Framework
 Copyright (C) Microsoft Corporation. All rights reserved.
 
-  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30133 for x64
+  Microsoft (R) C/C++ Optimizing Compiler Version 19.29.30136 for x64
   Copyright (C) Microsoft Corporation.  All rights reserved.
   CheckIncludeFile.c
-  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_e5e04.dir\Debug\\" /Fd"cmTC_e5e04.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
-  cmTC_e5e04.vcxproj -> C:\Users\jawda\OneDrive\Desktop\CMPUT350_Lab\BasicSc2Bot\build\CMakeFiles\CMakeTmp\Debug\cmTC_e5e04.exe
+  cl /c /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a0a39.dir\Debug\\" /Fd"cmTC_a0a39.dir\Debug\vc142.pdb" /external:W3 /Gd /TC /errorReport:queue "C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c"
+  cmTC_a0a39.vcxproj -> C:\Users\a\Documents\cmput350-project\2Bs-Bombastic-Botification\build\CMakeFiles\CMakeTmp\Debug\cmTC_a0a39.exe
 
 
 
