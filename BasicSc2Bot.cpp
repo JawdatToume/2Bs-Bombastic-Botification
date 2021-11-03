@@ -428,7 +428,3 @@ void BasicSc2Bot::OnStep() {
 void BasicSc2Bot::OnUnitIdle(const Unit *unit) {
     return;
 }
-
-
-
-
