@@ -11,8 +11,28 @@ class BasicSc2Bot : public sc2::Agent {
 public:
 	virtual void OnGameStart();
 	virtual void OnStep();
+	virtual void OnUnitIdle(const sc2::Unit* unit) final;
 
 private:
+	void ObtainInfo();
+	void PrintInfo();
+	bool TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type);
+
+	void MorphLarva(const sc2::Unit* unit);
+	void QueenAction(const sc2::Unit* unit, int num);
+	void Hatch(const sc2::Unit* unit);
+
+	int food_cap, food_used;
+	int minerals = 0, vespene = 0;
+
+	sc2::Point2D start_location;
+	std::vector<sc2::Point3D> expansions;
+
+	int larva_count,
+		drone_count,
+	    spawning_pool_count,
+		hatchery_count,
+		queen_count;
 };
 
 #endif
