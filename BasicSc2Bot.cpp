@@ -23,7 +23,6 @@ void BasicSc2Bot::ObtainInfo() {
     const ObservationInterface* obs = Observation();
     spawning_pool_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPAWNINGPOOL);
     hatchery_count = CountUnits(obs, UNIT_TYPEID::ZERG_HATCHERY) + CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
-    extractor_count = CountUnits(obs, UNIT_TYPEID::ZERG_EXTRACTOR);
     larva_count = CountUnits(obs, UNIT_TYPEID::ZERG_LARVA);
     queen_count = CountUnits(obs, UNIT_TYPEID::ZERG_QUEEN);
     drone_count = CountUnits(obs, UNIT_TYPEID::ZERG_DRONE);
@@ -181,7 +180,7 @@ void BasicSc2Bot::OnStep() {
             case UNIT_TYPEID::ZERG_HATCHERY: {
                 Hatch(unit);
                 if (minerals >= 150 && vespene >= 100) { // upgrade 
-
+                    Actions()->UnitCommand(unit, ABILITY_ID::MORPH_LAIR);
                 }
             }
             case UNIT_TYPEID::ZERG_LAIR: {
