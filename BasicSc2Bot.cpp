@@ -21,8 +21,11 @@ int CountUnits(const ObservationInterface* observation, UnitTypeID unit_type) {
 // Collects info from observation. Stores into class members
 void BasicSc2Bot::ObtainInfo() {
     const ObservationInterface* obs = Observation();
-    larva_count = CountUnits(obs, UNIT_TYPEID::ZERG_LARVA);
     spawning_pool_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPAWNINGPOOL);
+    hatchery_count = CountUnits(obs, UNIT_TYPEID::ZERG_HATCHERY) + CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
+    extractor_count = CountUnits(obs, UNIT_TYPEID::ZERG_EXTRACTOR);
+    larva_count = CountUnits(obs, UNIT_TYPEID::ZERG_LARVA);
+    queen_count = CountUnits(obs, UNIT_TYPEID::ZERG_QUEEN);
     drone_count = CountUnits(obs, UNIT_TYPEID::ZERG_DRONE);
     food_cap = obs->GetFoodCap();
     food_used = obs->GetFoodUsed();
@@ -101,7 +104,8 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
 
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
-    } else if (minerals >= 50 && food_cap - food_used > 0 ){
+    }
+    else if (minerals >= 50 && food_cap - food_used > 0){
 
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
@@ -109,7 +113,7 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
 }
 
 // Get the queens to inject Larva when they are able to, decides whether a queen spreads creep tumors or injects larva at a hatchery
-void BasicSc2Bot::InjectLarva(const Unit* unit, int num) {
+void BasicSc2Bot::QueenAction(const Unit* unit, int num) {
     Units hatcheries = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
     // decide which hatchery we're building at, cycles between queens
     int mode = num % (hatcheries.size()+1);
@@ -125,7 +129,21 @@ void BasicSc2Bot::InjectLarva(const Unit* unit, int num) {
             }
         }
     }
-    Actions()->UnitCommand(unit, ABILITY_ID::EFFECT_INJECTLARVA);
+    if (unit->energy >= 25 && unit->orders.empty()) {
+        Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+    }
+}
+
+// Decides hatchery actions (Queen can't evolve from Larva)
+void BasicSc2Bot::Hatch(const Unit* unit) {
+    // check if we can make queen, have a limit so we can also make drones
+    if (minerals >= 150 && spawning_pool_count > 0 && queen_count < hatchery_count) {
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_QUEEN);
+        cout << "Queen" << endl;
+    }
+    else {
+        cout << "Larva" << endl;
+    }
 }
 
 
@@ -151,8 +169,23 @@ void BasicSc2Bot::OnStep() {
                 MorphLarva(unit);
             }
             case UNIT_TYPEID::ZERG_QUEEN: {
-                InjectLarva(unit, queens);
+                QueenAction(unit, queens);
                 queens++;
+            }
+            case UNIT_TYPEID::ZERG_CREEPTUMOR: {
+                // builds creep tumor when it can, this is its only available action and can only happen once
+                if (unit->energy >= 25 && unit->orders.empty()) {
+                    Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+                }
+            }
+            case UNIT_TYPEID::ZERG_HATCHERY: {
+                Hatch(unit);
+                if (minerals >= 150 && vespene >= 100) { // upgrade 
+
+                }
+            }
+            case UNIT_TYPEID::ZERG_LAIR: {
+                Hatch(unit); // No specialization for now
             }
             default: {
                 break;
