@@ -11,10 +11,9 @@ class BasicSc2Bot : public sc2::Agent {
 public:
 	virtual void OnGameStart();
 	virtual void OnStep();
+	virtual void OnUnitIdle(const sc2::Unit* unit) final;
 
 private:
-<<<<<<< HEAD
-=======
 	void ObtainInfo();
 	void PrintInfo();
 
@@ -43,7 +42,6 @@ private:
 		base_count,
 		hatchery_count,
 		queen_count;
->>>>>>> main
 };
 
 #endif

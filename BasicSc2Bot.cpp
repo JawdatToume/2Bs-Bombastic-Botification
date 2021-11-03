@@ -1,6 +1,4 @@
 #include "BasicSc2Bot.h"
-<<<<<<< HEAD
-=======
 #include "sc2api/sc2_unit_filters.h"
 
 using namespace sc2;
@@ -430,13 +428,3 @@ void BasicSc2Bot::OnStep() {
 void BasicSc2Bot::OnUnitIdle(const Unit *unit) {
     return;
 }
-
->>>>>>> main
-
-void BasicSc2Bot::OnGameStart() { return; }
-
-<<<<<<< HEAD
-void BasicSc2Bot::OnStep() { return; }
-=======
-
->>>>>>> main
