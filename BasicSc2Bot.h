@@ -17,9 +17,18 @@ public:
 private:
 	void ObtainInfo();
 	void PrintInfo();
-	bool BasicSc2Bot::TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type);
 
+	sc2::Tag FindClosestGeyser(sc2::Point2D base_location);  // find closest geyser to a base
+	bool TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type, sc2::Tag location_tag = 0);
 	void MorphLarva(const sc2::Unit* unit);
+	void GenerateCreep(const sc2::Unit* unit);
+	void BuildExtractor();
+	void ManageWorkers(sc2::UNIT_TYPEID worker_type, sc2::AbilityID worker_gather_command, sc2::UNIT_TYPEID vespene_building_type);
+	void MineIdleWorkers(const sc2::Unit* worker, sc2::AbilityID worker_gather_command, sc2::UnitTypeID vespene_building_type);
+	const sc2::Unit* FindNearestMineralPatch(const sc2::Point2D& start);
+	bool TryBuildExpansionHatch();
+	void QueenAction(const sc2::Unit* unit, int num);
+	void Hatch(const sc2::Unit* unit);
 
 	int food_cap, food_used;
 	int minerals = 0, vespene = 0;
@@ -30,12 +39,17 @@ private:
 	int larva_count,
 		drone_count,
 		spine_crawler_count,
-	    spawning_pool_count;
+		spawning_pool_count,
+		lair_count,
+		base_count,
+		hatchery_count,
+		queen_count;
 
 	sc2::Tag zergling_sent = NULL;
 	int checked_spawn = 0;
 
 	double defensive_overlord_scatter_distance = 10.0;
+	    
 };
 
 #endif
