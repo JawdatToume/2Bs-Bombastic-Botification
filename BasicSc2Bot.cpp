@@ -127,6 +127,10 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
+    else if (minerals >= 25 && spawning_pool_count > 0){
+        cout << "Morphing into Zergling" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
+    }
     else if (minerals >= 50 && food_cap - food_used > 0){
 
         cout << "Morphing into Drone" << endl;
@@ -408,13 +412,9 @@ void BasicSc2Bot::QueenAction(const Unit* unit, int num) {
 
 // Decides hatchery actions (Queen can't evolve from Larva)
 void BasicSc2Bot::Hatch(const Unit* unit) {
-    // check if we can make queen, have a limit so we can also make drones
+    // check if we can make queen, have a limit so we can also make drones and zerglings
     if (minerals >= 150 && spawning_pool_count > 0 && queen_count < hatchery_count) {
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_QUEEN);
-        //cout << "Queen" << endl;
-    }
-    else {
-        //cout << "Larva" << endl;
     }
 }
 
