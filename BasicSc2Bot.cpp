@@ -1,5 +1,6 @@
 #include "BasicSc2Bot.h"
 #include "sc2api/sc2_unit_filters.h"
+#include <iostream>
 
 using namespace sc2;
 using namespace std;
@@ -24,6 +25,7 @@ void BasicSc2Bot::ObtainInfo() {
     larva_count = CountUnits(obs, UNIT_TYPEID::ZERG_LARVA);
     spawning_pool_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPAWNINGPOOL);
     drone_count = CountUnits(obs, UNIT_TYPEID::ZERG_DRONE);
+    spine_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPINECRAWLER);
     food_cap = obs->GetFoodCap();
     food_used = obs->GetFoodUsed();
     minerals = obs->GetMinerals();
@@ -140,13 +142,39 @@ void BasicSc2Bot::OnStep() {
     if (spawning_pool_count < 1 && minerals >= 200) {
         TryBuild(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
     }
+    if (spine_crawler_count < 3 && minerals >= 100) {
+        TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
+    }
 
     return;
 }
 
 void BasicSc2Bot::OnUnitIdle(const Unit *unit) {
-    return;
+    if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_OVERLORD) {
+        float rx = GetRandomScalar() * defensive_overlord_scatter_distance;
+        float ry = GetRandomScalar() * defensive_overlord_scatter_distance;
+        float rz = GetRandomScalar() * defensive_overlord_scatter_distance;
+        Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVEPATROL, unit->pos + Point3D(rx, ry, rz));
+    }
+
+    if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_ZERGLING) {
+        auto spawn_points = Observation()->GetGameInfo().enemy_start_locations;
+        if (zergling_sent == NULL) {
+            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+            zergling_sent = unit->tag;
+            checked_spawn = 1;
+        }
+        else if (unit->tag == zergling_sent) {
+            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+            checked_spawn++;
+            if (checked_spawn == spawn_points.size()) checked_spawn = 0;
+        }
+    }
 }
 
-
+void BasicSc2Bot::OnUnitDestroyed(const Unit* unit) {
+    if (unit->tag == zergling_sent) {
+        zergling_sent = NULL;
+    }
+}
 

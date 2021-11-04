@@ -12,6 +12,7 @@ public:
 	virtual void OnGameStart();
 	virtual void OnStep();
 	virtual void OnUnitIdle(const sc2::Unit* unit) final;
+	virtual void OnUnitDestroyed(const sc2::Unit* unit) final;
 
 private:
 	void ObtainInfo();
@@ -28,7 +29,13 @@ private:
 
 	int larva_count,
 		drone_count,
+		spine_crawler_count,
 	    spawning_pool_count;
+
+	sc2::Tag zergling_sent = NULL;
+	int checked_spawn = 0;
+
+	double defensive_overlord_scatter_distance = 10.0;
 };
 
 #endif
