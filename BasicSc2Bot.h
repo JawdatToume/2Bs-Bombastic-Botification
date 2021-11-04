@@ -19,21 +19,27 @@ private:
 	void PrintInfo();
 
 	sc2::Tag FindClosestGeyser(sc2::Point2D base_location);  // find closest geyser to a base
-	bool TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type, sc2::Tag location_tag = 0);
+	bool TryBuild(sc2::AbilityID ability_type_for_structure, 
+	              sc2::UnitTypeID unit_type,
+				  sc2::Tag location_tag = 0, 
+				  sc2::Point3D location_point3d = sc2::Point3D(-1,-1,-1), 
+				  bool is_expansion = false);
 	void MorphLarva(const sc2::Unit* unit);
 	void GenerateCreep(const sc2::Unit* unit);
 	void BuildExtractor();
-	void ManageWorkers(sc2::UNIT_TYPEID worker_type, sc2::AbilityID worker_gather_command, sc2::UNIT_TYPEID vespene_building_type);
-	void MineIdleWorkers(const sc2::Unit* worker, sc2::AbilityID worker_gather_command, sc2::UnitTypeID vespene_building_type);
+	void ManageWorkers(sc2::UNIT_TYPEID worker_type, sc2::AbilityID worker_gather_command, sc2::UNIT_TYPEID building_type);
+	void MineIdleWorkers(const sc2::Unit* worker, sc2::AbilityID worker_gather_command, sc2::UnitTypeID building_type);
 	const sc2::Unit* FindNearestMineralPatch(const sc2::Point2D& start);
-	bool TryBuildExpansionHatch();
+	bool BuildNewHatchery();
+	int GetExpectedWorkers(sc2::UNIT_TYPEID building_type);
+	bool TryExpand(sc2::AbilityID build_ability, sc2::UnitTypeID worker_type);
 	void QueenAction(const sc2::Unit* unit, int num);
 	void Hatch(const sc2::Unit* unit);
 
-	int food_cap, food_used;
+	int food_cap, food_used, food_workers;
 	int minerals = 0, vespene = 0;
 
-	sc2::Point2D start_location;
+	sc2::Point3D start_location, staging_location;  // on game start
 	std::vector<sc2::Point3D> expansions;
 
 	int larva_count,
