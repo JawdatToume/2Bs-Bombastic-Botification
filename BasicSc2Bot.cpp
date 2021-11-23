@@ -131,7 +131,7 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
-    else if (minerals >= 25 && spawning_pool_count > 0){
+    else if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 30) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
