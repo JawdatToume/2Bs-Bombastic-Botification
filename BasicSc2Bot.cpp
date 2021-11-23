@@ -463,7 +463,6 @@ void BasicSc2Bot::OnStep() {
                 if (unit->energy >= 25 && unit->orders.empty()) {
                     Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
                     if (!Observation()->HasCreep(unit->pos)) {
-                        Actions()->UnitCommand(unit, ABILITY_ID::BURROWDOWN);
                         Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
                     }
                 }
