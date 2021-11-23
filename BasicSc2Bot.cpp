@@ -27,12 +27,14 @@ void BasicSc2Bot::ObtainInfo() {
     larva_count = CountUnits(obs, UNIT_TYPEID::ZERG_LARVA);
     queen_count = CountUnits(obs, UNIT_TYPEID::ZERG_QUEEN);
     drone_count = CountUnits(obs, UNIT_TYPEID::ZERG_DRONE);
+    tumor_count = CountUnits(obs, UNIT_TYPEID::ZERG_CREEPTUMOR);
     spine_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPINECRAWLER);
     food_cap = obs->GetFoodCap();
     food_used = obs->GetFoodUsed();
     minerals = obs->GetMinerals();
     vespene = obs->GetVespene();
     lair_count = CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
+    hydralisk_count = CountUnits(obs, UNIT_TYPEID::ZERG_HYDRALISK);
     base_count = obs->GetUnits(Unit::Alliance::Self, IsTownHall()).size();
     food_workers = obs->GetFoodWorkers();
 }
@@ -399,7 +401,7 @@ void BasicSc2Bot::QueenAction(const Unit* unit, int num) {
     if (unit->energy >= 25 && unit->orders.empty() && tumor_count == 0) {
         // move towards expand location until we find a point where there is no creep, then drop a tumor
         Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
-        if (Observation()->HasCreep(unit->pos)) {
+        if (!Observation()->HasCreep(unit->pos)) {
             Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
         }
     }
@@ -424,6 +426,10 @@ void BasicSc2Bot::Hatch(const Unit* unit) {
     if (minerals >= 150 && spawning_pool_count > 0 && queen_count < hatchery_count) {
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_QUEEN);
     }
+    if (minerals >= 100 && vespene >= 100) {
+        // research burrow, this may be useful
+        Actions()->UnitCommand(unit, ABILITY_ID::RESEARCH_BURROW);
+    }
 }
 
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
@@ -438,7 +444,7 @@ void BasicSc2Bot::OnGameStart() {
 // per frame...
 void BasicSc2Bot::OnStep() { 
     ObtainInfo();
-    int queens = 0;
+    int queens = 0; // used for queens to be able to inject larva into more than 1 hatchery at once
 
     // looking through all unit types
     Units units = Observation()->GetUnits(Unit::Alliance::Self);
@@ -457,9 +463,15 @@ void BasicSc2Bot::OnStep() {
                 // move until we find a good place to place creep
                 if (unit->energy >= 25 && unit->orders.empty()) {
                     Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
-                    if (Observation()->HasCreep(unit->pos)) {
+                    if (!Observation()->HasCreep(unit->pos)) {
+                        Actions()->UnitCommand(unit, ABILITY_ID::BURROWDOWN);
                         Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
                     }
+                }
+            }
+            case UNIT_TYPEID::ZERG_SPAWNINGPOOL: {
+                if (minerals >= 100 && vespene >= 100 && hatchery_count > 0) { // Research metabolic boost, but only after the hatchery is ready 
+                    Actions()->UnitCommand(unit, ABILITY_ID::RESEARCH_ZERGLINGMETABOLICBOOST);
                 }
             }
             case UNIT_TYPEID::ZERG_HATCHERY: {
@@ -493,11 +505,19 @@ void BasicSc2Bot::OnStep() {
     if (spine_crawler_count < 3 && minerals >= 100) {
         TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
     }
+    // built hydralisk den
+    if (lair_count > 0 && hydralisk_count < 1 && minerals >= 100 && vespene >= 100) {
+        TryBuild(ABILITY_ID::BUILD_HYDRALISKDEN, UNIT_TYPEID::ZERG_DRONE);
+    }
 
     bool not_enough_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
     // if all bases are destroyed or there's no base, don't build
     if (base_count > 0 && minerals >= 25 && not_enough_extractor) {
         BuildExtractor();
+    }
+
+    if (hydralisk_count > 0) {
+        TryExpand(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
     }
 
     ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_EXTRACTOR);

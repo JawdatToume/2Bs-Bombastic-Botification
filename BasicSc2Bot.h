@@ -50,6 +50,7 @@ private:
 		lair_count,
 		base_count,
 		hatchery_count,
+		hydralisk_count,
 		queen_count;
 
 	sc2::Tag zergling_sent = NULL;
