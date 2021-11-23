@@ -53,6 +53,8 @@ private:
 		hydralisk_count,
 		queen_count;
 
+	bool ready_to_expand = false;
+
 	sc2::Tag zergling_sent = NULL;
 	int checked_spawn = 0;
 

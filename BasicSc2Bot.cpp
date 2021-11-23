@@ -395,10 +395,9 @@ int BasicSc2Bot::GetExpectedWorkers(UNIT_TYPEID building_type) {
 // Get the queens to inject Larva when they are able to, decides whether a queen spreads creep tumors or injects larva at a hatchery
 void BasicSc2Bot::QueenAction(const Unit* unit, int num) {
     Units hatcheries = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
-    int mode = num % (hatcheries.size());
 
     // if there are no creep tumors, make one so it can start spreading creep
-    if (unit->energy >= 25 && unit->orders.empty() && tumor_count == 0) {
+    if (unit->energy >= 25 && unit->orders.empty() && tumor_count == 0 && num >= hatcheries.size()) {
         // move towards expand location until we find a point where there is no creep, then drop a tumor
         Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
         if (!Observation()->HasCreep(unit->pos)) {
@@ -407,10 +406,10 @@ void BasicSc2Bot::QueenAction(const Unit* unit, int num) {
     }
     // decide which hatchery we're building at, cycles between queens
     for (size_t i = 0; i < hatcheries.size(); i++) {
-        if (mode == i) {
+        if (num == i) {
             // if hatchery is not completely built yet
             if (hatcheries.at(i)->build_progress != 1) {
-                mode++;
+                num++;
             }
             // prevents impossible requests
             else if(unit->energy >= 25 && unit->orders.empty()){
@@ -483,6 +482,11 @@ void BasicSc2Bot::OnStep() {
             case UNIT_TYPEID::ZERG_LAIR: {
                 Hatch(unit); // No specialization for now
             }
+            case UNIT_TYPEID::ZERG_HYDRALISKDEN: {
+                if (minerals >= 100 && vespene >= 50) {
+                    Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_HYDRALISK);
+                }
+            }
             case UNIT_TYPEID::ZERG_OVERLORD: {
                 if (lair_count > 0) {  // available once lair built
                     GenerateCreep(unit);
@@ -508,6 +512,7 @@ void BasicSc2Bot::OnStep() {
     // built hydralisk den
     if (lair_count > 0 && hydralisk_count < 1 && minerals >= 100 && vespene >= 100) {
         TryBuild(ABILITY_ID::BUILD_HYDRALISKDEN, UNIT_TYPEID::ZERG_DRONE);
+        ready_to_expand = true;
     }
 
     bool not_enough_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
@@ -516,8 +521,9 @@ void BasicSc2Bot::OnStep() {
         BuildExtractor();
     }
 
-    if (hydralisk_count > 0) {
-        TryExpand(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
+    if (ready_to_expand) {
+        TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
+        ready_to_expand = false;
     }
 
     ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_EXTRACTOR);
