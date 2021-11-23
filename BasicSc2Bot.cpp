@@ -393,8 +393,17 @@ int BasicSc2Bot::GetExpectedWorkers(UNIT_TYPEID building_type) {
 // Get the queens to inject Larva when they are able to, decides whether a queen spreads creep tumors or injects larva at a hatchery
 void BasicSc2Bot::QueenAction(const Unit* unit, int num) {
     Units hatcheries = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
+    int mode = num % (hatcheries.size());
+
+    // if there are no creep tumors, make one so it can start spreading creep
+    if (unit->energy >= 25 && unit->orders.empty() && tumor_count == 0) {
+        // move towards expand location until we find a point where there is no creep, then drop a tumor
+        Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+        if (Observation()->HasCreep(unit->pos)) {
+            Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+        }
+    }
     // decide which hatchery we're building at, cycles between queens
-    int mode = num % (hatcheries.size()+1);
     for (size_t i = 0; i < hatcheries.size(); i++) {
         if (mode == i) {
             // if hatchery is not completely built yet
@@ -406,9 +415,6 @@ void BasicSc2Bot::QueenAction(const Unit* unit, int num) {
                 Actions()->UnitCommand(unit, ABILITY_ID::EFFECT_INJECTLARVA, hatcheries.at(i));
             }
         }
-    }
-    if (unit->energy >= 25 && unit->orders.empty()) {
-        Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
     }
 }
 
@@ -448,8 +454,12 @@ void BasicSc2Bot::OnStep() {
             }
             case UNIT_TYPEID::ZERG_CREEPTUMOR: {
                 // builds creep tumor when it can, this is its only available action and can only happen once
+                // move until we find a good place to place creep
                 if (unit->energy >= 25 && unit->orders.empty()) {
-                    Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+                    Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                    if (Observation()->HasCreep(unit->pos)) {
+                        Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+                    }
                 }
             }
             case UNIT_TYPEID::ZERG_HATCHERY: {
@@ -464,6 +474,8 @@ void BasicSc2Bot::OnStep() {
             case UNIT_TYPEID::ZERG_OVERLORD: {
                 if (lair_count > 0) {  // available once lair built
                     GenerateCreep(unit);
+                    // start generating creep then move to staging location to spread it
+                    Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
                 }
             }
             default: {

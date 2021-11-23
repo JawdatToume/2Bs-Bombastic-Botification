@@ -46,6 +46,7 @@ private:
 		drone_count,
 		spine_crawler_count,
 		spawning_pool_count,
+		tumor_count,
 		lair_count,
 		base_count,
 		hatchery_count,
