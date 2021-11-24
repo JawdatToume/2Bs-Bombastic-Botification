@@ -469,7 +469,7 @@ void BasicSc2Bot::OnStep() {
                 }
             }
             case UNIT_TYPEID::ZERG_SPAWNINGPOOL: {
-                if (minerals >= 100 && vespene >= 100 && hatchery_count > 0 && researched_metabolic) { // Research metabolic boost, but only after the hatchery is ready 
+                if (minerals >= 100 && vespene >= 100 && hatchery_count > 0 && !researched_metabolic) { // Research metabolic boost, but only after the hatchery is ready 
                     Actions()->UnitCommand(unit, ABILITY_ID::RESEARCH_ZERGLINGMETABOLICBOOST);
                     researched_metabolic = true;
                 }
