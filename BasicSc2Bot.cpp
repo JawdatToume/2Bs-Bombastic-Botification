@@ -47,6 +47,26 @@ void BasicSc2Bot::PrintInfo() {
     cout << "Vespene: " << vespene << endl << endl;
 }
 
+
+void BasicSc2Bot::GetMostDamagedBuilding() {
+    Units buildings = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
+    const Unit *most_damaged;
+    bool any_damaged = false;
+    for (const Unit *unit : buildings) {
+        if (unit->health < unit->health_max) {
+            any_damaged = true;
+            if (!most_damaged || (unit->health/double(unit->health_max)) < (most_damaged->health/double(most_damaged->health_max))) {
+                most_damaged = unit;
+            }
+        }
+    }
+
+    if (any_damaged && defense_focus != most_damaged) {
+        defense_focus = most_damaged;
+        BasicSc2Bot::MoveDefense(Point2D(defense_focus->pos.x, defense_focus->pos.y));
+    }
+}
+
 // UNIT SPAWNING AND BUILDING ////////////////////////////////////////////////////////////
 
 // From bot_examples.cc
@@ -458,12 +478,29 @@ void BasicSc2Bot::Hatch(const Unit* unit) {
     }
 }
 
+// UNIT CONTROL ///////////////////////////////////////////////////////////////////
+
+void BasicSc2Bot::MoveDefense(Point2D& pos) {
+    Units units = Observation()->GetUnits(Unit::Alliance::Self);
+    cout << "aah! move defense!" << endl;
+
+    for (const Unit *unit : units) {
+        if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_SPINECRAWLER) {
+            Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT);
+        }
+        if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_ZERGLING) {
+            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, pos, true);
+        }
+    }
+}
+
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
 void BasicSc2Bot::OnGameStart() { 
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
+    defense_focus =  Observation()->GetUnits(Unit::Alliance::Self, IsTownHall())[0];
     return;
 }
 
@@ -510,6 +547,17 @@ void BasicSc2Bot::OnStep() {
             }
             case UNIT_TYPEID::ZERG_LAIR: {
                 Hatch(unit); // No specialization for now
+            }
+            case UNIT_TYPEID::ZERG_SPINECRAWLER: {
+                Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
+
+            }
+            case UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED: {
+                if (defense_focus != NULL) {
+                    // Point2D pos = Point2D(defense_focus->pos.x, defense_focus->pos.y);
+                    // Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, pos, true);
+                    Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT);
+                } 
             }
             case UNIT_TYPEID::ZERG_OVERLORD: {
                 if (lair_count > 0) {  // available once lair built

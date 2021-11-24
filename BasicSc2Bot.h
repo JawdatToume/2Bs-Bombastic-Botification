@@ -17,6 +17,7 @@ public:
 private:
 	void ObtainInfo();
 	void PrintInfo();
+	void GetMostDamagedBuilding();
 
 	sc2::Tag FindClosestGeyser(sc2::Point2D base_location);  // find closest geyser to a base
 	bool TryBuild(sc2::AbilityID ability_type_for_structure, 
@@ -35,6 +36,7 @@ private:
 	bool TryExpand(sc2::AbilityID build_ability, sc2::UnitTypeID worker_type);
 	void QueenAction(const sc2::Unit* unit, int num);
 	void Hatch(const sc2::Unit* unit);
+	void MoveDefense(sc2::Point2D &point);
 
 	int food_cap, food_used, food_workers;
 	int minerals = 0, vespene = 0;
@@ -61,6 +63,8 @@ private:
 	int checked_spawn = 0;
 
 	double defensive_overlord_scatter_distance = 10.0;
+
+	const sc2::Unit *defense_focus;
 	    
 };
 
