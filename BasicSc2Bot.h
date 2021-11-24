@@ -12,23 +12,57 @@ public:
 	virtual void OnGameStart();
 	virtual void OnStep();
 	virtual void OnUnitIdle(const sc2::Unit* unit) final;
+	virtual void OnUnitDestroyed(const sc2::Unit* unit) final;
 
 private:
+	int CountUnits(const sc2::ObservationInterface* observation, sc2::UnitTypeID unit_type);
 	void ObtainInfo();
 	void PrintInfo();
-	bool BasicSc2Bot::TryBuild(sc2::AbilityID ability_type_for_structure, sc2::UnitTypeID unit_type);
+	bool IsStructure(const sc2::Unit &unit);
+	void GetMostDamagedBuilding();
 
+	sc2::Tag FindClosestGeyser(sc2::Point2D base_location);  // find closest geyser to a base
+	bool TryBuild(sc2::AbilityID ability_type_for_structure, 
+	              sc2::UnitTypeID unit_type,
+				  sc2::Tag location_tag = 0, 
+				  sc2::Point3D location_point3d = sc2::Point3D(-1,-1,-1), 
+				  bool is_expansion = false);
 	void MorphLarva(const sc2::Unit* unit);
+	void GenerateCreep(const sc2::Unit* unit);
+	void BuildExtractor();
+	void ManageWorkers(sc2::UNIT_TYPEID worker_type, sc2::AbilityID worker_gather_command, sc2::UNIT_TYPEID building_type);
+	void MineIdleWorkers(const sc2::Unit* worker, sc2::AbilityID worker_gather_command, sc2::UnitTypeID building_type);
+	const sc2::Unit* FindNearestMineralPatch(const sc2::Point2D& start);
+	bool BuildNewHatchery();
+	int GetExpectedWorkers(sc2::UNIT_TYPEID building_type);
+	bool TryExpand(sc2::AbilityID build_ability, sc2::UnitTypeID worker_type);
+	void QueenAction(const sc2::Unit* unit, int num);
+	void Hatch(const sc2::Unit* unit);
+	void MoveDefense(sc2::Point2D &point);
+	
 
-	int food_cap, food_used;
+	int food_cap, food_used, food_workers;
 	int minerals = 0, vespene = 0;
 
-	sc2::Point2D start_location;
+	sc2::Point3D start_location, staging_location;  // on game start
 	std::vector<sc2::Point3D> expansions;
 
 	int larva_count,
 		drone_count,
-	    spawning_pool_count;
+		spine_crawler_count,
+		spawning_pool_count,
+		lair_count,
+		base_count,
+		hatchery_count,
+		queen_count;
+
+	sc2::Tag zergling_sent = NULL;
+	int checked_spawn = 0;
+
+	double defensive_overlord_scatter_distance = 10.0;
+
+	const sc2::Unit *defense_focus;
+	    
 };
 
 #endif
