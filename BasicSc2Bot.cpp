@@ -425,9 +425,10 @@ void BasicSc2Bot::Hatch(const Unit* unit) {
     if (minerals >= 150 && spawning_pool_count > 0 && queen_count < hatchery_count) {
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_QUEEN);
     }
-    if (minerals >= 100 && vespene >= 100) {
+    if (minerals >= 100 && vespene >= 100 && !researched_burrow) {
         // research burrow, this may be useful
         Actions()->UnitCommand(unit, ABILITY_ID::RESEARCH_BURROW);
+        researched_burrow = true;
     }
 }
 
@@ -468,8 +469,9 @@ void BasicSc2Bot::OnStep() {
                 }
             }
             case UNIT_TYPEID::ZERG_SPAWNINGPOOL: {
-                if (minerals >= 100 && vespene >= 100 && hatchery_count > 0) { // Research metabolic boost, but only after the hatchery is ready 
+                if (minerals >= 100 && vespene >= 100 && hatchery_count > 0 && researched_metabolic) { // Research metabolic boost, but only after the hatchery is ready 
                     Actions()->UnitCommand(unit, ABILITY_ID::RESEARCH_ZERGLINGMETABOLICBOOST);
+                    researched_metabolic = true;
                 }
             }
             case UNIT_TYPEID::ZERG_HATCHERY: {
@@ -522,7 +524,6 @@ void BasicSc2Bot::OnStep() {
 
     if (ready_to_expand) {
         TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
-        ready_to_expand = false;
     }
 
     ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_EXTRACTOR);

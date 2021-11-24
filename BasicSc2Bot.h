@@ -53,7 +53,9 @@ private:
 		hydralisk_count,
 		queen_count;
 
-	bool ready_to_expand = false;
+	bool ready_to_expand = false,
+		 researched_burrow = false,
+		 researched_metabolic = false;
 
 	sc2::Tag zergling_sent = NULL;
 	int checked_spawn = 0;
