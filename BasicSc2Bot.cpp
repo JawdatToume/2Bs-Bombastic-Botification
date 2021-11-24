@@ -28,7 +28,7 @@ void BasicSc2Bot::ObtainInfo() {
     queen_count = CountUnits(obs, UNIT_TYPEID::ZERG_QUEEN);
     drone_count = CountUnits(obs, UNIT_TYPEID::ZERG_DRONE);
     tumor_count = CountUnits(obs, UNIT_TYPEID::ZERG_CREEPTUMOR);
-    spine_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPINECRAWLER);
+    spine_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPINECRAWLER) + CountUnits(obs, UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED);
     food_cap = obs->GetFoodCap();
     food_used = obs->GetFoodUsed();
     minerals = obs->GetMinerals();
@@ -507,6 +507,7 @@ void BasicSc2Bot::OnGameStart() {
 // per frame...
 void BasicSc2Bot::OnStep() { 
     ObtainInfo();
+    GetMostDamagedBuilding();
     int queens = 0; // used for queens to be able to inject larva into more than 1 hatchery at once
 
     // looking through all unit types
@@ -549,14 +550,14 @@ void BasicSc2Bot::OnStep() {
                 Hatch(unit); // No specialization for now
             }
             case UNIT_TYPEID::ZERG_SPINECRAWLER: {
-                Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
+                // Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
+                //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, true);
 
             }
             case UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED: {
                 if (defense_focus != NULL) {
-                    // Point2D pos = Point2D(defense_focus->pos.x, defense_focus->pos.y);
-                    // Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, pos, true);
-                    Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT);
+                   Point2D pos = Point2D(defense_focus->pos.x +  GetRandomScalar() * 10, defense_focus->pos.y + GetRandomScalar() * 10);
+                   Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, pos, true);
                 } 
             }
             case UNIT_TYPEID::ZERG_OVERLORD: {
