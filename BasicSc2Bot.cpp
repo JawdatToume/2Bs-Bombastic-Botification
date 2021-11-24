@@ -55,7 +55,7 @@ void BasicSc2Bot::GetMostDamagedBuilding() {
     for (const Unit *unit : buildings) {
         if (unit->health < unit->health_max) {
             any_damaged = true;
-            if (!most_damaged || (unit->health/double(unit->health_max)) < (most_damaged->health/double(most_damaged->health_max))) {
+            if (most_damaged == NULL || (unit->health/double(unit->health_max)) < (most_damaged->health/double(most_damaged->health_max))) {
                 most_damaged = unit;
             }
         }
