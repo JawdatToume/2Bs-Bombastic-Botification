@@ -51,7 +51,8 @@ private:
 		base_count,
 		hatchery_count,
 		queen_count,
-		zergling_count;
+		zergling_count,
+		spore_crawler_count;
 
 	sc2::Tag zergling_sent = NULL;
 	int checked_spawn = 0;

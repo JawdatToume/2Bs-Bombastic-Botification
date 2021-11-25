@@ -60,6 +60,7 @@ void BasicSc2Bot::ObtainInfo() {
     base_count = obs->GetUnits(Unit::Alliance::Self, IsTownHall()).size();
     food_workers = obs->GetFoodWorkers();
     zergling_count = CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING);
+    spore_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPORECRAWLER);
 }
 
 // For debugging purposes
@@ -531,6 +532,10 @@ void BasicSc2Bot::OnStep() {
     }
     if (spine_crawler_count < 3 && minerals >= 100) {
         TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
+    }
+    // build spore crawler for defending air attacks
+    if (spore_crawler_count < 5 && minerals >= 75) {
+        TryBuild(ABILITY_ID::BUILD_SPORECRAWLER, UNIT_TYPEID::ZERG_DRONE);
     }
 
     bool not_enough_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
