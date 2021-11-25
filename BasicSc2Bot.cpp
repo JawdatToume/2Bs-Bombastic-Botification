@@ -458,11 +458,12 @@ void BasicSc2Bot::QueenAction(const Unit* unit, int num) {
     // if there are no creep tumors, make one so it can start spreading creep
     if (unit->energy >= 25 && unit->orders.empty() && tumor_count == 0 && num >= hatcheries.size()+lairs.size()) {
         // move towards expand location until we find a point where there is no creep, then drop a tumor
+
         if (Observation()->HasCreep(unit->pos)) {
             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
         }
         if (!Observation()->HasCreep(unit->pos)) {
-            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, unit->pos);
+            Actions()->UnitCommand(unit, ABILITY_ID::STOP_REDIRECT);
             Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
         }
     }
@@ -577,6 +578,7 @@ void BasicSc2Bot::OnStep() {
                         Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, staging_location);
                     }
                     if (!Observation()->HasCreep(unit->pos)) {
+                        Actions()->UnitCommand(unit, ABILITY_ID::STOP_REDIRECT);
                         Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
                     }
                 }
