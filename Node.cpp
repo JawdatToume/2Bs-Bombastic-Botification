@@ -1,0 +1,584 @@
+#include "Node.h"
+#include "sc2api/sc2_api.h"
+#include "sc2api/sc2_args.h"
+#include "sc2lib/sc2_lib.h"
+#include "sc2utils/sc2_manage_process.h"
+#include "sc2utils/sc2_arg_parser.h"
+#include "sc2api/sc2_unit_filters.h"
+#include <iostream>
+#include "Globals.h"
+
+using namespace sc2;
+using namespace std;
+
+//Constructor
+Node::Node() {
+
+}
+
+//Destructor
+Node::~Node() {
+
+}
+
+// From bot_examples.cc 
+int CountUnits(const ObservationInterface* observation, UnitTypeID unit_type) {
+    int count = 0;
+    Units my_units = observation->GetUnits(Unit::Alliance::Self);
+    for (const auto unit : my_units) {
+        if (unit->unit_type == unit_type)
+            ++count;
+    }
+
+    return count;
+}
+
+// Collects info from observation. Stores into class members
+void Node::ObtainInfo() {
+    const ObservationInterface* obs = Observation();
+    spawning_pool_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPAWNINGPOOL);
+    hatchery_count = CountUnits(obs, UNIT_TYPEID::ZERG_HATCHERY) + CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
+    larva_count = CountUnits(obs, UNIT_TYPEID::ZERG_LARVA);
+    queen_count = CountUnits(obs, UNIT_TYPEID::ZERG_QUEEN);
+    drone_count = CountUnits(obs, UNIT_TYPEID::ZERG_DRONE);
+    spine_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPINECRAWLER);
+    food_cap = obs->GetFoodCap();
+    food_used = obs->GetFoodUsed();
+    minerals = obs->GetMinerals();
+    vespene = obs->GetVespene();
+    lair_count = CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
+    base_count = obs->GetUnits(Unit::Alliance::Self, IsTownHall()).size();
+    food_workers = obs->GetFoodWorkers();
+}
+
+// For debugging purposes
+void Node::PrintInfo() {
+    cout << "Info:" << endl;
+    cout << "Larva Count: " << larva_count << endl;
+    cout << "Minerals: " << minerals << endl;
+    cout << "Vespene: " << vespene << endl << endl;
+}
+
+// UNIT SPAWNING AND BUILDING ////////////////////////////////////////////////////////////
+
+// From bot_examples.cc
+bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, Tag location_tag, Point3D location_point3d, bool is_expansion) {
+    float rx = GetRandomScalar();
+    float ry = GetRandomScalar();
+    const ObservationInterface* observation = Observation();
+
+    // default: pick a random location
+    Point2D build_location = Point2D(start_location.x + rx * 15, start_location.y + ry * 15);
+
+    // location is set to a geyser location that is closest to a base
+    if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
+        build_location = (observation->GetUnit(location_tag))->pos;
+    }
+
+    // building hatchery doesn't require location to have creep
+    if (ability_type_for_structure != ABILITY_ID::BUILD_HATCHERY) {
+        if (!observation->HasCreep(build_location)) { return false; }
+    }
+
+    //const ObservationInterface* observation = Observation();
+
+    Units workers = observation->GetUnits(Unit::Alliance::Self, IsUnit(unit_type));
+
+    //if we have no workers Don't build
+    if (workers.empty()) {
+        return false;
+    }
+
+    // Check to see if there is already a worker heading out to build it
+    for (const auto& worker : workers) {
+        for (const auto& order : worker->orders) {
+            if (order.ability_id == ability_type_for_structure) {
+                return false;
+            }
+        }
+    }
+
+    // If no worker is already building one, get a random worker to build one
+    const Unit* unit = GetRandomEntry(workers);
+
+    // skipping distance checking for building extractor because the chosen target location is already closest to a base
+    if (ability_type_for_structure != ABILITY_ID::BUILD_EXTRACTOR) {
+        // Check to see if unit can make it there
+        if (Query()->PathingDistance(unit, build_location) < 0.1f) {
+            return false;
+        }
+    }
+
+    // expansion uses Point3D
+    if (!is_expansion) {
+        for (const auto& expansion : expansions) {
+            if (Distance2D(build_location, Point2D(expansion.x, expansion.y)) < 7) {
+                return false;
+            }
+        }
+    }
+
+    // Check to see if unit can build there
+    if (Query()->Placement(ability_type_for_structure, build_location)) {
+        cout << "Building a " << ability_type_for_structure.to_string() << endl;
+        if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
+            // must pass in Unit type, Point2D does not work for building extractor
+            Actions()->UnitCommand(unit, ability_type_for_structure, observation->GetUnit(location_tag));
+            cout << "Finished building an extractor" << endl;
+        }
+        else {
+            Actions()->UnitCommand(unit, ability_type_for_structure, build_location);
+        }
+        return true;
+    }
+
+    return false;
+}
+
+// choose what unit type to transform larva into
+void Node::MorphLarva(const Unit* unit) {
+    // Become overlord if maxed food cap
+    // TODO: Multiple spawned at once. Make only spawn one?
+    if (food_used == food_cap && minerals >= 100) {
+
+        cout << "Morphing into Overlord" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
+        cout << "Morphed" << endl;
+    }
+    else if (minerals >= 25 && spawning_pool_count > 0) {
+        cout << "Morphing into Zergling" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
+    }
+    else if (minerals >= 50 && food_cap - food_used > 0) {
+
+        cout << "Morphing into Drone" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
+    }
+}
+
+// make overlord generate creep beneath it
+void Node::GenerateCreep(const Unit* unit) {
+    Actions()->UnitCommand(unit, ABILITY_ID::BEHAVIOR_GENERATECREEPON);
+}
+
+// build extractor to collect vespene gas
+void Node::BuildExtractor() {
+    const ObservationInterface* obs = Observation();
+    Units bases = obs->GetUnits(Unit::Alliance::Self, IsTownHall());  // return all command centers of current player
+
+    // build extractor
+    for (const auto& base : bases) {
+        if (base->assigned_harvesters >= base->ideal_harvesters) {  // if there are more drone than ideal working in a base
+            if (base->build_progress == 1) {
+                Tag geyser = FindClosestGeyser(base->pos);
+                if (geyser != 0) {  // only build if found closest geyser to a base
+                    TryBuild(ABILITY_ID::BUILD_EXTRACTOR, UNIT_TYPEID::ZERG_DRONE, geyser);
+                }
+            }
+        }
+    }
+}
+
+// from bot_example.cc
+Tag Node::FindClosestGeyser(Point2D base_location) {
+    Units geysers = Observation()->GetUnits(Unit::Alliance::Neutral, IsUnit(UNIT_TYPEID::NEUTRAL_VESPENEGEYSER));
+    // only search for closest geyser within this radius
+    float minimum_distance = 15.0f;
+    Tag closestGeyser = 0;
+
+    for (const auto& geyser : geysers) {
+        float current_distance = Distance2D(base_location, geyser->pos);
+        if (current_distance < minimum_distance) {
+            if (Query()->Placement(ABILITY_ID::BUILD_EXTRACTOR, geyser->pos)) {
+                minimum_distance = current_distance;
+                closestGeyser = geyser->tag;
+            }
+        }
+    }
+    return closestGeyser;
+}
+
+// Borrowed from bot_examples.cc
+// To ensure that we do not over or under saturate any base
+void Node::ManageWorkers(UNIT_TYPEID worker_type, AbilityID worker_gather_command, UNIT_TYPEID building_type) {
+    const ObservationInterface* observation = Observation();
+    Units bases = observation->GetUnits(Unit::Alliance::Self, IsTownHall());
+    Units geysers = observation->GetUnits(Unit::Alliance::Self, IsUnit(building_type));
+
+    if (bases.empty()) {
+        return;
+    }
+
+    for (const auto& base : bases) {
+        //If we have already mined out or still building here skip the base.
+        if (base->ideal_harvesters == 0 || base->build_progress != 1) {
+            continue;
+        }
+        //if base is over populated
+        if (base->assigned_harvesters > base->ideal_harvesters) {
+            Units workers = observation->GetUnits(Unit::Alliance::Self, IsUnit(worker_type));
+
+            for (const auto& worker : workers) {
+                if (!worker->orders.empty()) {  // if worker is busy
+                    // if worker's next task is to work at the base
+                    if (worker->orders.front().target_unit_tag == base->tag) {
+                        //This should allow them to be picked up by mineidleworkers()
+                        MineIdleWorkers(worker, worker_gather_command, building_type);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+    // check for over-populated geysers
+    Units workers = observation->GetUnits(Unit::Alliance::Self, IsUnit(worker_type));
+    for (const auto& geyser : geysers) {
+        if (geyser->ideal_harvesters == 0 || geyser->build_progress != 1) {
+            continue;
+        }
+        if (geyser->assigned_harvesters > geyser->ideal_harvesters) {
+            for (const auto& worker : workers) {
+                if (!worker->orders.empty()) {
+                    if (worker->orders.front().target_unit_tag == geyser->tag) {
+                        //This should allow them to be picked up by mineidleworkers()
+                        MineIdleWorkers(worker, worker_gather_command, building_type);
+                        return;
+                    }
+                }
+            }
+        }
+        else if (geyser->assigned_harvesters < geyser->ideal_harvesters) {
+            for (const auto& worker : workers) {
+                if (!worker->orders.empty()) {
+                    //This should move a worker that isn't mining gas to gas
+                    const Unit* target = observation->GetUnit(worker->orders.front().target_unit_tag);
+                    if (target == nullptr) {
+                        continue;
+                    }
+                    if (target->unit_type != building_type) {
+                        //This should allow them to be picked up by mineidleworkers()
+                        MineIdleWorkers(worker, worker_gather_command, building_type);
+                        return;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Borrowed from bot_example.cc
+// Mine the nearest mineral to Town hall.
+// If we don't do this, drones may mine from other patches if they stray too far from the base after building.
+void Node::MineIdleWorkers(const Unit* worker, AbilityID worker_gather_command, UnitTypeID building_type) {
+    const ObservationInterface* observation = Observation();
+    Units bases = observation->GetUnits(Unit::Alliance::Self, IsTownHall());
+    Units geysers = observation->GetUnits(Unit::Alliance::Self, IsUnit(building_type));
+
+    const Unit* valid_mineral_patch = nullptr;
+
+    if (bases.empty()) {
+        return;
+    }
+
+    // assign more workers to geyser if not over-populated
+    for (const auto& geyser : geysers) {
+        if (geyser->assigned_harvesters < geyser->ideal_harvesters) {
+            Actions()->UnitCommand(worker, worker_gather_command, geyser);
+            return;
+        }
+    }
+    // Search for a base that is missing workers.
+    for (const auto& base : bases) {
+        // If we have already mined out here skip the base.
+        if (base->ideal_harvesters == 0 || base->build_progress != 1) {
+            continue;
+        }
+        // if missing workers at a base
+        if (base->assigned_harvesters < base->ideal_harvesters) {
+            valid_mineral_patch = FindNearestMineralPatch(base->pos);
+            Actions()->UnitCommand(worker, worker_gather_command, valid_mineral_patch);
+            return;
+        }
+    }
+
+    if (!worker->orders.empty()) {
+        return;
+    }
+
+    //If all workers spots are filled just go to any base.
+    const Unit* random_base = GetRandomEntry(bases);
+    valid_mineral_patch = FindNearestMineralPatch(random_base->pos);
+    Actions()->UnitCommand(worker, worker_gather_command, valid_mineral_patch);
+}
+
+// Borrowed from bot_example.cc
+const Unit* Node::FindNearestMineralPatch(const Point2D& start) {
+    Units units = Observation()->GetUnits(Unit::Alliance::Neutral);  // need scouting to expand view point to spot more mine fields
+    float distance = std::numeric_limits<float>::max();
+    const Unit* target = nullptr;
+    for (const auto& u : units) {
+        if (u->unit_type == UNIT_TYPEID::NEUTRAL_MINERALFIELD) {
+            float d = DistanceSquared2D(u->pos, start);
+            if (d < distance) {
+                distance = d;
+                target = u;
+            }
+        }
+    }
+    //If we never found one return false;
+    if (distance == std::numeric_limits<float>::max()) {
+        return target;
+    }
+    return target;
+}
+
+// expand hatchery when reached ideal number of workers
+bool Node::BuildNewHatchery() {
+    int max_worker_count = 70;
+
+    // Don't have more active bases than we can provide workers for
+    if (GetExpectedWorkers(UNIT_TYPEID::ZERG_EXTRACTOR) > max_worker_count) {
+        return false;
+    }
+    // if we have extra workers around and more than enough minerals, try to build another base
+    if (GetExpectedWorkers(UNIT_TYPEID::ZERG_EXTRACTOR) < food_workers && minerals > min<size_t>(base_count * 300, 1200)) {
+        return TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
+    }
+    //Only build another Hatch if we are floating extra minerals
+    /*if (minerals > min<size_t>(base_count * 300, 1200)) {
+        return TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
+    }*/
+    return false;
+}
+
+//Expands to nearest location and updates the start location to be between the new location and old bases
+bool Node::TryExpand(AbilityID build_ability, UnitTypeID unit_type) {
+    const ObservationInterface* observation = Observation();
+    float minimum_distance = std::numeric_limits<float>::max();
+    Point3D closest_expansion;
+    for (const auto& expansion : expansions) {
+        float current_distance = Distance2D(start_location, expansion);
+        if (current_distance < .01f) {
+            continue;
+        }
+        // find closest ideal location for to expand base
+        if (current_distance < minimum_distance) {
+            if (Query()->Placement(build_ability, expansion)) {
+                closest_expansion = expansion;
+                minimum_distance = current_distance;
+            }
+        }
+    }
+    // only update staging location up till 3 bases
+    if (TryBuild(build_ability, unit_type, 0, closest_expansion, true) && base_count < 4) {
+        cout << "Building new base" << endl;
+        staging_location = Point3D(((staging_location.x + closest_expansion.x) / 2), ((staging_location.y + closest_expansion.y) / 2),
+            ((staging_location.z + closest_expansion.z) / 2));
+        return true;
+    }
+    return false;
+
+}
+
+// Borrowed from bot_examples.cc
+// An estimate of how many workers we should have based on what buildings we have
+int Node::GetExpectedWorkers(UNIT_TYPEID building_type) {
+    const ObservationInterface* observation = Observation();
+    Units bases = observation->GetUnits(Unit::Alliance::Self, IsTownHall());
+    Units geysers = observation->GetUnits(Unit::Alliance::Self, IsUnit(building_type));
+    int expected_workers = 0;
+    for (const auto& base : bases) {
+        if (base->build_progress != 1) {
+            continue;
+        }
+        expected_workers += base->ideal_harvesters;
+    }
+
+    for (const auto& geyser : geysers) {
+        if (geyser->vespene_contents > 0) {
+            if (geyser->build_progress != 1) {
+                continue;
+            }
+            expected_workers += geyser->ideal_harvesters;
+        }
+    }
+
+    return expected_workers;
+}
+
+// Get the queens to inject Larva when they are able to, decides whether a queen spreads creep tumors or injects larva at a hatchery
+void Node::QueenAction(const Unit* unit, int num) {
+    Units hatcheries = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
+    // decide which hatchery we're building at, cycles between queens
+    int mode = num % (hatcheries.size() + 1);
+    for (size_t i = 0; i < hatcheries.size(); i++) {
+        if (mode == i) {
+            // if hatchery is not completely built yet
+            if (hatcheries.at(i)->build_progress != 1) {
+                mode++;
+            }
+            // prevents impossible requests
+            else if (unit->energy >= 25 && unit->orders.empty()) {
+                Actions()->UnitCommand(unit, ABILITY_ID::EFFECT_INJECTLARVA, hatcheries.at(i));
+            }
+        }
+    }
+    if (unit->energy >= 25 && unit->orders.empty()) {
+        Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+    }
+}
+
+// Decides hatchery actions (Queen can't evolve from Larva)
+void Node::Hatch(const Unit* unit) {
+    // check if we can make queen, have a limit so we can also make drones and zerglings
+    if (minerals >= 150 && spawning_pool_count > 0 && queen_count < hatchery_count) {
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_QUEEN);
+    }
+}
+
+// GAME START AND STEP ///////////////////////////////////////////////////////////////////
+
+void Node::OnStart() {
+    start_location = Observation()->GetStartLocation();
+    staging_location = start_location;
+    expansions = search::CalculateExpansionLocations(Observation(), Query());
+    return;
+}
+
+// per frame...
+void Node::OnStep() {
+    ObtainInfo();
+    int queens = 0;
+
+    // looking through all unit types
+    Units units = Observation()->GetUnits(Unit::Alliance::Self);
+    for (const auto& unit : units) {
+
+        switch (unit->unit_type.ToType()) {
+        case UNIT_TYPEID::ZERG_LARVA: {
+            MorphLarva(unit);
+        }
+        case UNIT_TYPEID::ZERG_QUEEN: {
+            QueenAction(unit, queens);
+            queens++;
+        }
+        case UNIT_TYPEID::ZERG_CREEPTUMOR: {
+            // builds creep tumor when it can, this is its only available action and can only happen once
+            if (unit->energy >= 25 && unit->orders.empty()) {
+                Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+            }
+        }
+        case UNIT_TYPEID::ZERG_HATCHERY: {
+            Hatch(unit);
+            if (minerals >= 150 && vespene >= 100) { // upgrade 
+                Actions()->UnitCommand(unit, ABILITY_ID::MORPH_LAIR);
+            }
+        }
+        case UNIT_TYPEID::ZERG_LAIR: {
+            Hatch(unit); // No specialization for now
+        }
+        case UNIT_TYPEID::ZERG_OVERLORD: {
+            if (lair_count > 0) {  // available once lair built
+                GenerateCreep(unit);
+            }
+        }
+        default: {
+            break;
+        }
+
+        }
+    }
+
+    // building spawning pool
+    if (spawning_pool_count < 1 && minerals >= 200) {
+        TryBuild(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
+
+    }
+    if (spine_crawler_count < 3 && minerals >= 100) {
+        TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
+    }
+
+    bool not_enough_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
+    // if all bases are destroyed or there's no base, don't build
+    if (base_count > 0 && minerals >= 25 && not_enough_extractor) {
+        BuildExtractor();
+    }
+
+    ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_EXTRACTOR);
+    ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_HATCHERY);
+    BuildNewHatchery();
+
+    return;
+}
+
+//Called whenever a unit idles
+void Node::OnUnitWait(const Unit* unit) {
+    //If the unit is an overlord
+    if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_OVERLORD) {
+        //patrol to a random location
+        float rx = GetRandomScalar() * defensive_overlord_scatter_distance;
+        float ry = GetRandomScalar() * defensive_overlord_scatter_distance;
+        float rz = GetRandomScalar() * defensive_overlord_scatter_distance;
+        Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVEPATROL, unit->pos + Point3D(rx, ry, rz));
+    }
+
+    //if the unit is a zergling
+    if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_ZERGLING) {
+        auto spawn_points = Observation()->GetGameInfo().enemy_start_locations;
+        //if we havent sent a scout yet...
+        if (zergling_sent == NULL) {
+            //sent the scout to the first spawn point and note which zergling was sent
+            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+            zergling_sent = unit->tag;
+            checked_spawn = 1;
+        }
+        //if this unit is the scout
+        else if (unit->tag == zergling_sent) {
+            //send the scout to the next spawn point
+            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+            checked_spawn++;
+            if (checked_spawn == spawn_points.size()) checked_spawn = 0;
+        }
+    }
+}
+
+//Called when a unit belonging to this node is destroyed
+void Node::OnUnitDestroyed(const Unit* unit) {
+    if (unit->tag == zergling_sent) {
+        zergling_sent = NULL;
+    }
+
+    auto ret = remove(nodeUnits.begin(), nodeUnits.end(), unit->tag);
+}
+
+/*--------------META NODE FILES----------------*/
+
+//Checks if a unit belongs to this node
+bool Node::unitBelongs(const Unit* unit) {
+    for (int i = 0; i < nodeUnits.size(); i++) {
+        if (unit->tag == nodeUnits[i]) return true;
+    }
+    return false;
+}
+
+//Adds the given unit to the node
+void Node::addUnit(const sc2::Unit* unit) {
+    nodeUnits.push_back(unit->tag);
+}
+
+//Adds the given unit tag to the node
+void Node::addUnit(sc2::Tag tag) {
+    nodeUnits.push_back(tag);
+}
+
+const sc2::ObservationInterface* Node::Observation(){
+    return observation;
+}
+
+sc2::ActionInterface* Node::Actions() {
+    return actions;
+}
+
+sc2::QueryInterface* Node::Query() {
+    return query;
+}

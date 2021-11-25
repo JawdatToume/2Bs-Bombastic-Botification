@@ -5,11 +5,14 @@
 #include "sc2utils/sc2_arg_parser.h"
 
 #include "BasicSc2Bot.h"
+#include "Globals.h"
 #include "LadderInterface.h"
 
 // LadderInterface allows the bot to be tested against the built-in AI or
 // played against other bots
 int main(int argc, char* argv[]) {
-	RunBot(argc, argv, new BasicSc2Bot(), sc2::Race::Zerg);
+	BasicSc2Bot* bot = new BasicSc2Bot();
+	RunBot(argc, argv, bot, sc2::Race::Zerg);
+	std::cout << "Ran off the end" << std::endl;
 	return 0;
 }
