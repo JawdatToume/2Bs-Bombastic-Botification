@@ -580,6 +580,7 @@ void BasicSc2Bot::OnStep() {
                         Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
                     }
                 }
+                break;
             }
             case UNIT_TYPEID::ZERG_SPAWNINGPOOL: {
                 if (minerals >= 100 && vespene >= 100 && hatchery_count > 0 && !researched_metabolic) { // Research metabolic boost, but only after the hatchery is ready 
@@ -602,13 +603,14 @@ void BasicSc2Bot::OnStep() {
             case UNIT_TYPEID::ZERG_SPINECRAWLER: {
                 //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
                 //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, true);
-
+                break;
             }
             case UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED: {
                 if (defense_focus != NULL) {
                    Point2D pos = Point2D(defense_focus->pos.x +  GetRandomScalar() * 10, defense_focus->pos.y + GetRandomScalar());
                    Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, pos, true);
-                } 
+                }
+                break; 
             }
             case UNIT_TYPEID::ZERG_OVERLORD: {
                 if (lair_count > 0) {  // available once lair built
@@ -621,14 +623,12 @@ void BasicSc2Bot::OnStep() {
             default: {
                 break;
             }
-           
         }
     }
 
     // building spawning pool
     if (spawning_pool_count < 1 && minerals >= 200) {
         TryBuild(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
-        
     }
     if (spine_crawler_count < 3 && minerals >= 100) {
         TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
@@ -636,6 +636,7 @@ void BasicSc2Bot::OnStep() {
     // build spore crawler for defending air attacks
     if (spore_crawler_count < 5 && minerals >= 75) {
         TryBuild(ABILITY_ID::BUILD_SPORECRAWLER, UNIT_TYPEID::ZERG_DRONE);
+    }
     // built hydralisk den
     if (lair_count > 0 && hydralisk_count < 1 && minerals >= 100 && vespene >= 100) {
         TryBuild(ABILITY_ID::BUILD_HYDRALISKDEN, UNIT_TYPEID::ZERG_DRONE);

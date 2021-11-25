@@ -55,7 +55,7 @@ private:
 		hatchery_count,
 		queen_count,
 		zergling_count,
-		spore_crawler_count;
+		spore_crawler_count,
 		hydralisk_count;
 
 	bool ready_to_expand = false,
