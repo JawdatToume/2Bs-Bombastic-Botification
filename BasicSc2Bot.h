@@ -36,6 +36,7 @@ private:
 	bool TryExpand(sc2::AbilityID build_ability, sc2::UnitTypeID worker_type);
 	void QueenAction(const sc2::Unit* unit, int num);
 	void Hatch(const sc2::Unit* unit);
+	void HealUnits(const sc2::Unit* unit);
 	void MoveDefense(sc2::Point2D &point);
 
 	int food_cap, food_used, food_workers;
@@ -52,8 +53,10 @@ private:
 		lair_count,
 		base_count,
 		hatchery_count,
-		hydralisk_count,
-		queen_count;
+		queen_count,
+		zergling_count,
+		spore_crawler_count;
+		hydralisk_count;
 
 	bool ready_to_expand = false,
 		 researched_burrow = false,
