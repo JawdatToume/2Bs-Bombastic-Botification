@@ -5,6 +5,30 @@
 using namespace sc2;
 using namespace std;
 
+// ignores Overlords, workers, and structures
+struct IsArmy {
+    IsArmy(const ObservationInterface* obs) : observation_(obs) {}
+
+    bool operator()(const Unit& unit) {
+        // From bot_examples.cc
+        auto attributes = observation_->GetUnitTypeData().at(unit.unit_type).attributes;
+        for (const auto& attribute : attributes) {
+            if (attribute == Attribute::Structure) {
+                return false;
+            }
+        }
+        switch (unit.unit_type.ToType()) {
+            case UNIT_TYPEID::ZERG_OVERLORD: return false;
+            case UNIT_TYPEID::ZERG_DRONE: return false;
+            case UNIT_TYPEID::ZERG_LARVA: return false;
+            case UNIT_TYPEID::ZERG_EGG: return false;
+            default: return true;
+        }
+    }
+
+    const ObservationInterface* observation_;
+};
+
 // INFO COLLECTION ///////////////////////////////////////////////////////////////////
 
 // From bot_examples.cc 
@@ -35,6 +59,7 @@ void BasicSc2Bot::ObtainInfo() {
     lair_count = CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
     base_count = obs->GetUnits(Unit::Alliance::Self, IsTownHall()).size();
     food_workers = obs->GetFoodWorkers();
+    zergling_count = CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING);
 }
 
 // For debugging purposes
@@ -129,7 +154,7 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
-    else if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 30) {
+    else if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 30 && zergling_count < 101) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
@@ -137,6 +162,9 @@ void BasicSc2Bot::MorphLarva(const Unit *unit) {
 
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
+    }
+    else {
+        return;
     }
 }
 
@@ -420,6 +448,22 @@ void BasicSc2Bot::Hatch(const Unit* unit) {
     }
 }
 
+// make queen heal other biological units
+void BasicSc2Bot::HealUnits(const Unit* unit) {
+    Units army = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
+    if (unit->orders.empty()) {
+        for (size_t i = 0; i < army.size(); i++) {
+            // heal injured units
+            if (army.at(i)->health < army.at(i)->health_max) {
+                //cout << army.at(i) << " is injured" << endl;
+                Actions()->UnitCommand(unit, ABILITY_ID::EFFECT_TRANSFUSION, army.at(i)); 
+                //cout << "queen is healing " << army.at(i) << endl;
+                break;
+            }
+        }
+    }
+}   
+
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
 void BasicSc2Bot::OnGameStart() { 
@@ -441,30 +485,37 @@ void BasicSc2Bot::OnStep() {
         switch (unit->unit_type.ToType()) {
             case UNIT_TYPEID::ZERG_LARVA: {
                 MorphLarva(unit);
+                break;
             }
             case UNIT_TYPEID::ZERG_QUEEN: {
                 QueenAction(unit, queens);
                 queens++;
+                HealUnits(unit);
+                break;
             }
             case UNIT_TYPEID::ZERG_CREEPTUMOR: {
                 // builds creep tumor when it can, this is its only available action and can only happen once
                 if (unit->energy >= 25 && unit->orders.empty()) {
                     Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
                 }
+                break;
             }
             case UNIT_TYPEID::ZERG_HATCHERY: {
                 Hatch(unit);
                 if (minerals >= 150 && vespene >= 100) { // upgrade 
                     Actions()->UnitCommand(unit, ABILITY_ID::MORPH_LAIR);
                 }
+                break;
             }
             case UNIT_TYPEID::ZERG_LAIR: {
                 Hatch(unit); // No specialization for now
+                break;
             }
             case UNIT_TYPEID::ZERG_OVERLORD: {
                 if (lair_count > 0) {  // available once lair built
                     GenerateCreep(unit);
                 }
+                break;
             }
             default: {
                 break;

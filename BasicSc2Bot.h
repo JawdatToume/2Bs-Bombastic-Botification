@@ -35,6 +35,7 @@ private:
 	bool TryExpand(sc2::AbilityID build_ability, sc2::UnitTypeID worker_type);
 	void QueenAction(const sc2::Unit* unit, int num);
 	void Hatch(const sc2::Unit* unit);
+	void HealUnits(const sc2::Unit* unit);
 
 	int food_cap, food_used, food_workers;
 	int minerals = 0, vespene = 0;
@@ -49,7 +50,8 @@ private:
 		lair_count,
 		base_count,
 		hatchery_count,
-		queen_count;
+		queen_count,
+		zergling_count;
 
 	sc2::Tag zergling_sent = NULL;
 	int checked_spawn = 0;
