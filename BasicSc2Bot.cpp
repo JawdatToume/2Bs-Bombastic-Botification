@@ -550,13 +550,13 @@ void BasicSc2Bot::OnStep() {
                 Hatch(unit); // No specialization for now
             }
             case UNIT_TYPEID::ZERG_SPINECRAWLER: {
-                // Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
+                //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
                 //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, true);
 
             }
             case UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED: {
                 if (defense_focus != NULL) {
-                   Point2D pos = Point2D(defense_focus->pos.x +  GetRandomScalar() * 10, defense_focus->pos.y + GetRandomScalar() * 10);
+                   Point2D pos = Point2D(defense_focus->pos.x +  GetRandomScalar() * 10, defense_focus->pos.y + GetRandomScalar());
                    Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, pos, true);
                 } 
             }
