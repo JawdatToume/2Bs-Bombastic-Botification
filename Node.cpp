@@ -561,6 +561,21 @@ bool Node::unitBelongs(const Unit* unit) {
     return false;
 }
 
+//get the position of the base in this node
+sc2::Point3D Node::getBasePosition() {
+    Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
+    for (int base = 0; base < bases.size(); base++) {
+        for (int i = 0; i < nodeUnits.size(); i++) {
+            if (nodeUnits[i] == bases[base]->tag) {
+                return bases[base]->pos;
+            }
+        }
+    }
+
+    //should never run, each node should own at least 1 hatchery. may run on a node where the hatchery has been destroyed. in that event, consider distributing units to neighbour nodes? nodes dont get destroyed when destroyed in game rn
+    return sc2::Point3D(INFINITY, INFINITY, INFINITY);
+}
+
 //Adds the given unit to the node
 void Node::addUnit(const sc2::Unit* unit) {
     nodeUnits.push_back(unit->tag);
@@ -571,14 +586,17 @@ void Node::addUnit(sc2::Tag tag) {
     nodeUnits.push_back(tag);
 }
 
+//replacement for sc2::Agent::Observation
 const sc2::ObservationInterface* Node::Observation(){
     return observation;
 }
 
+//replacement for sc2::Agent::Actions
 sc2::ActionInterface* Node::Actions() {
     return actions;
 }
 
+//replacement for sc2::Agent::Query
 sc2::QueryInterface* Node::Query() {
     return query;
 }

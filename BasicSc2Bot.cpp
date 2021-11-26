@@ -16,6 +16,7 @@ BasicSc2Bot::BasicSc2Bot() {
 
 //Destructor
 BasicSc2Bot::~BasicSc2Bot() {
+	cout << "Bot Created..." << endl;
 	for (int i = 0; i < nodes.size(); i++) {
 		delete nodes[i];
 	}
@@ -23,10 +24,14 @@ BasicSc2Bot::~BasicSc2Bot() {
 
 //Called on start
 void BasicSc2Bot::OnGameStart() {
+	cout << "Start Game!" << endl;
 	for (int i = 0; i < nodes.size(); i++) {
 		updateNode(nodes[i]);
 		nodes[i]->OnStart();
 	}
+
+	Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
+	nodes[0]->addUnit(bases[0]->tag);
 }
 
 //Called each frame
@@ -66,11 +71,34 @@ Node* BasicSc2Bot::GetOwningNode(const sc2::Unit* u) {
 
 void BasicSc2Bot::OnUnitCreated(const sc2::Unit* unit) {
 	std::cout << "Unit Created" << std::endl;
-	nodes[0]->addUnit(unit);
+	if (unit->alliance == Unit::Alliance::Self) {
+		if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_HATCHERY) {
+			Node* n = new Node();
+			n->addUnit(unit);
+			nodes.push_back(n);
+		}
+		else {
+			addUnitToClosestNode(unit);
+		}
+	}
 }
 
 void BasicSc2Bot::updateNode(Node* n) {
 	n->actions = Actions();
 	n->observation = Observation();
 	n->query = Query();
+}
+
+void BasicSc2Bot::addUnitToClosestNode(const sc2::Unit* unit) {
+	Node* closest = NULL;
+	float mindistance = INFINITY;
+	sc2::Point3D unitPos = unit->pos;
+	for (int i = 0; i < nodes.size(); i++) {
+		float distance = DistanceSquared2D(nodes[i]->getBasePosition(), unitPos);
+		if (distance < mindistance) {
+			mindistance = distance;
+			closest = nodes[i];
+		}
+	}
+	closest->addUnit(unit);
 }

@@ -72,6 +72,7 @@ public:
 	const sc2::ObservationInterface* Observation();
 	sc2::QueryInterface* Query();
 	sc2::ActionInterface* Actions();
+	sc2::Point3D getBasePosition();
 
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;

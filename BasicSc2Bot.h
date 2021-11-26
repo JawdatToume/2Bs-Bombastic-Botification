@@ -30,6 +30,7 @@ public:
 private:
 	Node* GetOwningNode(const sc2::Unit* u);
 	void updateNode(Node* n);
+	void addUnitToClosestNode(const sc2::Unit* unit);
 };
 
 #include "Node.h"
