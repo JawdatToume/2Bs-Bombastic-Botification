@@ -27,7 +27,7 @@ void BasicSc2Bot::OnGameStart() {
 	cout << "Start Game!" << endl;
 	for (int i = 0; i < nodes.size(); i++) {
 		updateNode(nodes[i]);
-		nodes[i]->OnStart();
+		nodes[i]->OnGameStart();
 	}
 
 	Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
@@ -45,7 +45,7 @@ void BasicSc2Bot::OnStep() {
 //Called per each unit without a job
 void BasicSc2Bot::OnUnitIdle(const sc2::Unit* unit) {
 	for (int i = 0; i < nodes.size(); i++) {
-		if (nodes[i]->unitBelongs(unit)) nodes[i]->OnUnitWait(unit);
+		if (nodes[i]->unitBelongs(unit)) nodes[i]->OnUnitIdle(unit);
 	}
 }
 
