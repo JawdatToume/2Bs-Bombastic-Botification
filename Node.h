@@ -26,6 +26,7 @@ private:
 	void PrintInfo();
 	int CountUnits(const sc2::ObservationInterface* observation, sc2::UnitTypeID unit_type);
 	//void GetMostDamagedBuilding();
+	void GetClosestEnemy();
 
 	sc2::Tag FindClosestGeyser(sc2::Point2D base_location);  // find closest geyser to a base
 	bool TryBuild(sc2::AbilityID ability_type_for_structure, 
@@ -44,6 +45,7 @@ private:
 	bool TryExpand(sc2::AbilityID build_ability, sc2::UnitTypeID worker_type);
 	void QueenAction(const sc2::Unit* unit, int num);
 	void Hatch(const sc2::Unit* unit);
+	void Ambush();
 	void HealUnits(const sc2::Unit* unit);
 	//void MoveDefense(sc2::Point2D &point);
 
@@ -76,6 +78,8 @@ private:
 	double defensive_overlord_scatter_distance = 10.0;
 
 	const sc2::Unit *defense_focus; 
+
+	sc2::Point2D enemy_location = start_location;
 
 //Node meta functions
 public:

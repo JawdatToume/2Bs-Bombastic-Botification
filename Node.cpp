@@ -110,6 +110,21 @@ void Node::PrintInfo() {
 //     }
 // }
 
+// Get the closest enemy location
+void Node::GetClosestEnemy() {
+    Units enemies = Observation()->GetUnits(Unit::Alliance::Enemy);
+    if (enemies.size() > 0) {
+        sc2::Point2D closest_enemy = staging_location;
+        int zerglings = 0;
+        for (const Unit* unit : enemies) {
+            if (Distance2D(unit->pos, start_location) < Distance2D(closest_enemy, start_location) || closest_enemy == staging_location) {
+                closest_enemy = unit->pos;
+            }
+        }
+        enemy_location = closest_enemy;
+    }
+}
+
 // UNIT SPAWNING AND BUILDING ////////////////////////////////////////////////////////////
 
 // From bot_examples.cc
@@ -523,6 +538,19 @@ void Node::Hatch(const Unit* unit) {
     }
 }
 
+// Send zerglings to attack
+// TODO: Get more unit types
+void Node::Ambush() {
+    Units units = Observation()->GetUnits(Unit::Alliance::Self, IsUnit(UNIT_TYPEID::ZERG_ZERGLING));
+    int zerglings = 0;
+    for (const Unit* unit : units) {
+        if (zerglings < 20 && unit->tag != zergling_sent) {
+            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
+        }
+        zerglings++;
+    }
+}
+
 // UNIT CONTROL ///////////////////////////////////////////////////////////////////
 
 void Node::moveDefense() {
@@ -556,7 +584,7 @@ void Node::HealUnits(const Unit* unit) {
             }
         }
     }
-}   
+}
 
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
@@ -571,6 +599,10 @@ void Node::OnGameStart() {
 // per frame...
 void Node::OnStep() { 
     ObtainInfo();
+    GetClosestEnemy();
+    if (zergling_count >= 20) {
+        Ambush();
+    }
     Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
     const Unit* base;
     for (int j = 0; j < bases.size(); j++) {
@@ -651,9 +683,13 @@ void Node::OnStep() {
                 }
                 case UNIT_TYPEID::ZERG_OVERLORD: {
                     if (lair_count > 0) {  // available once lair built
-                        GenerateCreep(unit);
-                        // start generating creep then move to staging location to spread it
-                        Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                        // start generating creep if there is no creep
+                        if (Observation()->HasCreep(unit->pos)) {
+                            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                        }
+                        else {
+                            GenerateCreep(unit);
+                        }
                     }
                     break;
                 }
