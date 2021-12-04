@@ -49,11 +49,11 @@ struct IsArmy {
 // INFO COLLECTION ///////////////////////////////////////////////////////////////////
 
 // From bot_examples.cc 
-int CountUnits(const ObservationInterface* observation, UnitTypeID unit_type) {
+int Node::CountUnits(const ObservationInterface* observation, UnitTypeID unit_type) {
     int count = 0;
     Units my_units = observation->GetUnits(Unit::Alliance::Self);
     for (const auto unit : my_units) {
-        if (unit->unit_type == unit_type)
+        if (unit->unit_type == unit_type && unitBelongs(unit))
             ++count;
     }
 
@@ -91,24 +91,24 @@ void Node::PrintInfo() {
 }
 
 
-void Node::GetMostDamagedBuilding() {
-    Units buildings = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
-    const Unit *most_damaged;
-    bool any_damaged = false;
-    for (const Unit *unit : buildings) {
-        if (unit->health < unit->health_max) {
-            any_damaged = true;
-            if (most_damaged == NULL || (unit->health/double(unit->health_max)) < (most_damaged->health/double(most_damaged->health_max))) {
-                most_damaged = unit;
-            }
-        }
-    }
+// void Node::GetMostDamagedBuilding() {
+//     Units buildings = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
+//     const Unit *most_damaged;
+//     bool any_damaged = false;
+//     for (const Unit *unit : buildings) {
+//         if (unit->health < unit->health_max) {
+//             any_damaged = true;
+//             if (most_damaged == NULL || (unit->health/double(unit->health_max)) < (most_damaged->health/double(most_damaged->health_max))) {
+//                 most_damaged = unit;
+//             }
+//         }
+//     }
 
-    if (any_damaged && defense_focus != most_damaged) {
-        defense_focus = most_damaged;
-        Node::MoveDefense(Point2D(defense_focus->pos.x, defense_focus->pos.y));
-    }
-}
+//     if (any_damaged && defense_focus != most_damaged) {
+//         defense_focus = most_damaged;
+//         Node::MoveDefense(Point2D(defense_focus->pos.x, defense_focus->pos.y));
+//     }
+// }
 
 // UNIT SPAWNING AND BUILDING ////////////////////////////////////////////////////////////
 
@@ -525,16 +525,19 @@ void Node::Hatch(const Unit* unit) {
 
 // UNIT CONTROL ///////////////////////////////////////////////////////////////////
 
-void Node::MoveDefense(Point2D& pos) {
+void Node::moveDefense() {
     Units units = Observation()->GetUnits(Unit::Alliance::Self);
     cout << "aah! move defense!" << endl;
 
+    Point2D goTo = Point2D(getBasePosition().x, getBasePosition().y);
+
     for (const Unit *unit : units) {
         if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_SPINECRAWLER) {
-            Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT);
+            //TODO: Change tags
+            //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT);
         }
         if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_ZERGLING) {
-            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, pos, true);
+            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, goTo, true);
         }
     }
 }
@@ -558,88 +561,107 @@ void Node::HealUnits(const Unit* unit) {
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
 void Node::OnGameStart() { 
+    cout << "start!!!!!!" << endl;
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
-    defense_focus =  Observation()->GetUnits(Unit::Alliance::Self, IsTownHall())[0];
     return;
 }
 
 // per frame...
 void Node::OnStep() { 
     ObtainInfo();
-    GetMostDamagedBuilding();
+    Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
+    const Unit* base;
+    for (int j = 0; j < bases.size(); j++) {
+        for (int i = 0; i < nodeUnits.size(); i++) {
+            if (nodeUnits[i] == bases[j]->tag) {
+                base = bases[j];  
+                break;
+            }
+        }
+    }
+    if (base) {
+        ratio = base->health / base->health_max;
+    } else {
+        ratio = 1;
+    }
+    
     int queens = 0; // used for queens to be able to inject larva into more than 1 hatchery at once
 
     // looking through all unit types
     Units units = Observation()->GetUnits(Unit::Alliance::Self);
     for (const auto& unit : units) {
+        if (unitBelongs(unit) ) {
 
-        switch (unit->unit_type.ToType()) {
-            case UNIT_TYPEID::ZERG_LARVA: {
-                MorphLarva(unit);
-                break;
-            }
-            case UNIT_TYPEID::ZERG_QUEEN: {
-                QueenAction(unit, queens);
-                queens++;
-                HealUnits(unit);
-                break;
-            }
-            case UNIT_TYPEID::ZERG_CREEPTUMOR: {
-                // builds creep tumor when it can, this is its only available action and can only happen once
-                // move until we find a good place to place creep
-                if (unit->energy >= 25 && unit->orders.empty()) {
-                    if (Observation()->HasCreep(unit->pos)) {
-                        Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, staging_location);
+            switch (unit->unit_type.ToType()) {
+                case UNIT_TYPEID::ZERG_LARVA: {
+                    MorphLarva(unit);
+                    break;
+                }
+                case UNIT_TYPEID::ZERG_QUEEN: {
+                    QueenAction(unit, queens);
+                    queens++;
+                    HealUnits(unit);
+                    break;
+                }
+                case UNIT_TYPEID::ZERG_CREEPTUMOR: {
+                    // builds creep tumor when it can, this is its only available action and can only happen once
+                    // move until we find a good place to place creep
+                    if (unit->energy >= 25 && unit->orders.empty()) {
+                        if (Observation()->HasCreep(unit->pos)) {
+                            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, staging_location);
+                        }
+                        if (!Observation()->HasCreep(unit->pos)) {
+                            Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+                        }
                     }
-                    if (!Observation()->HasCreep(unit->pos)) {
-                        Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+                    break;
+                }
+                case UNIT_TYPEID::ZERG_SPAWNINGPOOL: {
+                    if (minerals >= 100 && vespene >= 100 && hatchery_count > 0 && !researched_metabolic) { // Research metabolic boost, but only after the hatchery is ready 
+                        Actions()->UnitCommand(unit, ABILITY_ID::RESEARCH_ZERGLINGMETABOLICBOOST);
+                        researched_metabolic = true;
                     }
+                    break;
                 }
-                break;
-            }
-            case UNIT_TYPEID::ZERG_SPAWNINGPOOL: {
-                if (minerals >= 100 && vespene >= 100 && hatchery_count > 0 && !researched_metabolic) { // Research metabolic boost, but only after the hatchery is ready 
-                    Actions()->UnitCommand(unit, ABILITY_ID::RESEARCH_ZERGLINGMETABOLICBOOST);
-                    researched_metabolic = true;
+                case UNIT_TYPEID::ZERG_HATCHERY: {
+                    Hatch(unit);
+                    if (minerals >= 150 && vespene >= 100) { // upgrade 
+                        Actions()->UnitCommand(unit, ABILITY_ID::MORPH_LAIR);
+                    }
+                    break;
                 }
-                break;
-            }
-            case UNIT_TYPEID::ZERG_HATCHERY: {
-                Hatch(unit);
-                if (minerals >= 150 && vespene >= 100) { // upgrade 
-                    Actions()->UnitCommand(unit, ABILITY_ID::MORPH_LAIR);
+                case UNIT_TYPEID::ZERG_LAIR: {
+                    Hatch(unit); // No specialization for now
+                    break;
                 }
-                break;
-            }
-            case UNIT_TYPEID::ZERG_LAIR: {
-                Hatch(unit); // No specialization for now
-                break;
-            }
-            case UNIT_TYPEID::ZERG_SPINECRAWLER: {
-                //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
-                //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, true);
-                break;
-            }
-            case UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED: {
-                if (defense_focus != NULL) {
-                   Point2D pos = Point2D(defense_focus->pos.x +  GetRandomScalar() * 10, defense_focus->pos.y + GetRandomScalar());
-                   Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, pos, true);
+                case UNIT_TYPEID::ZERG_SPINECRAWLER: {
+                    // Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
+                    //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, true);
+                    break;
                 }
-                break; 
-            }
-            case UNIT_TYPEID::ZERG_OVERLORD: {
-                if (lair_count > 0) {  // available once lair built
-                    GenerateCreep(unit);
-                    // start generating creep then move to staging location to spread it
-                    Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                case UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED: { 
+                    Point2D goTo = Point2D(getBasePosition().x, getBasePosition().y);
+                    if (unit->orders.empty()) {
+                        Point2D pos = Point2D(goTo.x +  GetRandomScalar() * 10, goTo.y + GetRandomScalar());
+                        Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, pos, true);
+                    }
+                    break; 
                 }
-                break;
+                case UNIT_TYPEID::ZERG_OVERLORD: {
+                    if (lair_count > 0) {  // available once lair built
+                        GenerateCreep(unit);
+                        // start generating creep then move to staging location to spread it
+                        Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                    }
+                    break;
+                }
+                default: {
+                    break;
+                }
             }
-            default: {
-                break;
-            }
+
         }
     }
 

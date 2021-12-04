@@ -31,6 +31,9 @@ private:
 	Node* GetOwningNode(const sc2::Unit* u);
 	void updateNode(Node* n);
 	void addUnitToClosestNode(const sc2::Unit* unit);
+
+	void focusDefense();
+	Node* focus;
 };
 
 #include "Node.h"

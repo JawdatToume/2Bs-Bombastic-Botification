@@ -11,6 +11,7 @@ using namespace std;
 BasicSc2Bot::BasicSc2Bot() {
 	std::cout << "Spawned" << std::endl;
 	Node* n = new Node;
+	focus = n;
 	nodes.push_back(n);
 }
 
@@ -40,6 +41,7 @@ void BasicSc2Bot::OnStep() {
 		updateNode(nodes[i]);
 		nodes[i]->OnStep();
 	}
+	focusDefense();
 }
 
 //Called per each unit without a job
@@ -75,6 +77,7 @@ void BasicSc2Bot::OnUnitCreated(const sc2::Unit* unit) {
 		if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_HATCHERY) {
 			Node* n = new Node();
 			n->addUnit(unit);
+			updateNode(n);
 			nodes.push_back(n);
 		}
 		else {
@@ -101,4 +104,22 @@ void BasicSc2Bot::addUnitToClosestNode(const sc2::Unit* unit) {
 		}
 	}
 	closest->addUnit(unit);
+}
+
+void BasicSc2Bot::focusDefense() {
+	float lowest_health = 1.0;
+	int lowest_index = 0;
+	bool any_damaged = false;
+	for (int i = 0; i < nodes.size(); i++) {
+		if (nodes[i]->ratio < lowest_health) {
+			lowest_index = i;
+			lowest_health = nodes[i]->ratio;
+			any_damaged = true;
+		}
+	}
+
+	if (any_damaged && nodes[lowest_index] != focus) {
+		focus = nodes[lowest_index];
+		focus->moveDefense();
+	}
 }

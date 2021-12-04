@@ -24,7 +24,8 @@ public:
 private:
 	void ObtainInfo();
 	void PrintInfo();
-	void GetMostDamagedBuilding();
+	int CountUnits(const sc2::ObservationInterface* observation, sc2::UnitTypeID unit_type);
+	//void GetMostDamagedBuilding();
 
 	sc2::Tag FindClosestGeyser(sc2::Point2D base_location);  // find closest geyser to a base
 	bool TryBuild(sc2::AbilityID ability_type_for_structure, 
@@ -44,7 +45,7 @@ private:
 	void QueenAction(const sc2::Unit* unit, int num);
 	void Hatch(const sc2::Unit* unit);
 	void HealUnits(const sc2::Unit* unit);
-	void MoveDefense(sc2::Point2D &point);
+	//void MoveDefense(sc2::Point2D &point);
 
 	int food_cap, food_used, food_workers;
 	int minerals = 0, vespene = 0;
@@ -74,7 +75,7 @@ private:
 
 	double defensive_overlord_scatter_distance = 10.0;
 
-	const sc2::Unit *defense_focus;
+	const sc2::Unit *defense_focus; 
 
 //Node meta functions
 public:
@@ -82,10 +83,14 @@ public:
 	void addUnit(const sc2::Unit* unit);
 	void addUnit(sc2::Tag tag);
 
+	void moveDefense();
+
 	const sc2::ObservationInterface* Observation();
 	sc2::QueryInterface* Query();
 	sc2::ActionInterface* Actions();
 	sc2::Point3D getBasePosition();
+	
+	float ratio;
 
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;
