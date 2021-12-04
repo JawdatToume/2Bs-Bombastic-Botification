@@ -490,11 +490,15 @@ void Node::QueenAction(const Unit* unit, int num) {
     // if there are no creep tumors, make one so it can start spreading creep
     if (unit->energy >= 25 && unit->orders.empty() && tumor_count == 0 && num >= hatcheries.size()+lairs.size()) {
         // move towards expand location until we find a point where there is no creep, then drop a tumor
+        // idk if this works rn I'll have to adjust it later
         if (Observation()->HasCreep(unit->pos)) {
             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
         }
         if (!Observation()->HasCreep(unit->pos)) {
-            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, unit->pos);
+            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, start_location);
+        }
+        if (Observation()->HasCreep(unit->pos)) {
+            Actions()->UnitCommand(unit, ABILITY_ID::STOP);
             Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
         }
     }
@@ -608,7 +612,7 @@ void Node::OnStep() {
     for (int j = 0; j < bases.size(); j++) {
         for (int i = 0; i < nodeUnits.size(); i++) {
             if (nodeUnits[i] == bases[j]->tag) {
-                base = bases[j];  
+                base = bases[j];
                 break;
             }
         }
@@ -632,9 +636,13 @@ void Node::OnStep() {
                     break;
                 }
                 case UNIT_TYPEID::ZERG_QUEEN: {
-                    QueenAction(unit, queens);
+                    if (queens < queen_count) {
+                        QueenAction(unit, queens);
+                    }
+                    else {
+                        HealUnits(unit);
+                    }
                     queens++;
-                    HealUnits(unit);
                     break;
                 }
                 case UNIT_TYPEID::ZERG_CREEPTUMOR: {
