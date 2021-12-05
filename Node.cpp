@@ -557,34 +557,13 @@ void Node::Hatch(const Unit* unit) {
 // Send zerglings to attack
 // TODO: Get more unit types
 void Node::Ambush() {
-    Units hydralisks = Observation()->GetUnits(Unit::Alliance::Self, IsUnit(UNIT_TYPEID::ZERG_HYDRALISK));
-    Units mutalisks = Observation()->GetUnits(Unit::Alliance::Self, IsUnit(UNIT_TYPEID::ZERG_MUTALISK));
-    Units roaches = Observation()->GetUnits(Unit::Alliance::Self, IsUnit(UNIT_TYPEID::ZERG_ROACH));
-    Units zerglings = Observation()->GetUnits(Unit::Alliance::Self, IsUnit(UNIT_TYPEID::ZERG_ZERGLING));
-    int units = 0;
-    for (const Unit* unit : hydralisks) {
-        if (units < 20) {
+    Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
+    int count = 0;
+    for (const Unit* unit : units) {
+        if (count < 20) {
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
         }
-        units++;
-    }
-    for (const Unit* unit : mutalisks) {
-        if (units < 20) {
-            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
-        }
-        units++;
-    }
-    for (const Unit* unit : roaches) {
-        if (units < 20) {
-            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
-        }
-        units++;
-    }
-    for (const Unit* unit : zerglings) {
-        if (units < 20 && unit->tag != zergling_sent) {
-            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
-        }
-        units++;
+        count++;
     }
 }
 
