@@ -705,6 +705,8 @@ void Node::OnStep() {
                         // start generating creep if there is no creep, or for 5 seconds every 5 seconds (theoretically)
                         if (Observation()->HasCreep(unit->pos) || timer%600 < 300) {
                             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                            // update staging_location
+                            staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z + 20));
                         }
                         else {
                             Actions()->UnitCommand(unit, ABILITY_ID::STOP);
@@ -746,11 +748,11 @@ void Node::OnStep() {
         BuildExtractor();
     }
 
-    if (ready_to_expand) {
+    /*if (ready_to_expand) {
         TryExpand(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
-    }
+    }*/
 
-    if (BuildNewHatchery()) { return; };
+    if (BuildNewHatchery()) { return; };  // try build new base
 
     return;
 }
