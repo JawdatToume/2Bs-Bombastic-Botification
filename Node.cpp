@@ -190,7 +190,7 @@ bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, 
         if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
             // must pass in Unit type, Point2D does not work for building extractor
             Actions()->UnitCommand(unit, ability_type_for_structure, observation->GetUnit(location_tag));
-            cout << "Finished building an extractor" << endl;
+            //cout << "Finished building an extractor" << endl;
         } else {
             Actions()->UnitCommand(unit, ability_type_for_structure, build_location);
         }
@@ -209,7 +209,7 @@ void Node::MorphLarva(const Unit *unit) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
-    else if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 30 && zergling_count < 101) {
+    else if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 101) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
@@ -346,17 +346,20 @@ void Node::MineIdleWorkers(const Unit* worker, AbilityID worker_gather_command, 
 
     const Unit* valid_mineral_patch = nullptr;
 
+    // if no base, return
     if (bases.empty()) {
         return;
     }
-    
+
     // assign more workers to geyser if not over-populated
     for (const auto& geyser : geysers) {
         if (geyser->assigned_harvesters < geyser->ideal_harvesters) {
             Actions()->UnitCommand(worker, worker_gather_command, geyser);
+            //cout << "MINEIDLEWORKERS!" << endl;
             return;
         }
     }
+
     // Search for a base that is missing workers.
     for (const auto& base : bases) {
         // If we have already mined out here skip the base.
@@ -365,11 +368,13 @@ void Node::MineIdleWorkers(const Unit* worker, AbilityID worker_gather_command, 
         }
         // if missing workers at a base
         if (base->assigned_harvesters < base->ideal_harvesters) {
+            cout << "We are missing workers at base!!" << endl;
             valid_mineral_patch = FindNearestMineralPatch(base->pos);
             Actions()->UnitCommand(worker, worker_gather_command, valid_mineral_patch);
             return;
         }
     }
+
 
     if (!worker->orders.empty()) {
         return;
@@ -384,6 +389,7 @@ void Node::MineIdleWorkers(const Unit* worker, AbilityID worker_gather_command, 
 // Borrowed from bot_example.cc
 const Unit* Node::FindNearestMineralPatch(const Point2D& start) {
     Units units = Observation()->GetUnits(Unit::Alliance::Neutral);  // need scouting to expand view point to spot more mine fields
+    cout << "Number of Neautral observations: " << units.size() << endl;
     float distance = std::numeric_limits<float>::max();
     const Unit* target = nullptr;
     for (const auto& u : units) {
@@ -414,10 +420,6 @@ bool Node::BuildNewHatchery() {
     if (GetExpectedWorkers(UNIT_TYPEID::ZERG_EXTRACTOR) < food_workers && minerals > min<size_t>(base_count * 300, 1200)) {
         return TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
     }
-    //Only build another Hatch if we are floating extra minerals
-    /*if (minerals > min<size_t>(base_count * 300, 1200)) {
-        return TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
-    }*/
     return false;
 }
 
@@ -709,6 +711,8 @@ void Node::OnStep() {
         }
     }
 
+    ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_EXTRACTOR);
+
     // building spawning pool
     if (spawning_pool_count < 1 && minerals >= 200) {
         TryBuild(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
@@ -736,33 +740,42 @@ void Node::OnStep() {
         TryExpand(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
     }
 
-    ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_EXTRACTOR);
-    ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_HATCHERY);
-    BuildNewHatchery();
+    if (BuildNewHatchery()) { return; };
 
     return;
 }
 
 void Node::OnUnitIdle(const Unit *unit) {
-    if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_OVERLORD) {
-        float rx = GetRandomScalar() * defensive_overlord_scatter_distance;
-        float ry = GetRandomScalar() * defensive_overlord_scatter_distance;
-        float rz = GetRandomScalar() * defensive_overlord_scatter_distance;
-        Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVEPATROL, unit->pos + Point3D(rx, ry, rz));
-    }
+   
+    switch (unit->unit_type.ToType()) {
 
-    if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_ZERGLING) {
-        auto spawn_points = Observation()->GetGameInfo().enemy_start_locations;
-        if (zergling_sent == NULL) {
-            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
-            zergling_sent = unit->tag;
-            checked_spawn = 1;
+        case UNIT_TYPEID::ZERG_OVERLORD: {
+            float rx = GetRandomScalar() * defensive_overlord_scatter_distance;
+            float ry = GetRandomScalar() * defensive_overlord_scatter_distance;
+            float rz = GetRandomScalar() * defensive_overlord_scatter_distance;
+            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVEPATROL, unit->pos + Point3D(rx, ry, rz));
+            break;
         }
-        else if (unit->tag == zergling_sent) {
-            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
-            checked_spawn++;
-            if (checked_spawn == spawn_points.size()) checked_spawn = 0;
+        case UNIT_TYPEID::ZERG_ZERGLING: {
+            auto spawn_points = Observation()->GetGameInfo().enemy_start_locations;
+            if (zergling_sent == NULL) {
+                Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+                zergling_sent = unit->tag;
+                checked_spawn = 1;
+            }
+            else if (unit->tag == zergling_sent) {
+                Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+                checked_spawn++;
+                if (checked_spawn == spawn_points.size()) checked_spawn = 0;
+            }
+            break;
         }
+        case UNIT_TYPEID::ZERG_DRONE: {
+            MineIdleWorkers(unit, ABILITY_ID::HARVEST_GATHER,UNIT_TYPEID::ZERG_EXTRACTOR);
+            break;
+        }
+        default:
+            break;
     }
 }
 
