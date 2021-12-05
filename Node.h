@@ -97,6 +97,7 @@ public:
 	sc2::ActionInterface* Actions();
 	sc2::Point3D getBasePosition();
 	
+	static sc2::Point2D focus;
 	float ratio;
 
 	const sc2::ObservationInterface* observation;

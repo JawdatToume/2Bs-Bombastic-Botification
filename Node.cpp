@@ -21,6 +21,8 @@ Node::~Node() {
 
 }
 
+Point2D Node::focus;
+
 // From bot_examples.cc 
 // ignores Overlords, workers, and structures
 struct IsArmy {
@@ -91,26 +93,6 @@ void Node::PrintInfo() {
     cout << "Minerals: " << minerals << endl;
     cout << "Vespene: " << vespene << endl << endl;
 }
-
-
-// void Node::GetMostDamagedBuilding() {
-//     Units buildings = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
-//     const Unit *most_damaged;
-//     bool any_damaged = false;
-//     for (const Unit *unit : buildings) {
-//         if (unit->health < unit->health_max) {
-//             any_damaged = true;
-//             if (most_damaged == NULL || (unit->health/double(unit->health_max)) < (most_damaged->health/double(most_damaged->health_max))) {
-//                 most_damaged = unit;
-//             }
-//         }
-//     }
-
-//     if (any_damaged && defense_focus != most_damaged) {
-//         defense_focus = most_damaged;
-//         Node::MoveDefense(Point2D(defense_focus->pos.x, defense_focus->pos.y));
-//     }
-// }
 
 // Get the closest enemy location
 void Node::GetClosestEnemy() {
@@ -219,15 +201,15 @@ void Node::MorphLarva(const Unit *unit) {
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
-    else if (minerals >= 75 && spawning_pool_count > 0 && timer < 36000 && timer % 5 > 2) {
+    else if (minerals >= 75 && food_cap - food_used > 0 && spawning_pool_count > 0 && timer < 36000 && timer % 5 > 2) {
         cout << "Morphing into Roach" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ROACH);
     }
-    else if (minerals >= 100 && vespene >= 50 && hydralisk_count > 0 && timer%5 <2) {
+    else if (minerals >= 100 && food_cap - food_used > 0 && vespene >= 50 && hydralisk_count > 0 && timer%5 <2) {
         cout << "Morphing into Hydralisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_HYDRALISK);
     }
-    else if (minerals >= 100 && vespene >= 50) {
+    else if (minerals >= 100 && food_cap - food_used > 0 && vespene >= 50) {
         cout << "Morphing into Mutalisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_MUTALISK);
     }
@@ -488,7 +470,11 @@ int Node::GetExpectedWorkers(UNIT_TYPEID building_type) {
     return expected_workers;
 }
 
-// Get the queens to inject Larva when they are able to, decides whether a queen spreads creep tumors or injects larva at a hatchery
+
+// UNIT CONTROL ////////////////////////////////////////////////////////////////////////////////////////////////
+
+// Get the queens to inject Larva when they are able to, decides whether a queen
+// spreads creep tumors or injects larva at a hatchery
 void Node::QueenAction(const Unit* unit, int num) {
     Units hatcheries = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
     Units lairs = Observation()->GetUnits(Unit::Alliance::Self, IsUnit(UNIT_TYPEID::ZERG_LAIR));
@@ -563,21 +549,22 @@ void Node::Ambush() {
     }
 }
 
-// UNIT CONTROL ///////////////////////////////////////////////////////////////////
-
 void Node::moveDefense() {
     Units units = Observation()->GetUnits(Unit::Alliance::Self);
     cout << "aah! move defense!" << endl;
 
-    Point2D goTo = Point2D(getBasePosition().x, getBasePosition().y);
+    focus = Point2D(getBasePosition().x, getBasePosition().y);
 
     for (const Unit *unit : units) {
         if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_SPINECRAWLER) {
             //TODO: Change tags
-            //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT);
+            Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT);
+        }
+        if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_SPORECRAWLER) {
+            Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPORECRAWLERUPROOT);
         }
         if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_ZERGLING) {
-            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, goTo, true);
+            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, focus, true);
         }
     }
 }
@@ -685,15 +672,18 @@ void Node::OnStep() {
                     Hatch(unit); // No specialization for now
                     break;
                 }
-                case UNIT_TYPEID::ZERG_SPINECRAWLER: {
-                    // Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERUPROOT, true);
-                    //Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, true);
-                    break;
+                // Uprooted spore and spinecrawlers move to defense focus
+                case UNIT_TYPEID::ZERG_SPORECRAWLERUPROOTED: {
+                    if (unit->orders.empty()) {
+                        Point2D pos = Point2D(focus.x +  GetRandomScalar() * 10, focus.y + GetRandomScalar() * 10);
+                        Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPORECRAWLERROOT, pos, true);
+                    }
+                    break; 
                 }
                 case UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED: { 
-                    Point2D goTo = Point2D(getBasePosition().x, getBasePosition().y);
+                    //Point2D goTo = Point2D(getBasePosition().x, getBasePosition().y);
                     if (unit->orders.empty()) {
-                        Point2D pos = Point2D(goTo.x +  GetRandomScalar() * 10, goTo.y + GetRandomScalar());
+                        Point2D pos = Point2D(focus.x +  GetRandomScalar() * 10, focus.y + GetRandomScalar() * 10);
                         Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPINECRAWLERROOT, pos, true);
                     }
                     break; 

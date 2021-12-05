@@ -70,7 +70,8 @@ Node* BasicSc2Bot::GetOwningNode(const sc2::Unit* u) {
 	return n;
 }
 
-
+// Creates new node if new unit is a hatchery and moves defense to it,
+// else assigns unit to closest node.
 void BasicSc2Bot::OnUnitCreated(const sc2::Unit* unit) {
 	std::cout << "Unit Created" << std::endl;
 	if (unit->alliance == Unit::Alliance::Self) {
@@ -78,6 +79,7 @@ void BasicSc2Bot::OnUnitCreated(const sc2::Unit* unit) {
 			Node* n = new Node();
 			n->addUnit(unit);
 			updateNode(n);
+			n->moveDefense();
 			nodes.push_back(n);
 		}
 		else {
@@ -86,12 +88,14 @@ void BasicSc2Bot::OnUnitCreated(const sc2::Unit* unit) {
 	}
 }
 
+// Updates Starcraft data for all nodes 
 void BasicSc2Bot::updateNode(Node* n) {
 	n->actions = Actions();
 	n->observation = Observation();
 	n->query = Query();
 }
 
+// Unit is added to the list of closest node
 void BasicSc2Bot::addUnitToClosestNode(const sc2::Unit* unit) {
 	Node* closest = NULL;
 	float mindistance = INFINITY;
@@ -106,6 +110,7 @@ void BasicSc2Bot::addUnitToClosestNode(const sc2::Unit* unit) {
 	closest->addUnit(unit);
 }
 
+// Finds weakest base and moves defense to its location
 void BasicSc2Bot::focusDefense() {
 	float lowest_health = 1.0;
 	int lowest_index = 0;
