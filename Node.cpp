@@ -209,17 +209,25 @@ void Node::MorphLarva(const Unit *unit) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
-    else if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 101) {
+    else if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 101 && timer < 36000 && timer%5 == 0) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
-    else if (minerals >= 50 && food_cap - food_used > 0){
+    else if (minerals >= 50 && food_cap - food_used > 0 && timer < 36000 && timer % 5 <3){
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
-    else if (minerals >= 100 && vespene >= 50 && hydralisk_count > 0) {
+    else if (minerals >= 75 && spawning_pool_count > 0 && timer < 36000 && timer % 5 > 2) {
+        cout << "Morphing into Roach" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ROACH);
+    }
+    else if (minerals >= 100 && vespene >= 50 && hydralisk_count > 0 && timer%5 <2) {
         cout << "Morphing into Hydralisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_HYDRALISK);
+    }
+    else if (minerals >= 100 && vespene >= 50) {
+        cout << "Morphing into Mutalisk" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_MUTALISK);
     }
     else {
         return;
@@ -228,7 +236,7 @@ void Node::MorphLarva(const Unit *unit) {
 
 // make overlord generate creep beneath it
 void Node::GenerateCreep(const Unit *unit) {
-    Actions()->UnitCommand(unit, ABILITY_ID::BEHAVIOR_GENERATECREEPON);
+    Actions()->UnitCommand(unit, ABILITY_ID::BEHAVIOR_GENERATECREEPON, true);
 }
 
 // build extractor to collect vespene gas
@@ -603,7 +611,8 @@ void Node::OnGameStart() {
 }
 
 // per frame...
-void Node::OnStep() { 
+void Node::OnStep() {
+    timer++;
     ObtainInfo();
     GetClosestEnemy();
     if (zergling_count >= 20) {
@@ -693,11 +702,12 @@ void Node::OnStep() {
                 }
                 case UNIT_TYPEID::ZERG_OVERLORD: {
                     if (lair_count > 0) {  // available once lair built
-                        // start generating creep if there is no creep
-                        if (Observation()->HasCreep(unit->pos)) {
+                        // start generating creep if there is no creep, or for 5 seconds every 5 seconds (theoretically)
+                        if (Observation()->HasCreep(unit->pos) || timer%600 < 300) {
                             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
                         }
                         else {
+                            Actions()->UnitCommand(unit, ABILITY_ID::STOP);
                             GenerateCreep(unit);
                         }
                     }

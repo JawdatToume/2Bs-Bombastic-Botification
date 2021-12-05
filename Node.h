@@ -75,6 +75,8 @@ private:
 	sc2::Tag zergling_sent = NULL;
 	int checked_spawn = 0;
 
+	int timer = 0;
+
 	double defensive_overlord_scatter_distance = 10.0;
 
 	const sc2::Unit *defense_focus; 
