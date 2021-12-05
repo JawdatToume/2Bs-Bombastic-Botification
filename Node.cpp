@@ -79,6 +79,8 @@ void Node::ObtainInfo() {
     base_count = obs->GetUnits(Unit::Alliance::Self, IsTownHall()).size();
     food_workers = obs->GetFoodWorkers();
     zergling_count = CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING);
+    attack_count = CountUnits(obs, UNIT_TYPEID::ZERG_ROACH) + CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING) + CountUnits(obs, UNIT_TYPEID::ZERG_MUTALISK) +
+                   CountUnits(obs, UNIT_TYPEID::ZERG_HYDRALISK);
     spore_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPORECRAWLER);
 }
 
@@ -209,11 +211,11 @@ void Node::MorphLarva(const Unit *unit) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
-    else if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 101 && timer < 36000 && timer%5 == 0) {
+    else if (minerals >= 75 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 101 && timer < 36000 && timer%5 == 0) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
-    else if (minerals >= 50 && food_cap - food_used > 0 && timer < 36000 && timer % 5 <3){
+    else if (minerals >= 75 && food_cap - food_used > 0 && timer < 36000 && timer % 5 <3){
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
@@ -555,13 +557,13 @@ void Node::Hatch(const Unit* unit) {
 // Send zerglings to attack
 // TODO: Get more unit types
 void Node::Ambush() {
-    Units units = Observation()->GetUnits(Unit::Alliance::Self, IsUnit(UNIT_TYPEID::ZERG_ZERGLING));
-    int zerglings = 0;
+    Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
+    int count = 0;
     for (const Unit* unit : units) {
-        if (zerglings < 20 && unit->tag != zergling_sent) {
+        if (count < 20) {
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
         }
-        zerglings++;
+        count++;
     }
 }
 
@@ -615,7 +617,7 @@ void Node::OnStep() {
     timer++;
     ObtainInfo();
     GetClosestEnemy();
-    if (zergling_count >= 20) {
+    if (attack_count >= 20) {
         Ambush();
     }
     Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
@@ -703,7 +705,7 @@ void Node::OnStep() {
                 case UNIT_TYPEID::ZERG_OVERLORD: {
                     if (lair_count > 0) {  // available once lair built
                         // start generating creep if there is no creep, or for 5 seconds every 5 seconds (theoretically)
-                        if (Observation()->HasCreep(unit->pos) || timer%600 < 300) {
+                        if (Observation()->HasCreep(unit->pos) || timer%3000 < 300) {
                             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
                             // update staging_location
                             staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z + 20));

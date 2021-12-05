@@ -65,6 +65,7 @@ private:
 		hatchery_count,
 		queen_count,
 		zergling_count,
+		attack_count,
 		spore_crawler_count,
 		hydralisk_count;
 
