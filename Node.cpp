@@ -208,7 +208,7 @@ bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, 
 
     // Check to see if unit can build there
     if (Query()->Placement(ability_type_for_structure, build_location)) {
-        cout << "Building a " << ability_type_for_structure.to_string() << endl;
+        //cout << "Building a " << ability_type_for_structure.to_string() << endl;
         if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
             // must pass in Unit type, Point2D does not work for building extractor
             Actions()->UnitCommand(unit, ability_type_for_structure, observation->GetUnit(location_tag));
@@ -705,13 +705,21 @@ void Node::OnStep() {
                     if (queens < queen_count) {
                         QueenAction(unit, queens);
                     }
+                    if (unit->energy >= 25 && unit->orders.empty()) {  // queen plant creep tumor
+                        if (Observation()->HasCreep(unit->pos)) {
+                            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                        }
+                        if (!Observation()->HasCreep(unit->pos)) {
+                            Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+                        }
+                    }
                     else {
                         HealUnits(unit);
                     }
                     queens++;
                     break;
                 }
-                case UNIT_TYPEID::ZERG_CREEPTUMOR: {
+                case UNIT_TYPEID::ZERG_CREEPTUMOR: {  // creep tumor generates creep tumor
                     // builds creep tumor when it can, this is its only available action and can only happen once
                     // move until we find a good place to place creep
                     if (unit->energy >= 25 && unit->orders.empty()) {
@@ -761,14 +769,14 @@ void Node::OnStep() {
                 case UNIT_TYPEID::ZERG_OVERLORD: {
                     if (lair_count > 0) {  // available once lair built
                         // start generating creep if there is no creep, or for 5 seconds every 5 seconds (theoretically)
+                        GenerateCreep(unit);
                         if (Observation()->HasCreep(unit->pos) || timer%3000 < 300) {
                             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
                             // update staging_location
-                            staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z + 20));
+                            staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z));
                         }
                         else {
                             Actions()->UnitCommand(unit, ABILITY_ID::STOP);
-                            GenerateCreep(unit);
                         }
                     }
                     break;
