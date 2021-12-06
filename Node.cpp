@@ -609,7 +609,7 @@ void Node::SearchAndAmbush() {
     Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
     int count = 0;
     for (const Unit* unit : units) {
-        if (count < 20) {
+        if (count < 20 && enemies.size() > 0) {
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemies[0]->pos);
         }
         else {
