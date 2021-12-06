@@ -45,7 +45,7 @@ Point2D Node::focus;
 struct IsArmy {
     IsArmy(const ObservationInterface* obs) : observation_(obs) {}
 
-    bool operator()(const Unit& unit) {
+    bool operator()(const Unit unit) {
         // From bot_examples.cc
         auto attributes = observation_->GetUnitTypeData().at(unit.unit_type).attributes;
         for (const auto& attribute : attributes) {
@@ -53,7 +53,7 @@ struct IsArmy {
                 return false;
             }
         }
-        if (unit.tag == zergling_sent) {
+        if (unit.tag == Node::zergling_sent) {
             return false;
         }
         switch (unit.unit_type.ToType()) {

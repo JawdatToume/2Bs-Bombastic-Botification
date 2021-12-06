@@ -74,7 +74,6 @@ private:
 		 researched_burrow = false,
 		 researched_metabolic = false;
 
-	sc2::Tag zergling_sent = NULL;
 	int checked_spawn = 0;
 
 	int timer = 0;
@@ -101,6 +100,7 @@ public:
 	static sc2::Point2D focus;
 	float ratio;
 	float radius;
+	static sc2::Tag zergling_sent;
 
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;
