@@ -654,13 +654,21 @@ void Node::OnStep() {
                     if (queens < queen_count) {
                         QueenAction(unit, queens);
                     }
+                    if (unit->energy >= 25 && unit->orders.empty()) {  // queen plant creep tumor
+                        if (Observation()->HasCreep(unit->pos)) {
+                            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                        }
+                        if (!Observation()->HasCreep(unit->pos)) {
+                            Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+                        }
+                    }
                     else {
                         HealUnits(unit);
                     }
                     queens++;
                     break;
                 }
-                case UNIT_TYPEID::ZERG_CREEPTUMOR: {
+                case UNIT_TYPEID::ZERG_CREEPTUMOR: {  // creep tumor generates creep tumor
                     // builds creep tumor when it can, this is its only available action and can only happen once
                     // move until we find a good place to place creep
                     if (unit->energy >= 25 && unit->orders.empty()) {
@@ -710,6 +718,7 @@ void Node::OnStep() {
                 case UNIT_TYPEID::ZERG_OVERLORD: {
                     if (lair_count > 0) {  // available once lair built
                         // start generating creep if there is no creep, or for 5 seconds every 5 seconds (theoretically)
+                        GenerateCreep(unit);
                         if (Observation()->HasCreep(unit->pos) || timer%3000 < 300) {
                             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
                             // update staging_location
@@ -717,7 +726,6 @@ void Node::OnStep() {
                         }
                         else {
                             Actions()->UnitCommand(unit, ABILITY_ID::STOP);
-                            GenerateCreep(unit);
                         }
                     }
                     break;
