@@ -34,6 +34,7 @@ private:
 				  sc2::Tag location_tag = 0, 
 				  sc2::Point3D location_point3d = sc2::Point3D(-1,-1,-1), 
 				  bool is_expansion = false);
+	//bool TryBuildUnit(sc2::AbilityID ability_type_for_unit);
 	void MorphLarva(const sc2::Unit* unit);
 	void GenerateCreep(const sc2::Unit* unit);
 	void BuildExtractor();
@@ -46,6 +47,7 @@ private:
 	void QueenAction(const sc2::Unit* unit, int num);
 	void Hatch(const sc2::Unit* unit);
 	void Ambush();
+	void SearchAndAmbush();
 	void HealUnits(const sc2::Unit* unit);
 	//void MoveDefense(sc2::Point2D &point);
 
@@ -84,6 +86,8 @@ private:
 
 	sc2::Point2D enemy_location = start_location;
 
+	
+
 //Node meta functions
 public:
 	bool unitBelongs(const sc2::Unit* unit);
@@ -101,6 +105,9 @@ public:
 	float ratio;
 	float radius;
 	static sc2::Tag zergling_sent;
+
+	static std::vector<float> baseCoordsX;
+	static std::vector<float> baseCoordsY; 
 
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;
