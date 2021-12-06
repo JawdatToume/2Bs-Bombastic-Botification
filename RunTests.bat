@@ -1,0 +1,9 @@
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Easy -m CactusValleyLE.SC2Map > results.txt;
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Easy -m CactusValleyLE.SC2Map > results.txt;
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Easy -m CactusValleyLE.SC2Map > results.txt;
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Medium -m CactusValleyLE.SC2Map > results.txt;
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Medium -m CactusValleyLE.SC2Map > results.txt;
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Medium -m CactusValleyLE.SC2Map > results.txt;
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Hard -m CactusValleyLE.SC2Map > results.txt;
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Hard -m CactusValleyLE.SC2Map > results.txt;
+FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Hard -m CactusValleyLE.SC2Map > results.txt;
