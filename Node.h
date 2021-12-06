@@ -84,6 +84,8 @@ private:
 
 	sc2::Point2D enemy_location = start_location;
 
+	
+
 //Node meta functions
 public:
 	bool unitBelongs(const sc2::Unit* unit);
@@ -101,6 +103,9 @@ public:
 	float ratio;
 	float radius;
 	static sc2::Tag zergling_sent;
+
+	static std::vector<float> baseCoordsX;
+	static std::vector<float> baseCoordsY; 
 
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;

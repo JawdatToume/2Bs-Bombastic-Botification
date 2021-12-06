@@ -40,6 +40,8 @@ Node::~Node() {
 
 Point2D Node::focus;
 sc2::Tag Node::zergling_sent;
+std::vector<float> Node::baseCoordsX;
+std::vector<float> Node::baseCoordsY;
 
 // From bot_examples.cc 
 // ignores Overlords, workers, and structures
@@ -151,6 +153,19 @@ bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, 
     // building hatchery doesn't require location to have creep
     if (ability_type_for_structure != ABILITY_ID::BUILD_HATCHERY) {
         if (!observation->HasCreep(build_location)) { return false; }
+
+        
+    } else {
+        build_location = Point2D(start_location.x + baseCoordsX[0], start_location.y + baseCoordsY[0]);
+        if (!Query()->Placement(ability_type_for_structure, build_location)) {
+            build_location = Point2D(start_location.x + baseCoordsX[1], start_location.y + baseCoordsY[1]);
+            if (!Query()->Placement(ability_type_for_structure, build_location)) {
+                build_location = Point2D(start_location.x + baseCoordsX[2], start_location.y + baseCoordsY[2]);
+                if (!Query()->Placement(ability_type_for_structure, build_location)) {
+                    return false;
+                }
+            }
+        }
     }
 
     //const ObservationInterface* observation = Observation();
@@ -615,6 +630,36 @@ void Node::OnGameStart() {
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
+
+
+    std::vector<float> A = {-33, -60, -20};
+    std::vector<float> B = {3.5, 0.5, -24.5};
+    std::vector<float> Aneg = {33, 60, 20};
+    std::vector<float> Bneg = {-3.5, -0.5, 24.5};
+    if (start_location.x > 70) {
+        // top left
+        if (start_location.y < 70) {
+            baseCoordsX = Aneg;
+            baseCoordsY = B;
+        }
+        // top right
+        else {
+            baseCoordsX = B;
+            baseCoordsY = A;
+        }
+    } else {
+        // bot left
+        if (start_location.y < 70) {
+            baseCoordsX = Bneg;
+            baseCoordsY = Aneg;
+        }
+        // bot right
+        else {
+            baseCoordsX = A;
+            baseCoordsY = Bneg;
+        }
+    }
+
     return;
 }
 
