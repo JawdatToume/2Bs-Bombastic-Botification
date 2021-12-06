@@ -663,7 +663,7 @@ void Node::OnGameStart() {
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
-    cout << start_location.x << " " << start_location.y << endl;
+    cout << Observation()->GetGameInfo().map_name << endl;
 
     std::vector<float> A = {-33, -60, -21};
     std::vector<float> B = {2.5, -3, -26};
@@ -672,15 +672,15 @@ void Node::OnGameStart() {
 
     if (Observation()->GetGameInfo().map_name == "Bel'Shir Vestige LE (Void)") {
         cout << "MAP2" << endl;
-        A = {-32, -60, -21};
-        B = {1, -3, -26};
-        Aneg = {32, 60, 21};
-        Bneg = {-1, 3, 26};
-    } else if (Observation()->GetGameInfo().map_name == "Proxima Station LE2") {
-        A = {-33, -60, -21};
-        B = {2.5, -3, -26};
-        Aneg = {33, 60, 21};
-        Bneg = {-2.5, 3, 26};
+        A = {-32, -0, -68};
+        B = {1, -38, 4};
+        Aneg = {32, 0, 68};
+        Bneg = {-1, 38, -4};
+    } else if (Observation()->GetGameInfo().map_name == "Proxima Station LE") {
+        A = {-0, -32, -28};
+        B = {27, 10, -19};
+        Aneg = {0, 32, 28};
+        Bneg = {-27, -10, 19};
     }
     
     if (start_location.y > Observation()->GetGameInfo().height / 2.0) {
@@ -845,7 +845,7 @@ void Node::OnStep() {
 
                     }
                     // Testing base positions
-                    // Point2D pon = Point2D(start_location.x + baseCoordsX[0], start_location.y + baseCoordsY[0]);
+                    // Point2D pon = Point2D(start_location.x + baseCoordsX[2], start_location.y + baseCoordsY[2]);
                     // Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, pon);
                     break;
                 }
