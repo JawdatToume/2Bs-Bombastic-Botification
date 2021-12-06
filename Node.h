@@ -67,6 +67,7 @@ private:
 		zergling_count = 0,
 		attack_count = 0,
 		spore_crawler_count = 0,
+		spire_count = 0,
 		hydralisk_count = 0;
 
 	bool ready_to_expand = false,
@@ -99,6 +100,7 @@ public:
 	
 	static sc2::Point2D focus;
 	float ratio;
+	float radius;
 
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;
