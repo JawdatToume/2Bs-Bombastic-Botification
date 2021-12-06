@@ -107,7 +107,8 @@ void Node::ObtainInfo() {
     food_workers = obs->GetFoodWorkers();
     zergling_count = CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING);
     attack_count = CountUnits(obs, UNIT_TYPEID::ZERG_ROACH) + CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING) + CountUnits(obs, UNIT_TYPEID::ZERG_MUTALISK) +
-                   CountUnits(obs, UNIT_TYPEID::ZERG_HYDRALISK);
+                   CountUnits(obs, UNIT_TYPEID::ZERG_HYDRALISK) + CountUnits(obs, UNIT_TYPEID::ZERG_ULTRALISK) + CountUnits(obs, UNIT_TYPEID::ZERG_BROODLORD) +
+                   CountUnits(obs, UNIT_TYPEID::ZERG_CORRUPTOR);
     spore_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPORECRAWLER);
 }
 
@@ -603,6 +604,21 @@ void Node::Ambush() {
     }
 }
 
+void Node::SearchAndAmbush() {
+    Units enemies = Observation()->GetUnits(Unit::Alliance::Enemy);
+    Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
+    int count = 0;
+    for (const Unit* unit : units) {
+        if (count < 20) {
+            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemies[0]->pos);
+        }
+        else {
+            break;
+        }
+        count++;
+    }
+}
+
 void Node::moveDefense() {
     Units units = Observation()->GetUnits(Unit::Alliance::Self);
     cout << "aah! move defense!" << endl;
@@ -686,6 +702,9 @@ void Node::OnStep() {
     GetClosestEnemy();
     if (attack_count >= 20) {
         Ambush();
+    }
+    if (attack_count >= 50) {
+        SearchAndAmbush();
     }
     Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
     const Unit* base;
@@ -819,6 +838,9 @@ void Node::OnStep() {
                     }
                     break;
                 }
+                case UNIT_TYPEID::ZERG_ULTRALISK: {
+                    SearchAndAmbush();
+                }
                 default: {
                     break;
                 }
@@ -853,7 +875,7 @@ void Node::OnStep() {
     if (lair_count > 0 && spire_count < 1 && minerals >= 100 && vespene >= 100) {
         TryBuild(ABILITY_ID::BUILD_SPIRE, UNIT_TYPEID::ZERG_DRONE);
     }
-    if (lair_count > 0 && minerals >= 150 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) < 1) {
+    if (minerals >= 150 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) < 1) {
         TryBuild(ABILITY_ID::BUILD_ULTRALISKCAVERN, UNIT_TYPEID::ZERG_DRONE);
     }
 

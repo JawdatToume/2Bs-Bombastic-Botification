@@ -1,9 +1,9 @@
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Easy -m CactusValleyLE.SC2Map > results.txt;
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Easy -m CactusValleyLE.SC2Map > results.txt;
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Easy -m CactusValleyLE.SC2Map > results.txt;
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Medium -m CactusValleyLE.SC2Map > results.txt;
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Medium -m CactusValleyLE.SC2Map > results.txt;
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Medium -m CactusValleyLE.SC2Map > results.txt;
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Hard -m CactusValleyLE.SC2Map > results.txt;
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Hard -m CactusValleyLE.SC2Map > results.txt;
-FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Hard -m CactusValleyLE.SC2Map > results.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Easy -m CactusValleyLE.SC2Map ;) > results1.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Easy -m CactusValleyLE.SC2Map ;) > results2.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Easy -m CactusValleyLE.SC2Map ;) > results3.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Medium -m CactusValleyLE.SC2Map ;) > results4.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Medium -m CactusValleyLE.SC2Map ;) > results5.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Medium -m CactusValleyLE.SC2Map ;) > results6.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a zerg -d Hard -m CactusValleyLE.SC2Map ;) > results7.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a protoss -d Hard -m CactusValleyLE.SC2Map ;) > results8.txt;
+(FOR /L %%i IN (1, 1, 20) DO .\build\bin\BasicSc2Bot.exe -c -a terran -d Hard -m CactusValleyLE.SC2Map ;) > results9.txt;
