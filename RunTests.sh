@@ -1,9 +1,0 @@
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a zerg -d Easy -m CactusValleyLE.SC2Map > results.txt;
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a protos -d Easy -m CactusValleyLE.SC2Map > results.txt;
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a terran -d Easy -m CactusValleyLE.SC2Map > results.txt;
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a zerg -d Medium -m CactusValleyLE.SC2Map > results.txt;
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a protos -d Medium -m CactusValleyLE.SC2Map > results.txt;
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a terran -d Medium -m CactusValleyLE.SC2Map > results.txt;
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a zerg -d Hard -m CactusValleyLE.SC2Map > results.txt;
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a protos -d Hard -m CactusValleyLE.SC2Map > results.txt;
-for i in {1..20}; do .\build\bin\BasicSc2Bot.exe -c -a terran -d Hard -m CactusValleyLE.SC2Map > results.txt;

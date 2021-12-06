@@ -90,7 +90,7 @@ int Node::CountUnits(const ObservationInterface* observation, UnitTypeID unit_ty
 void Node::ObtainInfo() {
     const ObservationInterface* obs = Observation();
     spawning_pool_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPAWNINGPOOL);
-    hatchery_count = CountUnits(obs, UNIT_TYPEID::ZERG_HATCHERY) + CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
+    hatchery_count = CountUnits(obs, UNIT_TYPEID::ZERG_HATCHERY) + CountUnits(obs, UNIT_TYPEID::ZERG_LAIR) + CountUnits(obs, UNIT_TYPEID::ZERG_HIVE);
     larva_count = CountUnits(obs, UNIT_TYPEID::ZERG_LARVA);
     queen_count = CountUnits(obs, UNIT_TYPEID::ZERG_QUEEN);
     drone_count = CountUnits(obs, UNIT_TYPEID::ZERG_DRONE);
@@ -107,7 +107,8 @@ void Node::ObtainInfo() {
     food_workers = obs->GetFoodWorkers();
     zergling_count = CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING);
     attack_count = CountUnits(obs, UNIT_TYPEID::ZERG_ROACH) + CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING) + CountUnits(obs, UNIT_TYPEID::ZERG_MUTALISK) +
-                   CountUnits(obs, UNIT_TYPEID::ZERG_HYDRALISK);
+                   CountUnits(obs, UNIT_TYPEID::ZERG_HYDRALISK) + CountUnits(obs, UNIT_TYPEID::ZERG_ULTRALISK) + CountUnits(obs, UNIT_TYPEID::ZERG_BROODLORD) +
+                   CountUnits(obs, UNIT_TYPEID::ZERG_CORRUPTOR);
     spore_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPORECRAWLER);
 }
 
@@ -250,9 +251,21 @@ void Node::MorphLarva(const Unit* unit) {
     // TODO: Multiple spawned at once. Make only spawn one?
     int larva_count = CountUnits(observation, UNIT_TYPEID::ZERG_LARVA);
 
+    if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 1) {
+        cout << "Morphing into Zergling" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
+    }
     if (food_used == food_cap && minerals >= 100) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
+    }
+    if (minerals >= 300 && food_cap - food_used > 0 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) > 0) {
+        cout << "Morphing into Ultralisk" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ULTRALISK);
+    }
+    if (minerals >= 150 && food_cap - food_used > 0 && vespene >= 100 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0) {
+        cout << "Morphing into Corruptor" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_CORRUPTOR);
     }
     if (minerals >= 100 && food_cap - food_used > 0 && vespene >= 50 && hydralisk_count > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_HYDRALISK) <= CountUnits(observation, UNIT_TYPEID::ZERG_MUTALISK)) {
         cout << "Morphing into Hydralisk" << endl;
@@ -535,16 +548,10 @@ int Node::GetExpectedWorkers(UNIT_TYPEID building_type) {
 // spreads creep tumors or injects larva at a hatchery
 void Node::QueenAction(const Unit* unit, int num) {
     Units hatcheries = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
-    Units lairs = Observation()->GetUnits(Unit::Alliance::Self, IsUnit(UNIT_TYPEID::ZERG_LAIR));
-    if (tumor_count > 0) {
-        num %= hatcheries.size() + lairs.size();
-    }
-    else {
-        num %= hatcheries.size() + lairs.size() + 1;
-    }
+    num %= hatcheries.size() + 1;
 
     // if there are no creep tumors, make one so it can start spreading creep
-    if (unit->energy >= 25 && unit->orders.empty() && tumor_count == 0 && num >= hatcheries.size()+lairs.size()) {
+    if (unit->energy >= 25 && unit->orders.empty() && num >= hatcheries.size()) {
         // move towards expand location until we find a point where there is no creep, then drop a tumor
         // idk if this works rn I'll have to adjust it later
         if (tumor_count == 0) {
@@ -564,18 +571,6 @@ void Node::QueenAction(const Unit* unit, int num) {
             // prevents impossible requests
             else if(unit->energy >= 25 && unit->orders.empty()){
                 Actions()->UnitCommand(unit, ABILITY_ID::EFFECT_INJECTLARVA, hatcheries.at(i));
-            }
-        }
-    }
-    for (size_t i = 0; i < lairs.size(); i++) {
-        if (num == i) {
-            // if hatchery is not completely built yet
-            if (lairs.at(i)->build_progress != 1) {
-                num++;
-            }
-            // prevents impossible requests
-            else if (unit->energy >= 25 && unit->orders.empty()) {
-                Actions()->UnitCommand(unit, ABILITY_ID::EFFECT_INJECTLARVA, lairs.at(i));
             }
         }
     }
@@ -602,6 +597,21 @@ void Node::Ambush() {
     for (const Unit* unit : units) {
         if (count < 20) {
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
+        }
+        else {
+            break;
+        }
+        count++;
+    }
+}
+
+void Node::SearchAndAmbush() {
+    Units enemies = Observation()->GetUnits(Unit::Alliance::Enemy);
+    Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
+    int count = 0;
+    for (const Unit* unit : units) {
+        if (count < 20) {
+            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemies[0]->pos);
         }
         else {
             break;
@@ -696,6 +706,9 @@ void Node::OnStep() {
     if (attack_count >= 20) {
         Ambush();
     }
+    if (attack_count >= 50) {
+        SearchAndAmbush();
+    }
     Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
     const Unit* base;
     bool baseFound = false;
@@ -768,10 +781,20 @@ void Node::OnStep() {
                     Hatch(unit);
                     if (minerals >= 150 && vespene >= 100) { // upgrade 
                         Actions()->UnitCommand(unit, ABILITY_ID::MORPH_LAIR);
+                        ready_to_expand = true;
                     }
                     break;
                 }
                 case UNIT_TYPEID::ZERG_LAIR: {
+                    Hatch(unit); // No specialization for now
+                    if (minerals >= 200 && vespene >= 150 && unit->orders.empty()) { // upgrade 
+                        Actions()->UnitCommand(unit, ABILITY_ID::MORPH_HIVE);
+                        Actions()->SendChat("Insolent little fool!");
+                        Actions()->SendChat("Prepare for the darkness owo.");
+                    }
+                    break;
+                }
+                case UNIT_TYPEID::ZERG_HIVE: {
                     Hatch(unit); // No specialization for now
                     break;
                 }
@@ -781,7 +804,7 @@ void Node::OnStep() {
                         Point2D pos = Point2D(focus.x +  GetRandomScalar() * 10, focus.y + GetRandomScalar() * 10);
                         Actions()->UnitCommand(unit, ABILITY_ID::MORPH_SPORECRAWLERROOT, pos, true);
                     }
-                    break; 
+                    break;
                 }
                 case UNIT_TYPEID::ZERG_SPINECRAWLERUPROOTED: { 
                     //Point2D goTo = Point2D(getBasePosition().x, getBasePosition().y);
@@ -812,6 +835,21 @@ void Node::OnStep() {
                     // Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, pon);
                     break;
                 }
+                case UNIT_TYPEID::ZERG_SPIRE: {
+                    if (minerals >= 100 && vespene >= 150) {
+                        Actions()->UnitCommand(unit, ABILITY_ID::MORPH_GREATERSPIRE);
+                    }
+                }
+                case UNIT_TYPEID::ZERG_CORRUPTOR: {
+                    if (minerals >= 150 && food_cap - food_used > 0 && vespene >= 150 && CountUnits(observation, UNIT_TYPEID::ZERG_GREATERSPIRE) > 0) {
+                        cout << "Morphing into Brood Lord" << endl;
+                        Actions()->UnitCommand(unit, ABILITY_ID::MORPH_BROODLORD);
+                    }
+                    break;
+                }
+                case UNIT_TYPEID::ZERG_ULTRALISK: {
+                    SearchAndAmbush();
+                }
                 default: {
                     break;
                 }
@@ -826,6 +864,9 @@ void Node::OnStep() {
     if (spawning_pool_count < 1 && minerals >= 200) {
         TryBuild(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
     }
+    if (spawning_pool_count > 0 && minerals >= 150 && CountUnits(observation, UNIT_TYPEID::ZERG_ROACHWARREN) < 1) {
+        TryBuild(ABILITY_ID::BUILD_ROACHWARREN, UNIT_TYPEID::ZERG_DRONE);
+    }
     if (spine_crawler_count < 3 && minerals >= 100) {
         TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
     }
@@ -834,13 +875,17 @@ void Node::OnStep() {
         TryBuild(ABILITY_ID::BUILD_SPORECRAWLER, UNIT_TYPEID::ZERG_DRONE);
     }
     // built hydralisk den
+    if (lair_count > 0 && minerals >= 100 && vespene >= 100 && CountUnits(observation, UNIT_TYPEID::ZERG_INFESTATIONPIT) < 1) {
+        TryBuild(ABILITY_ID::BUILD_INFESTATIONPIT, UNIT_TYPEID::ZERG_DRONE);
+    }
     if (lair_count > 0 && hydralisk_count < 1 && minerals >= 100 && vespene >= 100) {
         TryBuild(ABILITY_ID::BUILD_HYDRALISKDEN, UNIT_TYPEID::ZERG_DRONE);
-        ready_to_expand = true;
     }
     if (lair_count > 0 && spire_count < 1 && minerals >= 100 && vespene >= 100) {
         TryBuild(ABILITY_ID::BUILD_SPIRE, UNIT_TYPEID::ZERG_DRONE);
-        ready_to_expand = true;
+    }
+    if (minerals >= 150 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) < 1) {
+        TryBuild(ABILITY_ID::BUILD_ULTRALISKCAVERN, UNIT_TYPEID::ZERG_DRONE);
     }
 
     bool not_enough_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;

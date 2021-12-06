@@ -47,6 +47,7 @@ private:
 	void QueenAction(const sc2::Unit* unit, int num);
 	void Hatch(const sc2::Unit* unit);
 	void Ambush();
+	void SearchAndAmbush();
 	void HealUnits(const sc2::Unit* unit);
 	//void MoveDefense(sc2::Point2D &point);
 
