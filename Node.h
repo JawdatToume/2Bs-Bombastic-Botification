@@ -34,6 +34,7 @@ private:
 				  sc2::Tag location_tag = 0, 
 				  sc2::Point3D location_point3d = sc2::Point3D(-1,-1,-1), 
 				  bool is_expansion = false);
+	//bool TryBuildUnit(sc2::AbilityID ability_type_for_unit);
 	void MorphLarva(const sc2::Unit* unit);
 	void GenerateCreep(const sc2::Unit* unit);
 	void BuildExtractor();
