@@ -34,6 +34,7 @@ private:
 
 	void focusDefense();
 	Node* focus;
+	bool firstNode = true;
 };
 
 #include "Node.h"
