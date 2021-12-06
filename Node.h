@@ -55,19 +55,19 @@ private:
 	sc2::Point3D start_location, staging_location;  // on game start
 	std::vector<sc2::Point3D> expansions;
 
-	int larva_count,
-		drone_count,
-		spine_crawler_count,
-		spawning_pool_count,
-		tumor_count,
-		lair_count,
-		base_count,
-		hatchery_count,
-		queen_count,
-		zergling_count,
-		attack_count,
-		spore_crawler_count,
-		hydralisk_count;
+	int larva_count = 0,
+		drone_count = 0,
+		spine_crawler_count = 0,
+		spawning_pool_count = 0,
+		tumor_count = 0,
+		lair_count = 0,
+		base_count = 0,
+		hatchery_count = 0,
+		queen_count = 0,
+		zergling_count = 0,
+		attack_count = 0,
+		spore_crawler_count = 0,
+		hydralisk_count = 0;
 
 	bool ready_to_expand = false,
 		 researched_burrow = false,

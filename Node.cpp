@@ -13,7 +13,23 @@ using namespace std;
 
 //Constructor
 Node::Node() {
-
+    larva_count = 0;
+    drone_count = 0;
+    spine_crawler_count = 0;
+    spawning_pool_count = 0;
+    tumor_count = 0;
+    lair_count = 0;
+    base_count = 0;
+    hatchery_count = 0;
+    queen_count = 0;
+    zergling_count = 0;
+    attack_count = 0;
+    spore_crawler_count = 0;
+    hydralisk_count = 0;
+    observation = Observation();
+    query = Query();
+    actions = Actions();
+    ratio = 0;
 }
 
 //Destructor
@@ -38,6 +54,7 @@ struct IsArmy {
         }
         switch (unit.unit_type.ToType()) {
             case UNIT_TYPEID::ZERG_OVERLORD: return false;
+            case UNIT_TYPEID::ZERG_QUEEN: return false;
             case UNIT_TYPEID::ZERG_DRONE: return false;
             case UNIT_TYPEID::ZERG_LARVA: return false;
             case UNIT_TYPEID::ZERG_EGG: return false;
@@ -409,7 +426,7 @@ bool Node::BuildNewHatchery() {
         return false;
     }
     // if we have extra workers around and more than enough minerals, try to build another base
-    if (GetExpectedWorkers(UNIT_TYPEID::ZERG_EXTRACTOR) < food_workers && minerals > min<size_t>(base_count * 300, 1200)) {
+    if (GetExpectedWorkers(UNIT_TYPEID::ZERG_EXTRACTOR) < food_workers && minerals > min<size_t>((size_t)base_count * 300, 1200)) {
         return TryExpand(ABILITY_ID::BUILD_HATCHERY, UNIT_TYPEID::ZERG_DRONE);
     }
     return false;
@@ -605,15 +622,17 @@ void Node::OnStep() {
     }
     Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
     const Unit* base;
+    bool baseFound = false;
     for (int j = 0; j < bases.size(); j++) {
         for (int i = 0; i < nodeUnits.size(); i++) {
             if (nodeUnits[i] == bases[j]->tag) {
                 base = bases[j];
+                baseFound = true;
                 break;
             }
         }
     }
-    if (base) {
+    if (baseFound) {
         ratio = base->health / base->health_max;
     } else {
         ratio = 1;
@@ -807,7 +826,7 @@ sc2::Point3D Node::getBasePosition() {
     }
 
     //should never run, each node should own at least 1 hatchery. may run on a node where the hatchery has been destroyed. in that event, consider distributing units to neighbour nodes? nodes dont get destroyed when destroyed in game rn
-    return sc2::Point3D(INFINITY, INFINITY, INFINITY);
+    return start_location;
 }
 
 //Adds the given unit to the node
