@@ -46,8 +46,15 @@ void BasicSc2Bot::OnStep() {
 
 //Called per each unit without a job
 void BasicSc2Bot::OnUnitIdle(const sc2::Unit* unit) {
+	bool belongs = false;
 	for (int i = 0; i < nodes.size(); i++) {
-		if (nodes[i]->unitBelongs(unit)) nodes[i]->OnUnitIdle(unit);
+		if (nodes[i]->unitBelongs(unit)) {
+			belongs = true;
+			nodes[i]->OnUnitIdle(unit);
+		}
+	}
+	if (!belongs) {
+		addUnitToClosestNode(unit);
 	}
 }
 
@@ -76,11 +83,16 @@ void BasicSc2Bot::OnUnitCreated(const sc2::Unit* unit) {
 	std::cout << "Unit Created" << std::endl;
 	if (unit->alliance == Unit::Alliance::Self) {
 		if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_HATCHERY) {
+			if (firstNode) {
+				firstNode = false;
+				return;
+			}
 			Node* n = new Node();
 			n->addUnit(unit);
 			updateNode(n);
-			n->moveDefense();
 			nodes.push_back(n);
+			n->moveDefense();
+
 		}
 		else {
 			addUnitToClosestNode(unit);
@@ -100,6 +112,7 @@ void BasicSc2Bot::addUnitToClosestNode(const sc2::Unit* unit) {
 	Node* closest = NULL;
 	float mindistance = INFINITY;
 	sc2::Point3D unitPos = unit->pos;
+	//cout << "adding unit to closest node..." << endl;
 	for (int i = 0; i < nodes.size(); i++) {
 		float distance = DistanceSquared2D(nodes[i]->getBasePosition(), unitPos);
 		if (distance < mindistance) {
