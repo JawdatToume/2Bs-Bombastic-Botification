@@ -157,6 +157,7 @@ bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, 
 
         
     } else {
+        cout << "trying yo build hatchery..." << endl;
         build_location = Point2D(start_location.x + baseCoordsX[0], start_location.y + baseCoordsY[0]);
         if (!Query()->Placement(ability_type_for_structure, build_location)) {
             build_location = Point2D(start_location.x + baseCoordsX[1], start_location.y + baseCoordsY[1]);
@@ -662,15 +663,15 @@ void Node::OnGameStart() {
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
+    cout << start_location.x << " " << start_location.y << endl;
 
-
-    std::vector<float> A = {-33, -60, -20};
-    std::vector<float> B = {3.5, 0.5, -24.5};
-    std::vector<float> Aneg = {33, 60, 20};
-    std::vector<float> Bneg = {-3.5, -0.5, 24.5};
-    if (start_location.x > 70) {
+    std::vector<float> A = {-33, -60, -21};
+    std::vector<float> B = {2.5, -3, -26};
+    std::vector<float> Aneg = {33, 60, 21};
+    std::vector<float> Bneg = {-2.5, 3, 26};
+    if (start_location.y > 70) {
         // top left
-        if (start_location.y < 70) {
+        if (start_location.x < 70) {
             baseCoordsX = Aneg;
             baseCoordsY = B;
         }
@@ -681,7 +682,7 @@ void Node::OnGameStart() {
         }
     } else {
         // bot left
-        if (start_location.y < 70) {
+        if (start_location.x < 70) {
             baseCoordsX = Bneg;
             baseCoordsY = Aneg;
         }
@@ -691,6 +692,8 @@ void Node::OnGameStart() {
             baseCoordsY = Bneg;
         }
     }
+
+    cout << baseCoordsX[0] << " " << baseCoordsY[0] << endl;
 
     return;
 }
@@ -822,8 +825,14 @@ void Node::OnStep() {
                         }
                         else {
                             Actions()->UnitCommand(unit, ABILITY_ID::STOP);
+                           
                         }
+                        
+
                     }
+                    // Testing base positions
+                    // Point2D pon = Point2D(start_location.x + baseCoordsX[2], start_location.y + baseCoordsY[2]);
+                    // Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, pon);
                     break;
                 }
                 case UNIT_TYPEID::ZERG_SPIRE: {
