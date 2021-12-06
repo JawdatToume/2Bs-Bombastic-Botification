@@ -54,7 +54,7 @@ private:
 	int food_cap, food_used, food_workers;
 	int minerals = 0, vespene = 0;
 
-	sc2::Point3D start_location, staging_location;  // on game start
+	sc2::Point3D start_location, staging_location, overlord_staging_location;  // on game start
 	std::vector<sc2::Point3D> expansions;
 
 	int larva_count = 0,

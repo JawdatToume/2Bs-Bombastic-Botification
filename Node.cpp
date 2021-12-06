@@ -251,7 +251,7 @@ void Node::MorphLarva(const Unit* unit) {
     // TODO: Multiple spawned at once. Make only spawn one?
     int larva_count = CountUnits(observation, UNIT_TYPEID::ZERG_LARVA);
 
-    if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 1) {
+    if (minerals >= 25 && food_cap - food_used > 0 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 1) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
@@ -275,7 +275,7 @@ void Node::MorphLarva(const Unit* unit) {
         cout << "Morphing into Mutalisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_MUTALISK);
     }
-    if (minerals >= 75 && food_cap - food_used > 0 && spawning_pool_count > 0) {
+    if (minerals >= 75 && food_cap - food_used > 0 && spawning_pool_count > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_SPIRE) > 0) {
         cout << "Morphing into Roach" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ROACH);
     }
@@ -283,10 +283,10 @@ void Node::MorphLarva(const Unit* unit) {
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
-    if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 101) {
-        cout << "Morphing into Zergling" << endl;
-        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
-    }
+    // if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 50 && food_cap - food_used > 0) {
+    //     cout << "Morphing into Zergling" << endl;
+    //     Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
+    // }
 }
 
 // make overlord generate creep beneath it
@@ -662,6 +662,7 @@ void Node::OnGameStart() {
     cout << "start!!!!!!" << endl;
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
+    overlord_staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
     cout << start_location.x << " " << start_location.y << endl;
 
@@ -743,14 +744,14 @@ void Node::OnStep() {
                     if (queens < queen_count) {
                         QueenAction(unit, queens);
                     }
-                    if (unit->energy >= 25 && unit->orders.empty()) {  // queen plant creep tumor
-                        if (Observation()->HasCreep(unit->pos)) {
-                            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
-                        }
-                        if (!Observation()->HasCreep(unit->pos)) {
-                            Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
-                        }
-                    }
+                    // if (unit->energy >= 25 && unit->orders.empty()) {  // queen plant creep tumor
+                    //     if (Observation()->HasCreep(unit->pos)) {
+                    //         Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, staging_location);
+                    //     }
+                    //     if (!Observation()->HasCreep(unit->pos)) {
+                    //         Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+                    //     }
+                    // }
                     else {
                         HealUnits(unit);
                     }
@@ -819,13 +820,14 @@ void Node::OnStep() {
                         // start generating creep if there is no creep, or for 5 seconds every 5 seconds (theoretically)
                         GenerateCreep(unit);
                         if (Observation()->HasCreep(unit->pos) || timer%3000 < 300) {
-                            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
-                            // update staging_location
-                            staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z));
+                            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, overlord_staging_location);
+                            // update staging_location (staging_location.z not changed)
+                            overlord_staging_location.x += radius/2;
+                            overlord_staging_location.y += radius/2;
+                            overlord_staging_location.z += radius/2;
                         }
                         else {
                             Actions()->UnitCommand(unit, ABILITY_ID::STOP);
-                           
                         }
                         
 
