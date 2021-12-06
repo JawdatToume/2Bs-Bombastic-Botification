@@ -30,6 +30,7 @@ Node::Node() {
     query = Query();
     actions = Actions();
     ratio = 0;
+    radius = 1000;
 }
 
 //Destructor
@@ -44,13 +45,16 @@ Point2D Node::focus;
 struct IsArmy {
     IsArmy(const ObservationInterface* obs) : observation_(obs) {}
 
-    bool operator()(const Unit& unit) {
+    bool operator()(const Unit unit) {
         // From bot_examples.cc
         auto attributes = observation_->GetUnitTypeData().at(unit.unit_type).attributes;
         for (const auto& attribute : attributes) {
             if (attribute == Attribute::Structure) {
                 return false;
             }
+        }
+        if (unit.tag == Node::zergling_sent) {
+            return false;
         }
         switch (unit.unit_type.ToType()) {
             case UNIT_TYPEID::ZERG_OVERLORD: return false;
@@ -94,6 +98,7 @@ void Node::ObtainInfo() {
     minerals = obs->GetMinerals();
     vespene = obs->GetVespene();
     lair_count = CountUnits(obs, UNIT_TYPEID::ZERG_LAIR);
+    spire_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPIRE);
     hydralisk_count = CountUnits(obs, UNIT_TYPEID::ZERG_HYDRALISKDEN);
     base_count = obs->GetUnits(Unit::Alliance::Self, IsTownHall()).size();
     food_workers = obs->GetFoodWorkers();
@@ -439,7 +444,7 @@ bool Node::TryExpand(AbilityID build_ability, UnitTypeID unit_type) {
     Point3D closest_expansion;
     for (const auto& expansion : expansions) {
         float current_distance = Distance2D(start_location, expansion);
-        if (current_distance < .01f) {
+        if (current_distance < radius) {
             continue;
         }
         // find closest ideal location for to expand base
@@ -754,6 +759,10 @@ void Node::OnStep() {
     // built hydralisk den
     if (lair_count > 0 && hydralisk_count < 1 && minerals >= 100 && vespene >= 100) {
         TryBuild(ABILITY_ID::BUILD_HYDRALISKDEN, UNIT_TYPEID::ZERG_DRONE);
+        ready_to_expand = true;
+    }
+    if (lair_count > 0 && spire_count < 1 && minerals >= 100 && vespene >= 100) {
+        TryBuild(ABILITY_ID::BUILD_SPIRE, UNIT_TYPEID::ZERG_DRONE);
         ready_to_expand = true;
     }
 

@@ -67,13 +67,13 @@ private:
 		zergling_count = 0,
 		attack_count = 0,
 		spore_crawler_count = 0,
+		spire_count = 0,
 		hydralisk_count = 0;
 
 	bool ready_to_expand = false,
 		 researched_burrow = false,
 		 researched_metabolic = false;
 
-	sc2::Tag zergling_sent = NULL;
 	int checked_spawn = 0;
 
 	int timer = 0;
@@ -99,6 +99,8 @@ public:
 	
 	static sc2::Point2D focus;
 	float ratio;
+	float radius;
+	static sc2::Tag zergling_sent;
 
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;
