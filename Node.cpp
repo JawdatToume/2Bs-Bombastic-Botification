@@ -489,15 +489,11 @@ void Node::QueenAction(const Unit* unit, int num) {
     if (unit->energy >= 25 && unit->orders.empty() && tumor_count == 0 && num >= hatcheries.size()+lairs.size()) {
         // move towards expand location until we find a point where there is no creep, then drop a tumor
         // idk if this works rn I'll have to adjust it later
-        if (Observation()->HasCreep(unit->pos)) {
-            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
-        }
-        if (!Observation()->HasCreep(unit->pos)) {
-            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, start_location);
-        }
-        if (Observation()->HasCreep(unit->pos)) {
-            Actions()->UnitCommand(unit, ABILITY_ID::STOP);
+        if (tumor_count == 0) {
             Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
+        }
+        else {
+            HealUnits(unit);
         }
     }
     // decide which hatchery we're building at, cycles between queens
