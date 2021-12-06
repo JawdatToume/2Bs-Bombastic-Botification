@@ -126,7 +126,7 @@ void Node::GetClosestEnemy() {
         sc2::Point2D closest_enemy = staging_location;
         int zerglings = 0;
         for (const Unit* unit : enemies) {
-            if (Distance2D(unit->pos, start_location) < Distance2D(closest_enemy, start_location) || closest_enemy == staging_location) {
+            if ((Distance2D(unit->pos, start_location) < Distance2D(closest_enemy, start_location) || closest_enemy == staging_location) &&  !unit->is_flying ) {
                 closest_enemy = unit->pos;
             }
         }
