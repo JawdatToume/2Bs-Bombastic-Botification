@@ -39,6 +39,7 @@ Node::~Node() {
 }
 
 Point2D Node::focus;
+sc2::Tag Node::zergling_sent;
 
 // From bot_examples.cc 
 // ignores Overlords, workers, and structures
