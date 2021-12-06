@@ -170,7 +170,7 @@ bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, 
 
     // Check to see if unit can build there
     if (Query()->Placement(ability_type_for_structure, build_location)) {
-        cout << "Building a " << ability_type_for_structure.to_string() << endl;
+        //cout << "Building a " << ability_type_for_structure.to_string() << endl;
         if (ability_type_for_structure == ABILITY_ID::BUILD_EXTRACTOR) {
             // must pass in Unit type, Point2D does not work for building extractor
             Actions()->UnitCommand(unit, ability_type_for_structure, observation->GetUnit(location_tag));
@@ -694,7 +694,7 @@ void Node::OnStep() {
                         if (Observation()->HasCreep(unit->pos) || timer%3000 < 300) {
                             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
                             // update staging_location
-                            staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z + 20));
+                            staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z));
                         }
                         else {
                             Actions()->UnitCommand(unit, ABILITY_ID::STOP);
