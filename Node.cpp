@@ -759,7 +759,7 @@ void Node::OnStep() {
     if (attack_count >= army_size) {
         Ambush();
     }
-    if (attack_count >= 50) {
+    if (attack_count+attacking_units >= 50) {
         SearchAndAmbush();
     }
     Units bases = Observation()->GetUnits(Unit::Alliance::Self, IsTownHall());
