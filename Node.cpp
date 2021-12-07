@@ -609,6 +609,7 @@ void Node::Ambush() {
     }
 }
 
+// Search for the enemy actively
 void Node::SearchAndAmbush() {
     Units enemies = Observation()->GetUnits(Unit::Alliance::Enemy);
     Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
@@ -942,7 +943,10 @@ void Node::OnUnitIdle(const Unit *unit) {
             if (zergling_sent == NULL) {
                 Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
                 zergling_sent = unit->tag;
-                checked_spawn = 1;
+                checked_spawn = 0;
+                if (spawn_points.size() > 0) {
+                    check_spawn++;
+                }
             }
             else if (unit->tag == zergling_sent) {
                 Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
