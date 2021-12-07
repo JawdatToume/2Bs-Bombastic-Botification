@@ -38,6 +38,7 @@ Node::~Node() {
 
 }
 
+long double Node::elapsedTime = 0;
 int Node::base_count = 0;
 Point2D Node::focus;
 sc2::Tag Node::zergling_sent;
