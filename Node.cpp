@@ -613,15 +613,13 @@ void Node::Ambush() {
 void Node::SearchAndAmbush() {
     Units enemies = Observation()->GetUnits(Unit::Alliance::Enemy);
     Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
-    int count = 0;
     for (const Unit* unit : units) {
-        if (count < 20 && enemies.size() > 0) {
+        if (enemies.size() > 0) {
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemies[0]->pos);
         }
         else {
-            break;
+            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
         }
-        count++;
     }
 }
 
@@ -945,7 +943,7 @@ void Node::OnUnitIdle(const Unit *unit) {
                 zergling_sent = unit->tag;
                 checked_spawn = 0;
                 if (spawn_points.size() > 0) {
-                    check_spawn++;
+                    checked_spawn++;
                 }
             }
             else if (unit->tag == zergling_sent) {
