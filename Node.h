@@ -54,6 +54,8 @@ private:
 	int food_cap, food_used, food_workers;
 	int minerals = 0, vespene = 0;
 
+	long double elapsedTime;
+
 	sc2::Point3D start_location, staging_location;  // on game start
 	std::vector<sc2::Point3D> expansions;
 
@@ -69,7 +71,8 @@ private:
 		attack_count = 0,
 		spore_crawler_count = 0,
 		spire_count = 0,
-		hydralisk_count = 0;
+		hydralisk_count = 0,
+		army_size = 3;
 
 	bool ready_to_expand = false,
 		 researched_burrow = false,
