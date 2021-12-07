@@ -270,45 +270,48 @@ bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, 
 void Node::MorphLarva(const Unit* unit) {
     // Become overlord if maxed food cap
     // TODO: Multiple spawned at once. Make only spawn one?
+    int min_erals = (int)(elapsedTime / 6.0);
+    if (min_erals > 100.0) min_erals = 100.0;
+
     int larva_count = CountUnits(observation, UNIT_TYPEID::ZERG_LARVA);
 
-    if (minerals >= 25 && spawning_pool_count > 0 && zergling_count < 1) {
+    if (minerals >= 25 + min_erals && spawning_pool_count > 0 && zergling_count < 1) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
-    if (food_cap - food_used < 4 && minerals >= 100 && Observation()->GetFoodCap() != 200) {
+    if (food_cap - food_used < 4 && minerals >= 100 + min_erals && Observation()->GetFoodCap() != 200) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
-    if (drone_count < 10 && minerals >= 50 && food_cap - food_used > 0) {
+    if (drone_count < 10 && minerals >= 50 + min_erals && food_cap - food_used > 0) {
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
-    if (minerals >= 300 && food_cap - food_used > 0 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) > 0 && elapsedTime > 560) {
+    if (minerals >= 300 + min_erals && food_cap - food_used > 0 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) > 0 && elapsedTime > 560) {
         cout << "Morphing into Ultralisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ULTRALISK);
     }
-    if (minerals >= 150 && food_cap - food_used > 0 && vespene >= 100 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0) {
+    if (minerals >= 150 + min_erals && food_cap - food_used > 0 && vespene >= 100 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0) {
         cout << "Morphing into Corruptor" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_CORRUPTOR);
     }
-    if (minerals >= 100 && food_cap - food_used > 0 && vespene >= 50 && hydralisk_count > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_HYDRALISK) <= CountUnits(observation, UNIT_TYPEID::ZERG_MUTALISK)) {
+    if (minerals >= 100 + min_erals && food_cap - food_used > 0 && vespene >= 50 && hydralisk_count > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_HYDRALISK) <= CountUnits(observation, UNIT_TYPEID::ZERG_MUTALISK)) {
         cout << "Morphing into Hydralisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_HYDRALISK);
     }
-    if (minerals >= 100 && food_cap - food_used > 0 && vespene >= 50 && spire_count > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_HYDRALISK) > CountUnits(observation, UNIT_TYPEID::ZERG_MUTALISK)) {
+    if (minerals >= 100 + min_erals && food_cap - food_used > 0 && vespene >= 50 && spire_count > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_HYDRALISK) > CountUnits(observation, UNIT_TYPEID::ZERG_MUTALISK)) {
         cout << "Morphing into Mutalisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_MUTALISK);
     }
-    if (minerals >= 75 && food_cap - food_used > 0 && spawning_pool_count > 0 && zergling_count >= 1) {
+    if (minerals >= 75 + min_erals && food_cap - food_used > 0 && spawning_pool_count > 0 && zergling_count >= 1) {
         cout << "Morphing into Roach" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ROACH);
     }
-    if (minerals >= 50 && food_cap - food_used > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_DRONE) < 16){
+    if (minerals >= 50 + min_erals && food_cap - food_used > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_DRONE) < 16){
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
-    if (minerals >= 25 && spawning_pool_count > 0  && food_workers > 20 && zergling_count < 30) {
+    if (minerals >= 25 + min_erals && spawning_pool_count > 0  && food_workers > 20 && zergling_count < 30) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
@@ -821,10 +824,7 @@ void Node::OnStep() {
 
             switch (unit->unit_type.ToType()) {
                 case UNIT_TYPEID::ZERG_LARVA: {
-                    int min_erals = (int)(elapsedTime / 6.0);
-                    if (min_erals > 100.0) min_erals = 100.0;
-                    cout << min_erals << endl;
-                    if (minerals >= min_erals) MorphLarva(unit);
+                    MorphLarva(unit);
                     break;
                 }
                 case UNIT_TYPEID::ZERG_QUEEN: {
