@@ -818,8 +818,8 @@ void Node::OnStep() {
                     Hatch(unit); // No specialization for now
                     if (minerals >= 200 && vespene >= 150) { // upgrade 
                         Actions()->UnitCommand(unit, ABILITY_ID::MORPH_HIVE);
-                        Actions()->SendChat("Insolent little fool!");
-                        Actions()->SendChat("Prepare for the darkness owo.");
+                        //Actions()->SendChat("Insolent little fool!");
+                        //Actions()->SendChat("Prepare for the darkness owo.");
                     }
                     break;
                 }
