@@ -821,7 +821,10 @@ void Node::OnStep() {
 
             switch (unit->unit_type.ToType()) {
                 case UNIT_TYPEID::ZERG_LARVA: {
-                    MorphLarva(unit);
+                    int min_erals = (int)(elapsedTime / 6.0);
+                    if (min_erals > 100.0) min_erals = 100.0;
+                    cout << min_erals << endl;
+                    if (minerals >= min_erals) MorphLarva(unit);
                     break;
                 }
                 case UNIT_TYPEID::ZERG_QUEEN: {
