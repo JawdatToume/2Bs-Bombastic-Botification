@@ -263,7 +263,7 @@ void Node::MorphLarva(const Unit* unit) {
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
-    if (minerals >= 300 && food_cap - food_used > 0 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) > 0) {
+    if (minerals >= 300 && food_cap - food_used > 0 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) > 0 && elapsedTime > 560) {
         cout << "Morphing into Ultralisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ULTRALISK);
     }
@@ -279,15 +279,15 @@ void Node::MorphLarva(const Unit* unit) {
         cout << "Morphing into Mutalisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_MUTALISK);
     }
-    if (minerals >= 75 && food_cap - food_used > 0 && spawning_pool_count > 0) {
+    if (minerals >= 75 && food_cap - food_used > 0 && spawning_pool_count > 0 && zergling_count >= 1) {
         cout << "Morphing into Roach" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ROACH);
     }
-    if (minerals >= 50 && food_cap - food_used > 0){
+    if (minerals >= 50 && food_cap - food_used > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_DRONE) < 16){
         cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
-    if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 101) {
+    if (minerals >= 25 && spawning_pool_count > 0  && food_workers > 20 && zergling_count < 30) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
@@ -876,7 +876,7 @@ void Node::OnStep() {
                     break;
                 }
                 case UNIT_TYPEID::ZERG_ULTRALISK: {
-                    SearchAndAmbush();
+                    //SearchAndAmbush();
                 }
                 default: {
                     break;
@@ -895,11 +895,11 @@ void Node::OnStep() {
     if (spawning_pool_count > 0 && minerals >= 150 && CountUnits(observation, UNIT_TYPEID::ZERG_ROACHWARREN) < 1) {
         TryBuild(ABILITY_ID::BUILD_ROACHWARREN, UNIT_TYPEID::ZERG_DRONE);
     }
-    if (spine_crawler_count < 3 && minerals >= 100) {
+    if (spine_crawler_count < 2 && minerals >= 100) {
         TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
     }
     // build spore crawler for defending air attacks
-    if (spore_crawler_count < 5 && minerals >= 75) {
+    if (spore_crawler_count < 2 && minerals >= 75) {
         TryBuild(ABILITY_ID::BUILD_SPORECRAWLER, UNIT_TYPEID::ZERG_DRONE);
     }
     // built hydralisk den
