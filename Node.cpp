@@ -941,7 +941,7 @@ void Node::OnUnitIdle(const Unit *unit) {
             break;
         }
         case UNIT_TYPEID::ZERG_ZERGLING: {
-            auto spawn_points = search::CalculateExpansionLocations(Observation(), query);
+            auto spawn_points = Observation()->GetGameInfo().enemy_start_locations;
             if (zergling_sent == NULL) {
                 Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
                 zergling_sent = unit->tag;
