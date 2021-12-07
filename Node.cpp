@@ -946,7 +946,12 @@ void Node::OnUnitIdle(const Unit *unit) {
         case UNIT_TYPEID::ZERG_ZERGLING: {
             auto spawn_points = Observation()->GetGameInfo().enemy_start_locations;
             if (zergling_sent == NULL) {
-                Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+                if (checked_spawn < spawn_points.size()) {
+                    Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+                }
+                else {
+                    Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, expansions[checked_spawn - spawn_points.size()]);
+                }
                 zergling_sent = unit->tag;
                 checked_spawn = 0;
                 if (spawn_points.size() > 1) {
@@ -954,9 +959,14 @@ void Node::OnUnitIdle(const Unit *unit) {
                 }
             }
             else if (unit->tag == zergling_sent) {
-                Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+                if (checked_spawn < spawn_points.size()) {
+                    Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
+                }
+                else {
+                    Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, expansions[checked_spawn - spawn_points.size()]);
+                }
                 checked_spawn++;
-                if (checked_spawn == spawn_points.size()) checked_spawn = 0;
+                if (checked_spawn == spawn_points.size()+expansions.size()) checked_spawn = 0;
             }
             break;
         }
