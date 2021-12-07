@@ -110,7 +110,7 @@ void Node::ObtainInfo() {
     zergling_count = CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING);
     attack_count = CountUnits(obs, UNIT_TYPEID::ZERG_ROACH) + CountUnits(obs, UNIT_TYPEID::ZERG_ZERGLING) + CountUnits(obs, UNIT_TYPEID::ZERG_MUTALISK) +
                    CountUnits(obs, UNIT_TYPEID::ZERG_HYDRALISK) + CountUnits(obs, UNIT_TYPEID::ZERG_ULTRALISK) + CountUnits(obs, UNIT_TYPEID::ZERG_BROODLORD) +
-                   CountUnits(obs, UNIT_TYPEID::ZERG_CORRUPTOR);
+                   CountUnits(obs, UNIT_TYPEID::ZERG_CORRUPTOR) - attacking_units;
     spore_crawler_count = CountUnits(obs, UNIT_TYPEID::ZERG_SPORECRAWLER);
 }
 
@@ -597,17 +597,20 @@ void Node::Hatch(const Unit* unit) {
 // Send zerglings to attack
 // TODO: Get more unit types
 void Node::Ambush() {
+    Units enemies = Observation()->GetUnits(Unit::Alliance::Enemy);
     Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
     int count = 0;
     for (const Unit* unit : units) {
-        if (count < army_size) {
-            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
+        if (count < army_size && enemies.size() > 0) {
+            enemy_location = enemies[0]->pos;
+            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemies[0]->pos);
         }
         else {
-            break;
+            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
         }
         count++;
     }
+    attacking_units += army_size;
 }
 
 // Search for the enemy actively

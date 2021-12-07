@@ -78,6 +78,8 @@ private:
 
 	int checked_spawn = 0;
 
+	int attacking_units = 0;
+
 	int timer = 0;
 
 	double defensive_overlord_scatter_distance = 10.0;
