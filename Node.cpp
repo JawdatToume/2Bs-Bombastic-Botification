@@ -38,6 +38,7 @@ Node::~Node() {
 
 }
 
+int base_count;
 Point2D Node::focus;
 sc2::Tag Node::zergling_sent;
 std::vector<float> Node::baseCoordsX;

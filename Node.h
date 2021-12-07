@@ -65,7 +65,6 @@ private:
 		spawning_pool_count = 0,
 		tumor_count = 0,
 		lair_count = 0,
-		base_count = 0,
 		hatchery_count = 0,
 		queen_count = 0,
 		zergling_count = 0,
@@ -107,6 +106,7 @@ public:
 	static sc2::Point2D focus;
 	float ratio;
 	float radius;
+	static int base_count;
 	static sc2::Tag zergling_sent;
 
 	static std::vector<float> baseCoordsX;
@@ -115,6 +115,7 @@ public:
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;
 	sc2::ActionInterface* actions;
+
 };
 
 #endif
