@@ -616,6 +616,7 @@ void Node::SearchAndAmbush() {
     Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
     for (const Unit* unit : units) {
         if (enemies.size() > 0) {
+            enemy_location = enemies[0]->pos;
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemies[0]->pos);
         }
         else {
@@ -940,7 +941,7 @@ void Node::OnUnitIdle(const Unit *unit) {
             break;
         }
         case UNIT_TYPEID::ZERG_ZERGLING: {
-            auto spawn_points = Observation()->GetGameInfo().enemy_start_locations;
+            auto spawn_points = search::CalculateExpansionLocations(Observation(), query);
             if (zergling_sent == NULL) {
                 Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
                 zergling_sent = unit->tag;
