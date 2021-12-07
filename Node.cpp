@@ -251,7 +251,7 @@ void Node::MorphLarva(const Unit* unit) {
     // TODO: Multiple spawned at once. Make only spawn one?
     int larva_count = CountUnits(observation, UNIT_TYPEID::ZERG_LARVA);
 
-    if (minerals >= 25 && spawning_pool_count > 0 && food_workers > 20 && zergling_count < 1) {
+    if (minerals >= 25 && spawning_pool_count > 0 && zergling_count < 1) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
