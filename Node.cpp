@@ -255,9 +255,13 @@ void Node::MorphLarva(const Unit* unit) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
-    if (food_used == food_cap && minerals >= 100) {
+    if (food_used == food_cap && minerals >= 100 && Observation()->GetFoodCap() != 200) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
+    }
+    if (drone_count < 10 && minerals >= 50 && food_cap - food_used > 0) {
+        cout << "Morphing into Drone" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
     if (minerals >= 300 && food_cap - food_used > 0 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) > 0) {
         cout << "Morphing into Ultralisk" << endl;
@@ -605,18 +609,17 @@ void Node::Ambush() {
     }
 }
 
+// Search for the enemy actively
 void Node::SearchAndAmbush() {
     Units enemies = Observation()->GetUnits(Unit::Alliance::Enemy);
     Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
-    int count = 0;
     for (const Unit* unit : units) {
-        if (count < army_size && enemies.size() > 0) {
+        if (enemies.size() > 0) {
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemies[0]->pos);
         }
         else {
-            break;
+            Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
         }
-        count++;
     }
 }
 
@@ -944,7 +947,10 @@ void Node::OnUnitIdle(const Unit *unit) {
             if (zergling_sent == NULL) {
                 Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
                 zergling_sent = unit->tag;
-                checked_spawn = 1;
+                checked_spawn = 0;
+                if (spawn_points.size() > 0) {
+                    checked_spawn++;
+                }
             }
             else if (unit->tag == zergling_sent) {
                 Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
