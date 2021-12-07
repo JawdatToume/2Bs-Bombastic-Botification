@@ -638,6 +638,11 @@ void Node::moveDefense() {
             Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, focus, true);
         }
     }
+
+    Units army = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
+    for (const Unit* unit : army){
+        Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, focus, true);
+    }
 }
 
 // make queen heal other biological units
