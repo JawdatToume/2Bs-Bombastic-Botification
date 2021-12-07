@@ -255,7 +255,7 @@ void Node::MorphLarva(const Unit* unit) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
-    if (food_used == food_cap && minerals >= 100) {
+    if (food_used == food_cap && minerals >= 100 && Observation()->GetFoodCap() != 200) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
