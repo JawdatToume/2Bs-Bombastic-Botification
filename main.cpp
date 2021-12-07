@@ -9,7 +9,6 @@
 #include "LadderInterface.h"
 #include "Node.h"
 
-int base_count;
 // LadderInterface allows the bot to be tested against the built-in AI or
 // played against other bots
 int main(int argc, char* argv[]) {
