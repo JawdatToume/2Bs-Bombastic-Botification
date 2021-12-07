@@ -18,6 +18,9 @@ class Result:
         lines = file.readlines()
 
         self.time = lines[-1].replace("\n", "")
+        print(self.time[14:])
+        print(test)
+        self.real_time = float(self.time[14:])
         self.result = lines[-2].replace("\n", "")
 
     def isWin(self):
@@ -95,3 +98,16 @@ ax.bar(x_axis,y_axis)
 ax.set_ylabel("Wins")
 ax.set_title("Wins Per Map")
 plt.show()
+
+#Average times
+avg = 0
+for win in wins:
+    avg += win.real_time
+avg = avg / len(wins)
+print("AVG Time per win:", avg)
+
+avg = 0
+for lose in losses:
+    avg += lose.real_time
+avg = avg / len(losses)
+print("AVG Time per lose:", avg)
