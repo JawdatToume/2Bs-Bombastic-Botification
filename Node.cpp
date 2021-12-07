@@ -85,6 +85,7 @@ struct IsVespene {
         case UNIT_TYPEID::NEUTRAL_PURIFIERVESPENEGEYSER: return true;
         case UNIT_TYPEID::NEUTRAL_SHAKURASVESPENEGEYSER: return true;
         case UNIT_TYPEID::NEUTRAL_RICHVESPENEGEYSER: return true;
+        case UNIT_TYPEID::NEUTRAL_SPACEPLATFORMGEYSER: return true;
         default: return false;
         }
     }
