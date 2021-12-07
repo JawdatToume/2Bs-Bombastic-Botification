@@ -595,7 +595,7 @@ void Node::Ambush() {
     Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
     int count = 0;
     for (const Unit* unit : units) {
-        if (count < 20) {
+        if (count < army_size) {
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemy_location);
         }
         else {
@@ -610,7 +610,7 @@ void Node::SearchAndAmbush() {
     Units units = Observation()->GetUnits(Unit::Alliance::Self, IsArmy(Observation()));
     int count = 0;
     for (const Unit* unit : units) {
-        if (count < 20 && enemies.size() > 0) {
+        if (count < army_size && enemies.size() > 0) {
             Actions()->UnitCommand(unit, ABILITY_ID::ATTACK, enemies[0]->pos);
         }
         else {
@@ -665,6 +665,7 @@ void Node::HealUnits(const Unit* unit) {
 
 void Node::OnGameStart() { 
     cout << "start!!!!!!" << endl;
+    elapsedTime = 0;
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
@@ -720,9 +721,14 @@ void Node::OnGameStart() {
 // per frame...
 void Node::OnStep() {
     timer++;
+    elapsedTime += (1.0 / 22.4);
+    army_size = (int)(elapsedTime / 40.0);
+    if (army_size > 20) {
+        army_size = 20.0;
+    }
     ObtainInfo();
     GetClosestEnemy();
-    if (attack_count >= 20) {
+    if (attack_count >= army_size) {
         Ambush();
     }
     if (attack_count >= 50) {
