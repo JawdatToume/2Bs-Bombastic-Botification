@@ -6,7 +6,7 @@ races = ["zerg", "protoss", "terran"]
 maps = ["CactusValleyLE.SC2Map", "BelShirVestigeLE.SC2Map", "ProximaStationLE.SC2Map"]
 
 class Result:
-    def __init__(self, test):
+    def __init__(self, test, root):
         self.test = test
         params = test.split("-")
         self.diff = params[0]
@@ -14,14 +14,14 @@ class Result:
         self.map = params[2]
         self.iter = params[3]
 
-        file = open("tests\\" + test)
+        file = open(root + test)
         lines = file.readlines()
 
         self.time = lines[-1].replace("\n", "")
         self.result = lines[-2].replace("\n", "")
 
     def isWin(self):
-        return self.result == "Team2B lost :("
+        return self.result != "Team2B lost :("
 
     def __str__(self):
         return self.test + ": " + self.result + ", " + self.time
@@ -30,13 +30,22 @@ tests = os.listdir("tests\\")
 
 results = []
 
+#add alikay tests
 for test in tests:
-    res = Result(test)
+    res = Result(test, "tests\\")
+    results.append(res)
+
+tests = os.listdir("JawdatActualTests\\")
+
+#add jawdat tests
+for test in tests:
+    res = Result(test, "JawdatActualTests\\")
     results.append(res)
 
 for res in results:
     print(res)
 
+#compute wins and losses
 wins = []
 losses = []
 for res in results:
@@ -45,19 +54,44 @@ for res in results:
     else:
         losses.append(res)
 
-print(wins)
-
 #Plot wins vs losses per difficulty
 y_axis = [0, 0, 0]
 for res in wins:
-    if res.diff == "Easy":
-        y_axis[0] += 1
-    if res.diff == "Medium":
-        y_axis[1] += 1
-    if res.diff == "Hard":
-        y_axis[2] += 1
+    y_axis[difficulties.index(res.diff)] += 1
 
-fig = plt.subplots()
+print(y_axis)
+
+fig, ax = plt.subplots()
 x_axis = difficulties
-plt.bar(x_axis,y_axis)
+ax.bar(x_axis,y_axis)
+ax.set_ylabel("Wins")
+ax.set_title("Wins Per Difficulty")
+plt.show()
+
+#Plot wins by race
+y_axis = [0, 0, 0]
+for res in wins:
+    y_axis[races.index(res.race)] += 1
+
+print(y_axis)
+
+fig, ax = plt.subplots()
+x_axis = races
+ax.bar(x_axis,y_axis)
+ax.set_ylabel("Wins")
+ax.set_title("Wins Per Race")
+plt.show()
+
+#Plot wins vs map
+y_axis = [0, 0, 0]
+for res in wins:
+    y_axis[maps.index(res.map)] += 1
+
+print(y_axis)
+
+fig, ax = plt.subplots()
+x_axis = maps
+ax.bar(x_axis,y_axis)
+ax.set_ylabel("Wins")
+ax.set_title("Wins Per Map")
 plt.show()
