@@ -778,6 +778,41 @@ void Node::OnStep() {
     }
     
     int queens = 0; // used for queens to be able to inject larva into more than 1 hatchery at once
+    ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_EXTRACTOR);
+
+    // building spawning pool
+    if (spawning_pool_count < 1 && minerals >= 200) {
+        TryBuild(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
+    }
+    if (spawning_pool_count > 0 && minerals >= 150 && CountUnits(observation, UNIT_TYPEID::ZERG_ROACHWARREN) < 1) {
+        TryBuild(ABILITY_ID::BUILD_ROACHWARREN, UNIT_TYPEID::ZERG_DRONE);
+    }
+    if (spine_crawler_count < 2 && minerals >= 100) {
+        TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
+    }
+    // build spore crawler for defending air attacks
+    if (spore_crawler_count < 2 && minerals >= 75) {
+        TryBuild(ABILITY_ID::BUILD_SPORECRAWLER, UNIT_TYPEID::ZERG_DRONE);
+    }
+    // built hydralisk den
+    if (lair_count > 0 && minerals >= 100 && vespene >= 100 && CountUnits(observation, UNIT_TYPEID::ZERG_INFESTATIONPIT) < 1) {
+        TryBuild(ABILITY_ID::BUILD_INFESTATIONPIT, UNIT_TYPEID::ZERG_DRONE);
+    }
+    if (lair_count > 0 && hydralisk_count < 1 && minerals >= 100 && vespene >= 100) {
+        TryBuild(ABILITY_ID::BUILD_HYDRALISKDEN, UNIT_TYPEID::ZERG_DRONE);
+    }
+    if (lair_count > 0 && spire_count < 1 && minerals >= 100 && vespene >= 100) {
+        TryBuild(ABILITY_ID::BUILD_SPIRE, UNIT_TYPEID::ZERG_DRONE);
+    }
+    if (minerals >= 150 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) < 1) {
+        TryBuild(ABILITY_ID::BUILD_ULTRALISKCAVERN, UNIT_TYPEID::ZERG_DRONE);
+    }
+
+    bool not_enough_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
+    // if all bases are destroyed or there's no base, don't build
+    if (base_count > 0 && minerals >= 25 && not_enough_extractor) {
+        BuildExtractor();
+    }
 
     // looking through all unit types
     Units units = Observation()->GetUnits(Unit::Alliance::Self);
@@ -906,41 +941,7 @@ void Node::OnStep() {
         }
     }
 
-    ManageWorkers(UNIT_TYPEID::ZERG_DRONE, ABILITY_ID::HARVEST_GATHER, UNIT_TYPEID::ZERG_EXTRACTOR);
-
-    // building spawning pool
-    if (spawning_pool_count < 1 && minerals >= 200) {
-        TryBuild(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
-    }
-    if (spawning_pool_count > 0 && minerals >= 150 && CountUnits(observation, UNIT_TYPEID::ZERG_ROACHWARREN) < 1) {
-        TryBuild(ABILITY_ID::BUILD_ROACHWARREN, UNIT_TYPEID::ZERG_DRONE);
-    }
-    if (spine_crawler_count < 2 && minerals >= 100) {
-        TryBuild(ABILITY_ID::BUILD_SPINECRAWLER, UNIT_TYPEID::ZERG_DRONE);
-    }
-    // build spore crawler for defending air attacks
-    if (spore_crawler_count < 2 && minerals >= 75) {
-        TryBuild(ABILITY_ID::BUILD_SPORECRAWLER, UNIT_TYPEID::ZERG_DRONE);
-    }
-    // built hydralisk den
-    if (lair_count > 0 && minerals >= 100 && vespene >= 100 && CountUnits(observation, UNIT_TYPEID::ZERG_INFESTATIONPIT) < 1) {
-        TryBuild(ABILITY_ID::BUILD_INFESTATIONPIT, UNIT_TYPEID::ZERG_DRONE);
-    }
-    if (lair_count > 0 && hydralisk_count < 1 && minerals >= 100 && vespene >= 100) {
-        TryBuild(ABILITY_ID::BUILD_HYDRALISKDEN, UNIT_TYPEID::ZERG_DRONE);
-    }
-    if (lair_count > 0 && spire_count < 1 && minerals >= 100 && vespene >= 100) {
-        TryBuild(ABILITY_ID::BUILD_SPIRE, UNIT_TYPEID::ZERG_DRONE);
-    }
-    if (minerals >= 150 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) < 1) {
-        TryBuild(ABILITY_ID::BUILD_ULTRALISKCAVERN, UNIT_TYPEID::ZERG_DRONE);
-    }
-
-    bool not_enough_extractor = CountUnits(Observation(), UNIT_TYPEID::ZERG_EXTRACTOR) < Observation()->GetUnits(Unit::Alliance::Self, IsTownHall()).size() * 2;
-    // if all bases are destroyed or there's no base, don't build
-    if (base_count > 0 && minerals >= 25 && not_enough_extractor) {
-        BuildExtractor();
-    }
+    
 
     /*if (ready_to_expand) {
         TryExpand(ABILITY_ID::BUILD_SPAWNINGPOOL, UNIT_TYPEID::ZERG_DRONE);
