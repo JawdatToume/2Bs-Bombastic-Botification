@@ -259,6 +259,10 @@ void Node::MorphLarva(const Unit* unit) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
+    if (drone_count < 10 && minerals >= 50 && food_cap - food_used > 0) {
+        cout << "Morphing into Drone" << endl;
+        Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
+    }
     if (minerals >= 300 && food_cap - food_used > 0 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) > 0) {
         cout << "Morphing into Ultralisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ULTRALISK);
