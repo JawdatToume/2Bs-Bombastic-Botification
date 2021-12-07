@@ -846,15 +846,15 @@ void Node::OnStep() {
                     if (lair_count > 0) {  // available once lair built
                         // start generating creep if there is no creep, or for 5 seconds every 5 seconds (theoretically)
                         GenerateCreep(unit);
-                        if (Observation()->HasCreep(unit->pos) || timer%3000 < 300) {
-                            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                        //if (Observation()->HasCreep(unit->pos) || timer%3000 < 300) {
+                            //Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
                             // update staging_location
-                            staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z));
-                        }
-                        else {
-                            Actions()->UnitCommand(unit, ABILITY_ID::STOP);
+                            //staging_location = Point3D((staging_location.x + 20), (staging_location.y + 20), (staging_location.z));
+                        //}
+                        //else {
+                        //    Actions()->UnitCommand(unit, ABILITY_ID::STOP);
                            
-                        }
+                        //}
                         
 
                     }
@@ -936,10 +936,10 @@ void Node::OnUnitIdle(const Unit *unit) {
     switch (unit->unit_type.ToType()) {
 
         case UNIT_TYPEID::ZERG_OVERLORD: {
-            float rx = GetRandomScalar() * defensive_overlord_scatter_distance;
-            float ry = GetRandomScalar() * defensive_overlord_scatter_distance;
-            float rz = GetRandomScalar() * defensive_overlord_scatter_distance;
-            Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVEPATROL, unit->pos + Point3D(rx, ry, rz));
+            //float rx = GetRandomScalar() * defensive_overlord_scatter_distance;
+            //float ry = GetRandomScalar() * defensive_overlord_scatter_distance;
+            //float rz = GetRandomScalar() * defensive_overlord_scatter_distance;
+            //Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVEPATROL, unit->pos + Point3D(rx, ry, rz));
             break;
         }
         case UNIT_TYPEID::ZERG_ZERGLING: {
