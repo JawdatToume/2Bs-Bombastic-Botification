@@ -18,8 +18,6 @@ class Result:
         lines = file.readlines()
 
         self.time = lines[-1].replace("\n", "")
-        print(self.time[14:])
-        print(test)
         self.real_time = float(self.time[14:])
         self.result = lines[-2].replace("\n", "")
 
@@ -100,14 +98,26 @@ ax.set_title("Wins Per Map")
 plt.show()
 
 #Average times
-avg = 0
+avg = [0, 0, 0]
+nums = [0, 0, 0]
 for win in wins:
-    avg += win.real_time
-avg = avg / len(wins)
-print("AVG Time per win:", avg)
+    avg[difficulties.index(win.diff)] += win.real_time
+    nums[difficulties.index(win.diff)] += 1
 
-avg = 0
+average = (avg[0] + avg[1] + avg[2]) / (nums[0] + nums[1] + nums[2])
+print("AVG Time per win:", average)
+print("    AVG Time per Easy   win", avg[0]/nums[0])
+print("    AVG Time per Medium win", avg[1]/nums[1])
+print("    AVG Time per Hard   win", avg[2]/nums[2])
+
+avg = [0, 0, 0]
+nums = [0, 0, 0]
 for lose in losses:
-    avg += lose.real_time
-avg = avg / len(losses)
-print("AVG Time per lose:", avg)
+    avg[difficulties.index(lose.diff)] += lose.real_time
+    nums[difficulties.index(lose.diff)] += 1
+
+average = (avg[0] + avg[1] + avg[2]) / (nums[0] + nums[1] + nums[2])
+print("AVG Time per lose:", average)
+print("    AVG Time per Easy   lose", avg[0]/nums[0])
+print("    AVG Time per Medium lose", avg[1]/nums[1])
+print("    AVG Time per Hard   lose", avg[2]/nums[2])
