@@ -7,12 +7,22 @@
 #include "BasicSc2Bot.h"
 #include "Globals.h"
 #include "LadderInterface.h"
+#include "Node.h"
 
+int base_count;
 // LadderInterface allows the bot to be tested against the built-in AI or
 // played against other bots
 int main(int argc, char* argv[]) {
 	BasicSc2Bot* bot = new BasicSc2Bot();
 	RunBot(argc, argv, bot, sc2::Race::Zerg);
-	std::cout << "Ran off the end" << std::endl;
+
+    cout << "Game ended" << endl;
+    if (Node::base_count == 0) {
+        cout << "Team2B lost :(" << endl;
+    } else {
+        cout << "Team2B won!" << endl;
+    }
+
+	//std::cout << "Ran off the end" << std::endl;
 	return 0;
 }
