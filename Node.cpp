@@ -949,7 +949,7 @@ void Node::OnUnitIdle(const Unit *unit) {
                 Actions()->UnitCommand(unit, ABILITY_ID::MOVE_MOVE, spawn_points[checked_spawn]);
                 zergling_sent = unit->tag;
                 checked_spawn = 0;
-                if (spawn_points.size() > 0) {
+                if (spawn_points.size() > 1) {
                     checked_spawn++;
                 }
             }
