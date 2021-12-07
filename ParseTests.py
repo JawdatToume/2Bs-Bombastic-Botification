@@ -66,7 +66,7 @@ fig, ax = plt.subplots()
 x_axis = difficulties
 ax.bar(x_axis,y_axis)
 ax.set_ylabel("Wins")
-ax.set_title("Wins Per Difficulty")
+ax.set_title("Wins Per Difficulty (Max = 63)")
 plt.show()
 
 #Plot wins by race
@@ -80,7 +80,7 @@ fig, ax = plt.subplots()
 x_axis = races
 ax.bar(x_axis,y_axis)
 ax.set_ylabel("Wins")
-ax.set_title("Wins Per Race")
+ax.set_title("Wins Per Race (Max = 63)")
 plt.show()
 
 #Plot wins vs map
@@ -94,7 +94,7 @@ fig, ax = plt.subplots()
 x_axis = maps
 ax.bar(x_axis,y_axis)
 ax.set_ylabel("Wins")
-ax.set_title("Wins Per Map")
+ax.set_title("Wins Per Map (Max = 63)")
 plt.show()
 
 #Average times
