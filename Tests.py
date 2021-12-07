@@ -8,7 +8,7 @@ def getFileName(race, diff, map, iter):
     return "build\\" + diff + "-" + race + "-" + map + "-" + str(iter) + ".txt"
 
 iter = 0
-while iter == 0:
+while True:
     iter += 1
     for diff in difficulties:
         for race in races:
