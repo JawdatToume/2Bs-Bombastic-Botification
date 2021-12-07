@@ -38,7 +38,7 @@ Node::~Node() {
 
 }
 
-int base_count;
+int Node::base_count = 0;
 Point2D Node::focus;
 sc2::Tag Node::zergling_sent;
 std::vector<float> Node::baseCoordsX;
@@ -457,7 +457,6 @@ void Node::MineIdleWorkers(const Unit* worker, AbilityID worker_gather_command, 
 // Borrowed from bot_example.cc
 const Unit* Node::FindNearestMineralPatch(const Point2D& start) {
     Units units = Observation()->GetUnits(Unit::Alliance::Neutral);  // need scouting to expand view point to spot more mine fields
-    cout << "Number of Neautral observations: " << units.size() << endl;
     float distance = std::numeric_limits<float>::max();
     const Unit* target = nullptr;
     for (const auto& u : units) {
@@ -966,6 +965,10 @@ void Node::OnUnitIdle(const Unit *unit) {
 void Node::OnUnitDestroyed(const Unit* unit) {
     if (unit->tag == zergling_sent) {
         zergling_sent = NULL;
+    }
+    if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_HATCHERY || unit->unit_type.ToType() == UNIT_TYPEID::ZERG_LAIR || unit->unit_type.ToType() == UNIT_TYPEID::ZERG_HIVE) {
+        hatchery_count--;
+        base_count--;
     }
 }
 
