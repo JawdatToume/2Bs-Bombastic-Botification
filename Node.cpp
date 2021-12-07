@@ -771,12 +771,10 @@ void Node::OnStep() {
                         QueenAction(unit, queens);
                     }
                     if (unit->energy >= 25 && unit->orders.empty()) {  // queen plant creep tumor
-                        if (Observation()->HasCreep(unit->pos)) {
-                            Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
-                        }
-                        if (!Observation()->HasCreep(unit->pos)) {
-                            Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
-                        }
+                        //if (Observation()->HasCreep(unit->pos)) {
+                            //Actions()->UnitCommand(unit, ABILITY_ID::GENERAL_MOVE, staging_location);
+                        //}
+                        Actions()->UnitCommand(unit, ABILITY_ID::BUILD_CREEPTUMOR);
                     }
                     else {
                         HealUnits(unit);
