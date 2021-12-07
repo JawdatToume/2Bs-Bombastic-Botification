@@ -74,6 +74,24 @@ struct IsArmy {
     const ObservationInterface* observation_;
 };
 
+struct IsVespene {
+    IsVespene(const ObservationInterface* obs) : observation_(obs) {}
+
+    bool operator()(const Unit unit) {
+        // From bot_examples.cc
+        switch (unit.unit_type.ToType()) {
+        case UNIT_TYPEID::NEUTRAL_VESPENEGEYSER: return true;
+        case UNIT_TYPEID::NEUTRAL_PROTOSSVESPENEGEYSER: return true;
+        case UNIT_TYPEID::NEUTRAL_PURIFIERVESPENEGEYSER: return true;
+        case UNIT_TYPEID::NEUTRAL_SHAKURASVESPENEGEYSER: return true;
+        case UNIT_TYPEID::NEUTRAL_RICHVESPENEGEYSER: return true;
+        default: return false;
+        }
+    }
+
+    const ObservationInterface* observation_;
+};
+
 // INFO COLLECTION ///////////////////////////////////////////////////////////////////
 
 // From bot_examples.cc 
@@ -320,7 +338,7 @@ void Node::BuildExtractor() {
 
 // from bot_example.cc
 Tag Node::FindClosestGeyser(Point2D base_location) {
-    Units geysers = Observation()->GetUnits(Unit::Alliance::Neutral, IsUnit(UNIT_TYPEID::NEUTRAL_VESPENEGEYSER));
+    Units geysers = Observation()->GetUnits(Unit::Alliance::Neutral, IsVespene(Observation()));
     // only search for closest geyser within this radius
     float minimum_distance = 15.0f;
     Tag closestGeyser = 0;
