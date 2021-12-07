@@ -257,7 +257,7 @@ void Node::MorphLarva(const Unit* unit) {
         cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
-    if (food_used == food_cap && minerals >= 100 && Observation()->GetFoodCap() != 200) {
+    if (food_cap - food_used < 4 && minerals >= 100 && Observation()->GetFoodCap() != 200) {
         cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
@@ -976,6 +976,12 @@ void Node::OnUnitDestroyed(const Unit* unit) {
     if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_HATCHERY || unit->unit_type.ToType() == UNIT_TYPEID::ZERG_LAIR || unit->unit_type.ToType() == UNIT_TYPEID::ZERG_HIVE) {
         hatchery_count--;
         base_count--;
+    }
+    if (IsArmy(Observation())(*unit)) {
+        attacking_units--;
+        if (attacking_units < 0) {
+            attacking_units = 0;
+        }
     }
 }
 
