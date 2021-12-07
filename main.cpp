@@ -22,6 +22,8 @@ int main(int argc, char* argv[]) {
         cout << "Team2B won!" << endl;
     }
 
+    std::cout << "Elapsed Time: " << Node::elapsedTime << std::endl;
+
 	//std::cout << "Ran off the end" << std::endl;
 	return 0;
 }

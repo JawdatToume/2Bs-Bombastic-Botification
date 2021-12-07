@@ -25,6 +25,7 @@ BasicSc2Bot::~BasicSc2Bot() {
 
 //Called on start
 void BasicSc2Bot::OnGameStart() {
+	Node::elapsedTime = 0.0;
 	cout << "Start Game!" << endl;
 	for (int i = 0; i < nodes.size(); i++) {
 		updateNode(nodes[i]);
@@ -37,6 +38,7 @@ void BasicSc2Bot::OnGameStart() {
 
 //Called each frame
 void BasicSc2Bot::OnStep() {
+	Node::elapsedTime += (1.0 / 22.4);
 	for (int i = 0; i < nodes.size(); i++) {
 		updateNode(nodes[i]);
 		nodes[i]->OnStep();

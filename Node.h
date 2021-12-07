@@ -54,8 +54,6 @@ private:
 	int food_cap, food_used, food_workers;
 	int minerals = 0, vespene = 0;
 
-	long double elapsedTime;
-
 	sc2::Point3D start_location, staging_location;  // on game start
 	std::vector<sc2::Point3D> expansions;
 
@@ -115,6 +113,8 @@ public:
 	const sc2::ObservationInterface* observation;
 	sc2::QueryInterface* query;
 	sc2::ActionInterface* actions;
+
+	static long double elapsedTime;
 
 };
 

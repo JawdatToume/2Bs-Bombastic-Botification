@@ -668,7 +668,6 @@ void Node::HealUnits(const Unit* unit) {
 
 void Node::OnGameStart() { 
     cout << "start!!!!!!" << endl;
-    elapsedTime = 0;
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
@@ -724,7 +723,6 @@ void Node::OnGameStart() {
 // per frame...
 void Node::OnStep() {
     timer++;
-    elapsedTime += (1.0 / 22.4);
     army_size = (int)(elapsedTime / 40.0);
     if (army_size > 20) {
         army_size = 20.0;
