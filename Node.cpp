@@ -403,7 +403,7 @@ void Node::ManageWorkers(UNIT_TYPEID worker_type, AbilityID worker_gather_comman
         }
     }
 }
-
+// bloop
 // Borrowed from bot_example.cc
 // Mine the nearest mineral to Town hall.
 // If we don't do this, drones may mine from other patches if they stray too far from the base after building.
