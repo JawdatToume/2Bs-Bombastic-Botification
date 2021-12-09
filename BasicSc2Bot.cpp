@@ -9,7 +9,7 @@ using namespace std;
 
 //Constructor
 BasicSc2Bot::BasicSc2Bot() {
-	std::cout << "Spawned" << std::endl;
+	//std::cout << "Spawned" << std::endl;
 	Node* n = new Node;
 	focus = n;
 	nodes.push_back(n);
@@ -82,7 +82,7 @@ Node* BasicSc2Bot::GetOwningNode(const sc2::Unit* u) {
 // Creates new node if new unit is a hatchery and moves defense to it,
 // else assigns unit to closest node.
 void BasicSc2Bot::OnUnitCreated(const sc2::Unit* unit) {
-	std::cout << "Unit Created" << std::endl;
+	//std::cout << "Unit Created" << std::endl;
 	if (unit->alliance == Unit::Alliance::Self) {
 		if (unit->unit_type.ToType() == UNIT_TYPEID::ZERG_HATCHERY) {
 			if (firstNode) {

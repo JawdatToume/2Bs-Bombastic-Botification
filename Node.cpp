@@ -45,7 +45,6 @@ sc2::Tag Node::zergling_sent;
 std::vector<float> Node::baseCoordsX;
 std::vector<float> Node::baseCoordsY;
 
-// From bot_examples.cc 
 // ignores Overlords, workers, and structures
 struct IsArmy {
     IsArmy(const ObservationInterface* obs) : observation_(obs) {}
@@ -158,7 +157,6 @@ void Node::GetClosestEnemy() {
 
 // UNIT SPAWNING AND BUILDING ////////////////////////////////////////////////////////////
 
-// From bot_examples.cc
 bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, Tag location_tag, Point3D location_point3d, bool is_expansion) {
     float rx = GetRandomScalar();
     float ry = GetRandomScalar();
@@ -178,7 +176,7 @@ bool Node::TryBuild(AbilityID ability_type_for_structure, UnitTypeID unit_type, 
 
         
     } else {
-        cout << "trying yo build hatchery..." << endl;
+        //cout << "trying yo build hatchery..." << endl;
         build_location = Point2D(start_location.x + baseCoordsX[0], start_location.y + baseCoordsY[0]);
         if (!Query()->Placement(ability_type_for_structure, build_location)) {
             build_location = Point2D(start_location.x + baseCoordsX[1], start_location.y + baseCoordsY[1]);
@@ -276,43 +274,43 @@ void Node::MorphLarva(const Unit* unit) {
     int larva_count = CountUnits(observation, UNIT_TYPEID::ZERG_LARVA);
 
     if (minerals >= 25 + min_erals && spawning_pool_count > 0 && zergling_count < 1) {
-        cout << "Morphing into Zergling" << endl;
+        //cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
     if (food_cap - food_used < 4 && minerals >= 100 + min_erals && Observation()->GetFoodCap() != 200) {
-        cout << "Morphing into Overlord" << endl;
+        //cout << "Morphing into Overlord" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_OVERLORD);
     }
     if (drone_count < 10 && minerals >= 50 + min_erals && food_cap - food_used > 0) {
-        cout << "Morphing into Drone" << endl;
+        //cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
     if (minerals >= 300 && food_cap - food_used > 0 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) > 0 && elapsedTime > 560) {
-        cout << "Morphing into Ultralisk" << endl;
+        //cout << "Morphing into Ultralisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ULTRALISK);
     }
     if (minerals >= 150 + min_erals && food_cap - food_used > 0 && vespene >= 100 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0) {
-        cout << "Morphing into Corruptor" << endl;
+        //cout << "Morphing into Corruptor" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_CORRUPTOR);
     }
     if (minerals >= 100 + min_erals/2 && food_cap - food_used > 0 && vespene >= 50 && hydralisk_count > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_HYDRALISK) <= CountUnits(observation, UNIT_TYPEID::ZERG_MUTALISK)) {
-        cout << "Morphing into Hydralisk" << endl;
+        //cout << "Morphing into Hydralisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_HYDRALISK);
     }
     if (minerals >= 100 + min_erals/2 && food_cap - food_used > 0 && vespene >= 50 && spire_count > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_HYDRALISK) > CountUnits(observation, UNIT_TYPEID::ZERG_MUTALISK)) {
-        cout << "Morphing into Mutalisk" << endl;
+        //cout << "Morphing into Mutalisk" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_MUTALISK);
     }
     if (minerals >= 75 + min_erals && food_cap - food_used > 0 && spawning_pool_count > 0 && zergling_count >= 1) {
-        cout << "Morphing into Roach" << endl;
+        //cout << "Morphing into Roach" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ROACH);
     }
     if (minerals >= 50 + min_erals && food_cap - food_used > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_DRONE) < 16){
-        cout << "Morphing into Drone" << endl;
+        //cout << "Morphing into Drone" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_DRONE);
     }
     if (minerals >= 25 + min_erals && spawning_pool_count > 0  && food_workers > 20 && zergling_count < 30) {
-        cout << "Morphing into Zergling" << endl;
+        //cout << "Morphing into Zergling" << endl;
         Actions()->UnitCommand(unit, ABILITY_ID::TRAIN_ZERGLING);
     }
 }
@@ -427,7 +425,7 @@ void Node::ManageWorkers(UNIT_TYPEID worker_type, AbilityID worker_gather_comman
     }
 }
 // bloop
-// Borrowed from bot_example.cc
+// From bot_example.cc
 // Mine the nearest mineral to Town hall.
 // If we don't do this, drones may mine from other patches if they stray too far from the base after building.
 void Node::MineIdleWorkers(const Unit* worker, AbilityID worker_gather_command, UnitTypeID building_type) {
@@ -459,7 +457,7 @@ void Node::MineIdleWorkers(const Unit* worker, AbilityID worker_gather_command, 
         }
         // if missing workers at a base
         if (base->assigned_harvesters < base->ideal_harvesters) {
-            cout << "We are missing workers at base!!" << endl;
+            //cout << "We are missing workers at base!!" << endl;
             valid_mineral_patch = FindNearestMineralPatch(base->pos);
             Actions()->UnitCommand(worker, worker_gather_command, valid_mineral_patch);
             return;
@@ -533,7 +531,7 @@ bool Node::TryExpand(AbilityID build_ability, UnitTypeID unit_type) {
     }
     // only update staging location up till 3 bases
     if (TryBuild(build_ability, unit_type, 0, closest_expansion, true) && base_count < 4) {
-        cout << "Building new base" << endl;
+        //cout << "Building new base" << endl;
         staging_location = Point3D(((staging_location.x + closest_expansion.x) / 2), ((staging_location.y + closest_expansion.y) / 2),
             ((staging_location.z + closest_expansion.z) / 2));
         return true;
@@ -542,7 +540,7 @@ bool Node::TryExpand(AbilityID build_ability, UnitTypeID unit_type) {
 
 }
 
-// Borrowed from bot_examples.cc
+// From bot_examples.cc
 // An estimate of how many workers we should have based on what buildings we have
 int Node::GetExpectedWorkers(UNIT_TYPEID building_type) {
     const ObservationInterface* observation = Observation();
@@ -652,7 +650,7 @@ void Node::SearchAndAmbush() {
 
 void Node::moveDefense() {
     Units units = Observation()->GetUnits(Unit::Alliance::Self);
-    cout << "aah! move defense!" << endl;
+    //cout << "aah! move defense!" << endl;
 
     focus = Point2D(getBasePosition().x, getBasePosition().y);
 
@@ -694,7 +692,7 @@ void Node::HealUnits(const Unit* unit) {
 // GAME START AND STEP ///////////////////////////////////////////////////////////////////
 
 void Node::OnGameStart() { 
-    cout << "start!!!!!!" << endl;
+    //cout << "start!!!!!!" << endl;
     start_location = Observation()->GetStartLocation();
     staging_location = start_location;
     expansions = search::CalculateExpansionLocations(Observation(), Query());
@@ -706,7 +704,7 @@ void Node::OnGameStart() {
     std::vector<float> Bneg = {-2.5, 3, 26};
 
     if (Observation()->GetGameInfo().map_name == "Bel'Shir Vestige LE (Void)") {
-        cout << "MAP2" << endl;
+        //cout << "MAP2" << endl;
         A = {-32, -0, -68};
         B = {1, -38, 4};
         Aneg = {32, 0, 68};

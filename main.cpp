@@ -17,9 +17,9 @@ int main(int argc, char* argv[]) {
 
     cout << "Game ended" << endl;
     if (Node::base_count == 0) {
-        cout << "Team2B lost :(" << endl;
+        cout << "Team 2B lost :(" << endl;
     } else {
-        cout << "Team2B won!" << endl;
+        cout << "Team 2B won!" << endl;
     }
 
     std::cout << "Elapsed Time: " << Node::elapsedTime << std::endl;
