@@ -806,6 +806,8 @@ void Node::OnStep() {
         TryBuild(ABILITY_ID::BUILD_SPIRE, UNIT_TYPEID::ZERG_DRONE);
     }
     if (minerals >= 150 && vespene >= 200 && CountUnits(observation, UNIT_TYPEID::ZERG_HIVE) > 0 && CountUnits(observation, UNIT_TYPEID::ZERG_ULTRALISKCAVERN) < 1) {
+        Actions()->SendChat("Insolent little fool!");
+        Actions()->SendChat("Prepare for the darkness owo.");
         TryBuild(ABILITY_ID::BUILD_ULTRALISKCAVERN, UNIT_TYPEID::ZERG_DRONE);
     }
 
@@ -873,8 +875,6 @@ void Node::OnStep() {
                     Hatch(unit); // No specialization for now
                     if (minerals >= 200 && vespene >= 150) { // upgrade 
                         Actions()->UnitCommand(unit, ABILITY_ID::MORPH_HIVE);
-                        //Actions()->SendChat("Insolent little fool!");
-                        //Actions()->SendChat("Prepare for the darkness owo.");
                     }
                     break;
                 }
