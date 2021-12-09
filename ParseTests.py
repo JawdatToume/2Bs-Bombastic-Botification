@@ -101,14 +101,10 @@ plt.show()
 #Average times
 avg = [0, 0, 0]
 nums = [0, 0, 0]
-std = [0, 0, 0]
-times = [[], [], []]
 for win in wins:
     avg[difficulties.index(win.diff)] += win.real_time
     nums[difficulties.index(win.diff)] += 1
-for win in wins:
-    std[difficulties.index(win.diff)] += np.sqrt(((win.real_time-avg[difficulties.index(win.diff)]/nums[difficulties.index(win.diff)])**2)/(nums[difficulties.index(win.diff)]))
-
+    
 average = (avg[0] + avg[1] + avg[2]) / (nums[0] + nums[1] + nums[2])
 print("AVG Time per win:", average)
 print("    AVG Time per Easy   win", avg[0]/nums[0])
@@ -120,7 +116,6 @@ nums = [0, 0, 0]
 for lose in losses:
     avg[difficulties.index(lose.diff)] += lose.real_time
     nums[difficulties.index(lose.diff)] += 1
-    times[difficulties.index(lose.diff)].append(lose.real_time)
 
 
 average = (avg[0] + avg[1] + avg[2]) / (nums[0] + nums[1] + nums[2])
@@ -128,9 +123,3 @@ print("AVG Time per lose:", average)
 print("    AVG Time per Easy   lose", avg[0]/nums[0])
 print("    AVG Time per Medium lose", avg[1]/nums[1])
 print("    AVG Time per Hard   lose", avg[2]/nums[2])
-
-print(std[0])
-print(std[1])
-print(std[2])
-
-print(times)
