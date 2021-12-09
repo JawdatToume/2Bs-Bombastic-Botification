@@ -5,7 +5,6 @@
 #include "sc2utils/sc2_arg_parser.h"
 
 #include "BasicSc2Bot.h"
-#include "Globals.h"
 #include "LadderInterface.h"
 #include "Node.h"
 

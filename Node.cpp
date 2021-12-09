@@ -6,7 +6,6 @@
 #include "sc2utils/sc2_arg_parser.h"
 #include "sc2api/sc2_unit_filters.h"
 #include <iostream>
-#include "Globals.h"
 
 using namespace sc2;
 using namespace std;
